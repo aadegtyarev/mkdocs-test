@@ -155,7 +155,7 @@
 
 ## Монтаж
 
---8<-- "../includes/mount-relay.md"
+--8<-- "docs/relay/includes/mount-relay.md"
 
 ## Настройка
 
