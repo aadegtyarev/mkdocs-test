@@ -155,11 +155,7 @@
 
 ## Монтаж
 
-{%
-   include-markdown "../includes/mount-relay.md"
-%}
-
---8<-- "mount-relay.md"
+--8<-- "docs/relay/includes/mount-relay.md"
 
 ## Настройка
 
