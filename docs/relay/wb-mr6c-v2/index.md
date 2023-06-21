@@ -10,7 +10,7 @@
 
 ## Монтаж
 {%
-   include-markdown "docs/relay/includes/mount-relay.md"
+   include-markdown "../includes/mount-relay.md"
 %}
 
 ## Настройка
