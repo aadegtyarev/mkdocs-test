@@ -3,9 +3,12 @@ site_url: https://aadegtytarev.github.io/mkdocs-test
 nav:
     - Home: index.md
     - Контроллеры:
-        - Wiren Board 7: wb7/index.md
-        - Wiren Board 6: wb6/index.md
+        - Wiren Board 7: plc/wb7/index.md
+        - Wiren Board 6: plc/wb6/index.md
     - Реле:
-        - WB-MR6C v.2: wb-mr6c-v2/index.md
+        - WB-MR6C v.2: relay/wb-mr6c-v2/index.md
 
 theme: material
+
+plugins:
+  - include-markdown
