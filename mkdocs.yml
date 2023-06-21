@@ -18,6 +18,7 @@ theme:
 plugins:
   - include-markdown
   - glightbox
+  - external-markdown
 
 markdown_extensions:
   - pymdownx.superfences
