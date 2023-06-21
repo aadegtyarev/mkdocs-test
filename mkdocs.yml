@@ -1,0 +1,12 @@
+site_name: Wiren Board Docs
+site_url: https://aadegtytarev.github.io/mkdocs-test
+nav:
+    - Home: index.md
+    - Version 2.x:
+        - Getting Started: v2/getting-started.md
+        - Types:
+            - Comments: v2/types/comments.md
+    - Version 1.x:
+        - Getting Started: v2/getting-started.md
+
+theme: readthedocs
