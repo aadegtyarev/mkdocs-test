@@ -7,4 +7,4 @@ nav:
     - Version 1.x:
         - Getting Started: v1/getting-started.md
 
-theme: readthedocs
+theme: material
