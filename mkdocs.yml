@@ -2,9 +2,10 @@ site_name: Wiren Board Docs
 site_url: https://aadegtytarev.github.io/mkdocs-test
 nav:
     - Home: index.md
-    - Version 2.x:
-        - Getting Started: v2/getting-started.md
-    - Version 1.x:
-        - Getting Started: v1/getting-started.md
+    - Контроллеры:
+        - Wiren Board 7: wb7/index.md
+        - Wiren Board 6: wb6/index.md
+    - Реле:
+        - WB-MR6C v.2: wb-mr6c-v2/index.md
 
 theme: material
