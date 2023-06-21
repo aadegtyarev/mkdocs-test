@@ -44,7 +44,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -298,6 +309,11 @@
 Как обжимать наконечники НШВИ</p>
 <p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
+<figure>
+<p><a class="glightbox" href="../images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../images/nshvi-press.jpg" width="300" /></a>
+  </p>
+<figcaption>Как обжимать наконечники НШВИ</figcaption>
+</figure>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
 <p>При включении реле модуль импульсно потребляет большую мощность (см. потребление). Используйте блок питания с запасом по мощности. При питании по длинному кабелю учитывайте падение напряжения на нем.</p>
 <p>Срабатывание дискретных входов происходит при их замыкании на землю iGND. Возникающий ток невелик (~2 мА), так что тип кнопки или выключателя может быть любым. Также не играет роли длина и сечение кабеля. Но для предотвращения наводок от близко расположенных силовых линий лучше использовать витую пару и подключать землю iGND ко второй жиле пары. Подробнее про подключение клемм iGND смотрите в инструкции.</p>
@@ -348,5 +364,5 @@
       <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -46,7 +46,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -608,6 +619,7 @@
 
 
 <h1 id="wb-mr6c-v2">Модуль реле WB-MR6C v.2</h1>
+<p><a class="glightbox" href="images/wb-mr6cv2-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="images/wb-mr6cv2-small.png" width="300" /></a></p>
 <h2 id="_1">Назначение</h2>
 <p>Шестиканальные модули реле WB-MR6C v.2 выпускаются для систем промышленной и домашней автоматизации и предназначены для прямого управления светодиодными, люминесцентными светильниками, лампами накаливания и другими нагрузками номиналом до 10 А (2 кВт). Также могут использоваться как модули ввода-вывода общего назначения.</p>
 <p>Благодаря специальной конструкции реле, каждый канал может выдерживать длительный ток до 16 А и пусковые токи до 80 А. Обратите внимание, что из-за конструкции клеммников, суммарный номинальный коммутируемый ток на группу из трёх каналов 20 А. </p>
@@ -661,6 +673,11 @@
 </div>
 <h3 id="_7">Выходы</h3>
 <p>Внутри установлены 6 реле Hongfa HF32FV-16 с нормально открытыми контактами. Выходы объединены в две группы, каждая со своим общим проводом: COM1 и COM2. На выходы COM1 и COM2 можно подключить разные фазы. Допустимую мощность и тип коммутируемой нагрузки смотреть в статье Рекомендации по выбору реле.</p>
+<figure>
+<p><a class="glightbox" href="images/wb-mr6cv2-relay-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C" src="images/wb-mr6cv2-relay-small.png" width="300" /></a>
+  </p>
+<figcaption>Контакты реле WB-MR6C</figcaption>
+</figure>
 <p>С прошивки 1.18.4 можно настроить безопасное состояние каждого выхода выбрать поведение выходов при включении реле.</p>
 <h2 id="_8">Монтаж</h2>
 <!-- BEGIN INCLUDE ../includes/mount-relay.md -->
@@ -668,6 +685,11 @@
 Как обжимать наконечники НШВИ</p>
 <p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
+<figure>
+<p><a class="glightbox" href="../includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../includes/images/nshvi-press.jpg" width="300" /></a>
+  </p>
+<figcaption>Как обжимать наконечники НШВИ</figcaption>
+</figure>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
 <p>При включении реле модуль импульсно потребляет большую мощность (см. потребление). Используйте блок питания с запасом по мощности. При питании по длинному кабелю учитывайте падение напряжения на нем.</p>
 <p>Срабатывание дискретных входов происходит при их замыкании на землю iGND. Возникающий ток невелик (~2 мА), так что тип кнопки или выключателя может быть любым. Также не играет роли длина и сечение кабеля. Но для предотвращения наводок от близко расположенных силовых линий лучше использовать витую пару и подключать землю iGND ко второй жиле пары. Подробнее про подключение клемм iGND смотрите в инструкции.</p>
@@ -739,5 +761,5 @@
       <script src="../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
