@@ -621,7 +621,7 @@
 </ul>
 <h3 id="_5">Входы</h3>
 <p>Входы реле выведены на разъёмные клеммники с номерами и общей клеммой iGND, работают по принципу «Сухой контакт».</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">прошивка 15.0 и новее</label><label for="__tabbed_1_2">прошивка до 1.15.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">fw &gt;= 15.0</label><label for="__tabbed_1_2">fw &lt; 1.15.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>К входам можно подключить выключатели для прямого управления выходами, или источник сигнала и посчитать количество импульсов, а также измерить его частоту. Максимальное значение измеряемой частоты сигнала зависит от ревизии устройства и от количества измеряемых сигналов. На испытании мы успешно измеряли шесть сигналов одновременно на частоте 2.5 кГц.</p>
@@ -633,7 +633,7 @@
 </div>
 </div>
 <p>По умолчанию каждый вход управляет выходом с таким же номером, а вход с номером «0» отключает все выходы.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">прошивка 1.12.0 и новее</label><label for="__tabbed_2_2">прошивка до 1.12.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">fw &gt;= 1.12.0</label><label for="__tabbed_2_2">fw &lt; 1.12.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>По умолчанию модуль настроен на выключатели с фиксацией — состояние контактов реле повторяют состояние контактов выключателя.</p>
@@ -644,24 +644,6 @@
 </div>
 </div>
 <p>Тип выключателей и настройки входов можно изменить в настройках.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Unordered list</label><label for="__tabbed_3_2">Ordered list</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ol>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ol>
-</div>
-</div>
-</div>
 <h3 id="_6">Распознавание типов нажатий</h3>
 <p>Модуль может распознавать четыре типа нажатий: короткое, длинное, двойное, короткое, а затем длинное.</p>
 <p>Обработку нажатий можно использовать на контроллере, куда по Modbus передаются специальные счётчики для каждого типа нажатий, или в самом устройстве для управления выходами.</p>
