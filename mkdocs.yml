@@ -34,9 +34,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.snippets:
-      check_paths: true
-      url_download: true
   - toc:
       permalink: true
 
