@@ -34,6 +34,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: ['.','../includes','docs/']
+      check_paths: true
+      url_download: true
   - toc:
       permalink: true
 
