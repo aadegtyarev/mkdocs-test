@@ -9,6 +9,13 @@ nav:
         - WB-MR6C v.2: relay/wb-mr6c-v2/index.md
 
 theme: material
+  features:
+    - content.tabs.link
 
 plugins:
   - include-markdown
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
