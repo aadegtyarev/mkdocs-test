@@ -14,11 +14,13 @@ theme:
   name: material
   features:
     - content.tabs.link
+  language: ru
 
 plugins:
   - include-markdown
   - glightbox
   - external-markdown
+  - search
 
 markdown_extensions:
   - pymdownx.superfences
