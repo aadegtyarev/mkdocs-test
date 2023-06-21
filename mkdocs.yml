@@ -5,6 +5,6 @@ nav:
     - Version 2.x:
         - Getting Started: v2/getting-started.md
     - Version 1.x:
-        - Getting Started: v2/getting-started.md
+        - Getting Started: v1/getting-started.md
 
 theme: readthedocs
