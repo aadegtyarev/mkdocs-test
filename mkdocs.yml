@@ -9,8 +9,6 @@ nav:
         - WB-MR6C v.2: relay/wb-mr6c-v2/index.md
 
 theme: material
-
-theme:
   features:
     - content.tabs.link
 
