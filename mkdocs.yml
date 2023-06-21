@@ -28,3 +28,5 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+
+repo_url: https://github.com/aadegtyarev/mkdocs-test
