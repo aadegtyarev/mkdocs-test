@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/modbus/">
+        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/modbus-fw-update-cmd/">
       
       
       
@@ -17,7 +17,7 @@
     
     
       
-        <title>Modbus - Wiren Board Docs</title>
+        <title>Modbus fw update cmd - Wiren Board Docs</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modbus
+              Modbus fw update cmd
             
           </span>
         </div>
@@ -437,7 +437,7 @@
                   
 
   
-    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/modbus.md" title="Редактировать страницу" class="md-content__button md-icon">
+    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/modbus-fw-update-cmd.md" title="Редактировать страницу" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -445,35 +445,9 @@
   
 
 
-  <h1>Modbus</h1>
+  <h1>Modbus fw update cmd</h1>
 
-<p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
-<p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>?? note "Параметры порта по умолчанию"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- BEGIN INCLUDE modbus-default-settings.md --&gt;
-**Параметры порта по умолчанию**
-
-| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
-|-----------------------|-------------------------------------|---------------------------|
-| 9600                  | Baud rate                           | Скорость, бит/с           |
-| 8                     | Data bits                           | Количество битов данных   |
-| None                  | Parity                              | Бит чётности              |
-| 2                     | Stop bits                           | Количество стоповых битов |
-
-&lt;!-- END INCLUDE --&gt;
-</code></pre></div></td></tr></table></div>
-<p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
-<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
+<p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 
   <hr>
 <div class="md-source-file">

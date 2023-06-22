@@ -1093,7 +1093,17 @@
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
 <p>?? note "Параметры порта по умолчанию"</p>
-<pre><code>&lt;!-- BEGIN INCLUDE modbus-default-settings.md --&gt;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- BEGIN INCLUDE modbus-default-settings.md --&gt;
 **Параметры порта по умолчанию**
 
 | Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
@@ -1104,20 +1114,58 @@
 | 2                     | Stop bits                           | Количество стоповых битов |
 
 &lt;!-- END INCLUDE --&gt;
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
 <p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
 <!-- END INCLUDE -->
 
 <h2 id="_11">Обновление прошивки<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт возможность расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
+<!-- BEGIN INCLUDE ../../includes/modbus-fw-update.md -->
+<p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
+<p>?? note "Обновление прошивки с контроллера Wiren Board"</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Обновить прошивки всех подключённых и настроенных на контроллере устройств:
+
+```bash
+wb-mcu-fw-updater update-all
+```
+
+Обновить прошивку определённого устройства:
+
+```bash
+wb-mcu-fw-updater update-fw &lt;порт, на котором находится устройство&gt; -a &lt;modbus адрес устройства&gt;
+```
+
+Обновление загрузчика. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.
+
+```bash
+wb-mcu-fw-updater update-bl &lt;порт, на котором находится устройство&gt; -a &lt;modbus адрес устройства&gt;
+```
+</code></pre></div></td></tr></table></div>
+<!-- END INCLUDE -->
+
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.19.0</label><label for="__tabbed_4_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>При использовании загрузчика версии не ниже 1.2.х настройки хранящиеся в памяти модуля не пропадают при обновлении прошивки.</p>
 </div>
 <div class="tabbed-block">
-<p>При обновлении прошивки настройки из памяти модуля будут стёрты. Чтобы не терять настройки — обновите прошивку из загрузчик по инструкции Обновление загрузчика.</p>
+<p>При обновлении прошивки настройки из памяти модуля будут стёрты. Чтобы не терять настройки — обновите прошивку и загрузчик.</p>
 </div>
 </div>
 </div>
