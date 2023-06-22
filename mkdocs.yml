@@ -37,15 +37,11 @@ plugins:
 
 markdown_extensions:
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      preserve_tabs: true
   - pymdownx.inlinehilite
   - pymdownx.highlight:
       linenums: true
-
-  - pymdownx.snippets:
-      base_path: ['.']
-      url_download: true
-      check_paths: true
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list

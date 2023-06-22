@@ -2,7 +2,11 @@
 
 При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.
 
-Параметры порта по умолчанию
+??? note "Параметры порта по умолчанию"
+
+   {%
+      include-markdown "default-settings.md"
+   %}
 
 {%
    include-markdown "default-settings.md"
