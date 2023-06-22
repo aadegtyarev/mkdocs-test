@@ -144,14 +144,6 @@
 ## Монтаж
 
 {%
-   include-markdown "/relay/includes/mount-relay.md"
-%}
-
-{%
-   include-markdown "relay/includes/mount-relay.md"
-%}
-
-{%
    include-markdown "../includes/mount-relay.md"
 %}
 
@@ -246,10 +238,13 @@
 
 ## Обновление прошивки
 
-{{ read_raw('docs/includes/fw-update/modbus-fw-update.md') }}
+{%
+   include-markdown "../../includes/fw-update/modbus-fw-update.md"
+%}
 
-{{ read_raw('docs/relay/includes/fw-update-save-data.md') }}
-
+{%
+   include-markdown "../includes/fw-update-save-data.md"
+%}
 
 ## Известные неисправности
 
