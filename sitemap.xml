@@ -26,12 +26,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/control/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/dimensions-3u/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/terminal-blocks-and-wire/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/indication/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/klemmy/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -107,6 +117,11 @@
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-state-after-power-on/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/teth-tables-inputs/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
