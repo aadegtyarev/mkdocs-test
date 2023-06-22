@@ -4,9 +4,9 @@
 
 ??? note "Параметры порта по умолчанию"
 
-   {%
-      include-markdown "default-settings.md"
-   %}
+    {%
+        include-markdown "default-settings.md"
+    %}
 
 {%
    include-markdown "default-settings.md"
