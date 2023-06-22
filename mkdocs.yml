@@ -19,7 +19,7 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.tabs
-    - navigation.sections
+    - toc.integrate
   language: ru
   primary: green
 
