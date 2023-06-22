@@ -159,10 +159,6 @@
    include-markdown "../includes/mount-relay.md"
 %}
 
-## Монтаж Snippet
-
---8<-- "docs/relay/includes/mount-relay.md"
-
 ## Настройка
 
 ## Подключение к контроллеру Wiren Board
@@ -190,6 +186,18 @@
 
 {%
    include-markdown "docs/includes/modbus.md"
+%}
+
+{%
+   include-markdown "includes/modbus.md"
+%}
+
+{%
+   include-markdown "/includes/modbus.md"
+%}
+
+{%
+   include-markdown "/docs/includes/modbus.md"
 %}
 
 ## Обновление прошивки
