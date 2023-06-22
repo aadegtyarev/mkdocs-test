@@ -147,7 +147,7 @@
    include-markdown "../includes/mount-relay.md"
 %}
 
-## Подключение к контроллеру Wiren Board
+## Работа с контроллером Wiren Board
 
 ### Выбор шаблона
 
