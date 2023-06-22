@@ -19,3 +19,6 @@
     ```bash
     wb-mcu-fw-updater update-bl <порт, на котором находится устройство> -a <modbus адрес устройства>
     ```
+
+    Другие параметры утилиты обновления смотрите в документации [wb-mcu-fw-updater](soft/wb-mcu-fw-updater/index.md).
+
