@@ -86,7 +86,7 @@
 - 1–6 — состояние выходов: горит — реле замкнуто.
 
 ??? info "Анимация"
-    ![Индикаторы WB-MR6C v.2](images/indicators.gif){width="400px"}
+    ![Индикаторы WB-MR6C v.2](images/indicators.gif)
 
 ### Входы
 
@@ -137,7 +137,7 @@
 Внутри установлены 6 реле Hongfa HF32FV-16 с нормально открытыми контактами. Выходы объединены в две группы, каждая со своим общим проводом: COM1 и COM2. На выходы COM1 и COM2 можно подключить разные фазы. Допустимую мощность и тип коммутируемой нагрузки смотреть в статье Рекомендации по выбору реле.
 
 ??? info "Схема контактов реле"
-    ![Контакты реле WB-MR6C v.2](images/relay-contacts.png){width="400px"}
+    ![Контакты реле WB-MR6C v.2](images/relay-contacts.png)
 
 С прошивки 1.18.4 можно настроить безопасное состояние каждого выхода выбрать поведение выходов при включении реле.
 
@@ -159,7 +159,7 @@
 
     Подробнее о выборе типа выключателей и других настройках модуля читайте в разделе Настройка.
 
-    ![Пример монтажа](images/installation.png){width="400px"}
+    ![Пример монтажа](images/installation.png)
 
 ## Работа с контроллером Wiren Board
 
@@ -182,7 +182,7 @@
    include-markdown "../includes/webui-view-6ch.md"
 %}
 
-![WB-MR6C v.2 в веб-интерфейсе контроллера](images/devices-view.png){width="400px"}
+![WB-MR6C v.2 в веб-интерфейсе контроллера](images/devices-view.png)
 
 ## Работа по Modbus
 
@@ -204,7 +204,7 @@
    include-markdown "../includes/settings-inputs-mode.md"
 %}
 
-![Выбор режима](../includes/images/wb-mr6c-v2-select-input-mode.png){width="400px"}
+![Выбор режима](../includes/images/wb-mr6c-v2-select-input-mode.png)
 
 ### Управление с выключателей
 
@@ -214,7 +214,7 @@
 
 Нулевой вход по умолчанию отключает все реле.
 
-![Привязка действия к нажатиям](../includes/images/wb-mr6c-v2-press-events-action.png){width="400px"}
+![Привязка действия к нажатиям](../includes/images/wb-mr6c-v2-press-events-action.png)
 
 ### Управление по mapping-матрице
 
@@ -222,7 +222,7 @@
    include-markdown "../includes/settings-magging-matric-classic.md"
 %}
 
-![Mapping-матрица](../includes/images/wb-mr6c-v2-mapping-matrix-action.png){width="400px"}
+![Mapping-матрица](../includes/images/wb-mr6c-v2-mapping-matrix-action.png)
 
 ### Антидребезг
 
@@ -230,7 +230,7 @@
    include-markdown "../includes/settings-debounce.md"
 %}
 
-![Антидребезг](../includes/images/wb-mr6c-v2-debounce.png){width="400px"}
+![Антидребезг](../includes/images/wb-mr6c-v2-debounce.png)
 
 ### Состояния выходов при подаче питания
 
@@ -238,7 +238,7 @@
    include-markdown "../includes/settings-state-after-power-on.md"
 %}
 
-![Состояние при подаче питания](../includes/images/wb-mr6c-v2-state-after-power-on.png){width="400px"}
+![Состояние при подаче питания](../includes/images/wb-mr6c-v2-state-after-power-on.png)
 
 ### Безопасный режим
 
@@ -246,9 +246,9 @@
    include-markdown "../includes/settings-safety-mode.md"
 %}
 
-![Управление с входов в безопасном режиме](../includes/images/wb-mr6c-v2-input-control-safety-mode.png){width="400px"}
+![Управление с входов в безопасном режиме](../includes/images/wb-mr6c-v2-input-control-safety-mode.png)
 
-![Таймер безопасного режима](../includes/images/wb-mr6c-v2-state-safety-mode.png){width="400px"}
+![Таймер безопасного режима](../includes/images/wb-mr6c-v2-state-safety-mode.png)
 
 
 ## Обновление прошивки
@@ -287,4 +287,4 @@
 
     Autocad PDF: [wb-mr6c-v2.pdf](files/wb-mr6c-v2.pdf)
 
-![DIN 3U](../../includes/other/images/din-3u.png){width="400px"}
+![DIN 3U](../../includes/other/images/din-3u.png)
