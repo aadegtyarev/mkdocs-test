@@ -143,9 +143,7 @@
 
 ## Монтаж
 
-{%
-   include-markdown "../includes/mount-relay.md"
-%}
+{{ read_raw('docs/relay/includes/mount-relay.md') }}
 
 ## Работа с контроллером Wiren Board
 
