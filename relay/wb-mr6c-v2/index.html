@@ -1393,6 +1393,7 @@
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 <details class="note">
 <summary>Обновление прошивки с контроллера Wiren Board</summary>
+<p>Чтобы обновить прошивку подключённого и настроенного в контроллере устройства, надо зайти на контроллер по SSH и выполнить одну из команд ниже.</p>
 <p>Обновить прошивки всех подключённых и настроенных на контроллере устройств:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-all
 </code></pre></div></td></tr></table></div>
@@ -1420,7 +1421,78 @@
 <!-- END INCLUDE -->
 
 <h2 id="_18">Известные неисправности<a class="headerlink" href="#_18" title="Permanent link">¶</a></h2>
+<p><a href="errata/">Errata</a></p>
 <h2 id="_19">Ревизии<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
+<details class="info">
+<summary>Список ревизий устройства</summary>
+<p>Номер партии (Batch №) указан на наклейке на боковой поверхности корпуса или на печатной плате.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Ревизия</th>
+<th align="center">Партии</th>
+<th align="center">Дата выпуска</th>
+<th align="center">Отличия от предыдущей ревизии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">3.6</td>
+<td align="center">v3.6B, v3.6C, v3.6C/2, v3.6D, v3.6D/1, v3.6E, v3.6F, v3.6G, v3.6H, v3.6H/1, v3.6I - ...</td>
+<td align="center">09.2022 - ...</td>
+<td align="center">Стандартная версия:  С 7.62мм клеммниками для COM1/2. Другой вид серийных номеров (изменена микросхема eeprom)</td>
+</tr>
+<tr>
+<td align="center">3.6</td>
+<td align="center">v3.6A</td>
+<td align="center">08.2022 - 09.2022</td>
+<td align="center">С 7.62мм клеммниками для COM1/2</td>
+</tr>
+<tr>
+<td align="center">4.2</td>
+<td align="center">v4.2A - v4.2E</td>
+<td align="center">04.2022 - 08.2022</td>
+<td align="center">Изменена трассировка платы</td>
+</tr>
+<tr>
+<td align="center">4.0</td>
+<td align="center">v4.0A (/2, /2/3), v4.0B - v4.0D</td>
+<td align="center">01.2022 - 04.2022</td>
+<td align="center">Изменена трассировка платы; новая ревизия платы микроконтроллера. Без конденсаторов на входах (улучшено быстродействие входов). Без варисторов на выходах реле</td>
+</tr>
+<tr>
+<td align="center">3.4</td>
+<td align="center">v3.4M - v3.4N</td>
+<td align="center">10.2021 - 12.2021</td>
+<td align="center">Без конденсаторов на входах (улучшено быстродействие входов)</td>
+</tr>
+<tr>
+<td align="center">3.4</td>
+<td align="center">v3.4L/1</td>
+<td align="center">10.2021</td>
+<td align="center">Партия без варисторов</td>
+</tr>
+<tr>
+<td align="center">3.4</td>
+<td align="center">v3.4H - v3.4L</td>
+<td align="center">07.2021 - 10.2021</td>
+<td align="center">На микроконтроллере GD32</td>
+</tr>
+<tr>
+<td align="center">3.4</td>
+<td align="center">v3.4G</td>
+<td align="center">05.2021</td>
+<td align="center">На микроконтроллере STM32F042K6T6</td>
+</tr>
+<tr>
+<td align="center">3.4</td>
+<td align="center">v3.4A - v3.4F</td>
+<td align="center">07.2020 - 04.2021</td>
+<td align="center">Новая версия WB-MR6C v.2 — с более мощными реле</td>
+</tr>
+</tbody>
+</table>
+</details>
 <h2 id="_20">Изображения и чертежи<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2></div>
 
   <hr>

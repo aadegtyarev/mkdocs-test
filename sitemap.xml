@@ -136,6 +136,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/errata/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/revisions/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/soft/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
