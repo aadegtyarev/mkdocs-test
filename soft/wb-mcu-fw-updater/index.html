@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/modbus/">
+        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/soft/wb-mcu-fw-updater/">
       
+      
+        <link rel="prev" href="../wb-mqtt-serial/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -17,7 +19,7 @@
     
     
       
-        <title>Modbus - Wiren Board Docs</title>
+        <title>wb-mcu-fw-updater - Wiren Board Docs</title>
       
     
     
@@ -69,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#python-packages-inside" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modbus
+              wb-mcu-fw-updater
             
           </span>
         </div>
@@ -359,14 +366,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -383,7 +392,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../soft/wb-mqtt-serial/">Софт</a>
+          <a href="../wb-mqtt-serial/">Софт</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -391,7 +400,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Софт
@@ -404,11 +413,76 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../soft/wb-mcu-fw-updater/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          wb-mcu-fw-updater
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         wb-mcu-fw-updater
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-packages-inside" class="md-nav__link">
+    Python packages inside:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debian-packages" class="md-nav__link">
+    Debian packages:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-dependencies" class="md-nav__link">
+    External dependencies:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -438,6 +512,49 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-packages-inside" class="md-nav__link">
+    Python packages inside:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debian-packages" class="md-nav__link">
+    Debian packages:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-dependencies" class="md-nav__link">
+    External dependencies:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -451,7 +568,7 @@
                   
 
   
-    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/modbus.md" title="Редактировать страницу" class="md-content__button md-icon">
+    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/soft/wb-mcu-fw-updater/index.md" title="Редактировать страницу" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -459,35 +576,41 @@
   
 
 
-  <h1>Modbus</h1>
+  <h1>wb-mcu-fw-updater</h1>
 
-<p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
-<p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>?? note "Параметры порта по умолчанию"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- BEGIN INCLUDE modbus-default-settings.md --&gt;
-**Параметры порта по умолчанию**
-
-| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
-|-----------------------|-------------------------------------|---------------------------|
-| 9600                  | Baud rate                           | Скорость, бит/с           |
-| 8                     | Data bits                           | Количество битов данных   |
-| None                  | Parity                              | Бит чётности              |
-| 2                     | Stop bits                           | Количество стоповых битов |
-
-&lt;!-- END INCLUDE --&gt;
-</code></pre></div></td></tr></table></div>
-<p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
-<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
+<p>A command-line tool, updating WirenBoard modbus devices to latest firmwares. Versions 1.1.x flash devices via wb-mcu-fw-flasher binary; versions 1.2+ use own implementation of fw-update protocol.</p>
+<h3 id="python-packages-inside">Python packages inside:<a class="headerlink" href="#python-packages-inside" title="Permanent link">&para;</a></h3>
+<ul>
+<li>wb_mcu_fw_updater - downloading firmwares from remote server; flashing firmwares; handling generic update logic.</li>
+<li>wb_modbus - safe &amp; configurable wrappers around minimalmodbus; common (for Wiren Board devices) modbus bindings.</li>
+</ul>
+<h2 id="debian-packages">Debian packages:<a class="headerlink" href="#debian-packages" title="Permanent link">&para;</a></h2>
+<ul>
+<li>python2-wb-mcu-fw-updater - python2 library (wb_mcu_fw_updater + wb_modbus)</li>
+<li>python3-wb-mcu-fw-updater - python3 library (wb_mcu_fw_updater + wb_modbus)</li>
+<li>wb-mcu-fw-updater - python3-library-dependent binary</li>
+</ul>
+<h2 id="external-dependencies">External dependencies:<a class="headerlink" href="#external-dependencies" title="Permanent link">&para;</a></h2>
+<ul>
+<li>for python2-package: python-serial</li>
+<li>for python3-package: python3-serial</li>
+</ul>
+<h2 id="building">Building:<a class="headerlink" href="#building" title="Permanent link">&para;</a></h2>
+<p><code>dpkg-buildpackage -rfakeroot -us -uc</code></p>
+<h2 id="installation">Installation:<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Add Wiren Board repo, if doesn't exist.</li>
+<li>
+<p>Update list of packages:</p>
+<p><code>apt update</code>
+3. Install wb-mcu-fw-updater</p>
+<h4 id="from-wiren-board-repo">from Wiren Board repo:<a class="headerlink" href="#from-wiren-board-repo" title="Permanent link">&para;</a></h4>
+<p><code>apt install wb-mcu-fw-updater</code></p>
+<h4 id="from-deb-package">From deb package:<a class="headerlink" href="#from-deb-package" title="Permanent link">&para;</a></h4>
+<p><code>apt install ./&lt;path to python3-lib .deb&gt;</code></p>
+<p><code>apt install ./&lt;path to wb-mcu-fw-updater .deb&gt;</code></p>
+</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
@@ -498,7 +621,7 @@
       
         <br>
         Дата создания:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

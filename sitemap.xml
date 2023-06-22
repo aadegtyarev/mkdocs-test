@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/git/includes/wb-mqtt-serial/</loc>
-         <lastmod>2023-06-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus-default-settings/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
@@ -47,6 +42,16 @@
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mcu-fw-updater/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mqtt-serial/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
