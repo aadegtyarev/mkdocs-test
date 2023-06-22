@@ -27,8 +27,8 @@ theme:
   primary: blue
 
 plugins:
-#  - include-markdown
-  - external-markdown
+  - include-markdown
+#  - external-markdown
   - glightbox
   - search
   - git-revision-date-localized:
