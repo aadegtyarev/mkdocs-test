@@ -35,6 +35,10 @@ plugins:
 markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      linenums: true
+
   - pymdownx.snippets:
       base_path: ['.']
       url_download: true
