@@ -267,10 +267,10 @@
    include-markdown "../../includes/other/wb-library.md"
 %}
 
-SVG: [wb-mr6c-v2.svg.zip](wb-mr6c-v2.svg.zip)
+SVG: [wb-mr6c-v2.svg.zip](files/wb-mr6c-v2.svg.zip)
 
-Autocad 2013 DXF: [wb-mr6c-v2.dxf.zip](wb-mr6c-v2.dxf.zip)
+Autocad 2013 DXF: [wb-mr6c-v2.dxf.zip](files/wb-mr6c-v2.dxf.zip)
 
-Autocad PDF: [wb-mr6c-v2.pdf](wb-mr6c-v2.pdf)
+Autocad PDF: [wb-mr6c-v2.pdf](files/wb-mr6c-v2.pdf)
 
 ![DIN 3U](../../includes/images/din-3u.png)
