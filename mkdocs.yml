@@ -24,7 +24,7 @@ theme:
     - search.highlight
     - navigation.indexes
     - navigation.top
-    - toc.integrate
+#    - toc.integrate
   language: ru
   primary: green
 
