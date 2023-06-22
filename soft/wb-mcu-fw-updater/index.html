@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#python-packages-inside" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -453,9 +458,66 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          wb-mcu-fw-updater
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         wb-mcu-fw-updater
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-packages-inside" class="md-nav__link">
+    Python packages inside:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debian-packages" class="md-nav__link">
+    Debian packages:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-dependencies" class="md-nav__link">
+    External dependencies:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -486,6 +548,49 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-packages-inside" class="md-nav__link">
+    Python packages inside:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debian-packages" class="md-nav__link">
+    Debian packages:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-dependencies" class="md-nav__link">
+    External dependencies:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -509,9 +614,39 @@
 
   <h1>wb-mcu-fw-updater</h1>
 
-<p>{{
-    external_markdown('https://raw.githubusercontent.com/wirenboard/wb-mcu-fw-updater/master/README.md', '')
-}}</p>
+<div><p>A command-line tool, updating WirenBoard modbus devices to latest firmwares. Versions 1.1.x flash devices via wb-mcu-fw-flasher binary; versions 1.2+ use own implementation of fw-update protocol.</p>
+<h3 id="python-packages-inside">Python packages inside:<a class="headerlink" href="#python-packages-inside" title="Permanent link">¶</a></h3>
+<ul>
+<li>wb_mcu_fw_updater - downloading firmwares from remote server; flashing firmwares; handling generic update logic.</li>
+<li>wb_modbus - safe &amp; configurable wrappers around minimalmodbus; common (for Wiren Board devices) modbus bindings.</li>
+</ul>
+<h2 id="debian-packages">Debian packages:<a class="headerlink" href="#debian-packages" title="Permanent link">¶</a></h2>
+<ul>
+<li>python2-wb-mcu-fw-updater - python2 library (wb_mcu_fw_updater + wb_modbus)</li>
+<li>python3-wb-mcu-fw-updater - python3 library (wb_mcu_fw_updater + wb_modbus)</li>
+<li>wb-mcu-fw-updater - python3-library-dependent binary</li>
+</ul>
+<h2 id="external-dependencies">External dependencies:<a class="headerlink" href="#external-dependencies" title="Permanent link">¶</a></h2>
+<ul>
+<li>for python2-package: python-serial</li>
+<li>for python3-package: python3-serial</li>
+</ul>
+<h2 id="building">Building:<a class="headerlink" href="#building" title="Permanent link">¶</a></h2>
+<p><code>dpkg-buildpackage -rfakeroot -us -uc</code></p>
+<h2 id="installation">Installation:<a class="headerlink" href="#installation" title="Permanent link">¶</a></h2>
+<ol>
+<li>Add Wiren Board repo, if doesn't exist.</li>
+<li>
+<p>Update list of packages:</p>
+<p><code>apt update</code>
+3. Install wb-mcu-fw-updater</p>
+<h4 id="from-wiren-board-repo">from Wiren Board repo:<a class="headerlink" href="#from-wiren-board-repo" title="Permanent link">¶</a></h4>
+<p><code>apt install wb-mcu-fw-updater</code></p>
+<h4 id="from-deb-package">From deb package:<a class="headerlink" href="#from-deb-package" title="Permanent link">¶</a></h4>
+<p><code>apt install ./&lt;path to python3-lib .deb&gt;</code></p>
+<p><code>apt install ./&lt;path to wb-mcu-fw-updater .deb&gt;</code></p>
+</li>
+</ol></div>
 
   <hr>
 <div class="md-source-file">
