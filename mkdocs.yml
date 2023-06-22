@@ -24,8 +24,11 @@ theme:
     - search.highlight
     - navigation.indexes
     - navigation.top
+    - navigation.tabs
+    - navigation.sections
   language: ru
-  primary: blue
+  primary: green
+  accent: light blue
 
 plugins:
   - include-markdown
@@ -50,7 +53,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
-      toc_depth: 3
+      toc_depth: 2
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test
 edit_uri: edit/main/docs/
