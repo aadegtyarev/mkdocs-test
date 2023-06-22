@@ -1161,7 +1161,7 @@
 <li>S — статус обмена по Modbus: загорается при подаче низковольтного питания на модуль и мигает в момент опроса по шине RS-485. В режиме загрузчика редко мигает. При загрузке новой прошивки перестает менять свое состояние.</li>
 <li>1–6 — состояние выходов: горит — реле замкнуто.</li>
 </ul>
-<details class="example">
+<details class="info">
 <summary>Анимация</summary>
 <p><a class="glightbox" href="images/indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикаторы WB-MR6C v.2" src="images/indicators.gif"></a></p>
 </details>
@@ -1207,7 +1207,7 @@
 </div>
 <h3 id="_6">Выходы<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>Внутри установлены 6 реле Hongfa HF32FV-16 с нормально открытыми контактами. Выходы объединены в две группы, каждая со своим общим проводом: COM1 и COM2. На выходы COM1 и COM2 можно подключить разные фазы. Допустимую мощность и тип коммутируемой нагрузки смотреть в статье Рекомендации по выбору реле.</p>
-<details class="note">
+<details class="info">
 <summary>Схема контактов реле</summary>
 <p><a class="glightbox" href="images/relay-contacts.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C v.2" src="images/relay-contacts.png"></a></p>
 </details>
@@ -1215,7 +1215,7 @@
 <h2 id="_7">Монтаж<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../includes/mount-relay.md -->
 <p>Устройство монтируется на стандартную DIN-рейку шириной 35 мм. Клеммный блок «V+ GND A B» с шагом 3.5 мм служит для подключения питания и управления по шине RS-485. Для стабильной связи с устройством важно правильно организовать подключение к шине RS-485, читайте об этом в статье RS-485:Физическое подключение.</p>
-<details class="hint">
+<details class="tip">
 <summary>Общие рекомендации</summary>
 <p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
@@ -1285,7 +1285,7 @@
 <li>каждый вход управляет соответствующим реле, т.е. вход номер 2 управляет реле номер 2;</li>
 <li>режим работы для входов — выключатель с фиксацией.</li>
 </ul>
-<details class="note">
+<details class="info">
 <summary>Видео: Обработка нажатий в устройствах Wiren Board</summary>
 <p><a class="glightbox" href="https://www.youtube.com/embed/lBGJm6FlS7Q" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/embed/lBGJm6FlS7Q" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </details>
@@ -1338,7 +1338,7 @@
 <li>Разрешить только в безопасном режиме — если управление с входов было заблокировано в настройках, в безопасном режиме реле можно будет управлять.</li>
 </ul>
 <p>Во всех случаях настройки mapping-матриц игнорируются.</p>
-<details class="note">
+<details class="info">
 <summary>Видео: Безопасный режим в модулях реле Wiren Board</summary>
 <p><a class="glightbox" href="https://www.youtube.com/embed/dXNHMv4hdXg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/embed/dXNHMv4hdXg" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </details>
@@ -1425,7 +1425,7 @@
 <p>Если вы столкнулись со странным поведением устройства, в первую очередь проверьте список известных неисправностей. Возможно, вы столкнулись с известной проблемой и она уже решена в новых прошивках или ревизиях устройства.</p>
 <p><a href="../wb-mr-errata/">Список известных неисправностей</a></p>
 <h2 id="_19">Ревизии<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
-<details class="note">
+<details class="info">
 <summary>Список ревизий устройства</summary>
 <table>
 <thead>
@@ -1525,7 +1525,7 @@
 </table>
 </details>
 <h2 id="_20">Изображения и чертежи<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
-<details class="note">
+<details class="info">
 <summary>CorelDraw, Autocad и SVG</summary>
 <p><!-- BEGIN INCLUDE ../../includes/other/wb-library.md -->
 Corel Draw 2018 (шрифт — Ubuntu): <a href="../../includes/files/wb-library.cdr.zip">wb-library.cdr.zip</a></p>
