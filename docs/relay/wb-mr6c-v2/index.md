@@ -147,6 +147,12 @@
    include-markdown "../includes/mount-relay.md"
 %}
 
+--8<-- "relay/includes/includes/mount-relay.md"
+
+--8<-- "docs/relay/includes/includes/mount-relay.md"
+
+--8<-- "../includes/mount-relay.md"
+
 ## Работа с контроллером Wiren Board
 
 ### Выбор шаблона
