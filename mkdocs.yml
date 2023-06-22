@@ -15,7 +15,10 @@ theme:
   features:
     - content.tabs.link
     - content.action.edit
+    - search.highlight
+    - toc.integrate
   language: ru
+  primary: blue
 
 plugins:
   - include-markdown
@@ -37,6 +40,8 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 2
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test
 edit_uri: edit/main/docs/
