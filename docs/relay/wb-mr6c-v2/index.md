@@ -186,22 +186,18 @@
 
 {%
    include-markdown "docs/includes/modbus.md"
-   rewrite-relative-urls=false
 %}
 
 {%
    include-markdown "includes/modbus.md"
-   rewrite-relative-urls=false
 %}
 
 {%
    include-markdown "/includes/modbus.md"
-   rewrite-relative-urls=false
 %}
 
 {%
-   include-markdown "/docs/includes/modbus.md"
-   rewrite-relative-urls=false
+   include-markdown "/home/runner/work/mkdocs-test/docs/includes/modbus.md"
 %}
 
 ## Обновление прошивки
