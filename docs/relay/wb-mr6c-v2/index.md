@@ -147,7 +147,9 @@
    include-markdown "../includes/mount-relay.md"
 %}
 
---8<-- "docs/relay/includes/includes/mount-relay.md"
+--8<-- "relay/includes/mount-relay.md"
+
+--8<-- "docs/relay/includes/mount-relay.md"
 
 --8<-- "../includes/mount-relay.md"
 
