@@ -798,9 +798,9 @@
   
 
 
-<h1 id="wb-mr6c-v2">Модуль реле WB-MR6C v.2<a class="headerlink" href="#wb-mr6c-v2" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="images/wb-mr6cv2-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="images/wb-mr6cv2-small.png" width="300" /></a></p>
-<h2 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div><h1 id="wb-mr6c-v2">Модуль реле WB-MR6C v.2<a class="headerlink" href="#wb-mr6c-v2" title="Permanent link">¶</a></h1>
+<p><a class="glightbox" href="images/wb-mr6cv2-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="images/wb-mr6cv2-small.png" width="300"></a></p>
+<h2 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>Шестиканальные модули реле WB-MR6C v.2 выпускаются для систем промышленной и домашней автоматизации и предназначены для прямого управления светодиодными, люминесцентными светильниками, лампами накаливания и другими нагрузками номиналом до 10 А (2 кВт). Также могут использоваться как модули ввода-вывода общего назначения.</p>
 <p>Благодаря специальной конструкции реле, каждый канал может выдерживать длительный ток до 16 А и пусковые токи до 80 А. Обратите внимание, что из-за конструкции клеммников, суммарный номинальный коммутируемый ток на группу из трёх каналов 20 А.</p>
 <details class="note">
@@ -1050,16 +1050,16 @@
 </tbody>
 </table>
 </details>
-<h2 id="_2">Общий принцип работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">Индикация<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">Общий принцип работы<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="_3">Индикация<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <p>В модуле есть индикаторы, которые помогут определить его состояние без подключения к контроллеру:</p>
 <ul>
 <li>S — статус обмена по Modbus: загорается при подаче низковольтного питания на модуль и мигает в момент опроса по шине RS-485. В режиме загрузчика редко мигает. При загрузке новой прошивки перестает менять свое состояние.</li>
 <li>1–6 — состояние выходов: горит — реле замкнуто.</li>
 </ul>
-<h3 id="_4">Входы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">Входы<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>Входы реле выведены на разъёмные клеммники с номерами и общей клеммой iGND, работают по принципу «Сухой контакт».</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">fw ≥ 1.15.0</label><label for="__tabbed_1_2">fw &lt; 1.15.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">fw ≥ 1.15.0</label><label for="__tabbed_1_2">fw &lt; 1.15.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>К входам можно подключить выключатели для прямого управления выходами, или источник сигнала и посчитать количество импульсов, а также измерить его частоту.</p>
@@ -1073,7 +1073,7 @@
 </div>
 </div>
 <p>По умолчанию каждый вход управляет выходом с таким же номером, а вход с номером «0» отключает все выходы.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">fw ≥ 1.12.0</label><label for="__tabbed_2_2">fw &lt; 1.12.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">fw ≥ 1.12.0</label><label for="__tabbed_2_2">fw &lt; 1.12.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>По умолчанию модуль настроен на выключатели с фиксацией — состояние контактов реле повторяют состояние контактов выключателя.</p>
@@ -1084,8 +1084,8 @@
 </div>
 </div>
 <p>Тип выключателей и настройки входов можно изменить в настройках.</p>
-<h3 id="_5">Распознавание типов нажатий<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">fw ≥ 1.17.0</label><label for="__tabbed_3_2">fw &lt; 1.17.0</label></div>
+<h3 id="_5">Распознавание типов нажатий<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">fw ≥ 1.17.0</label><label for="__tabbed_3_2">fw &lt; 1.17.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Модуль может распознавать четыре типа нажатий: короткое, длинное, двойное, короткое, а затем длинное.</p>
@@ -1097,15 +1097,15 @@
 </div>
 </div>
 </div>
-<h3 id="_6">Выходы<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">Выходы<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>Внутри установлены 6 реле Hongfa HF32FV-16 с нормально открытыми контактами. Выходы объединены в две группы, каждая со своим общим проводом: COM1 и COM2. На выходы COM1 и COM2 можно подключить разные фазы. Допустимую мощность и тип коммутируемой нагрузки смотреть в статье Рекомендации по выбору реле.</p>
 <figure>
-<p><a class="glightbox" href="images/wb-mr6cv2-relay-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C" src="images/wb-mr6cv2-relay-small.png" width="300" /></a>
+<p><a class="glightbox" href="images/wb-mr6cv2-relay-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C" src="images/wb-mr6cv2-relay-small.png" width="300"></a>
   </p>
 <figcaption>Контакты реле WB-MR6C</figcaption>
 </figure>
 <p>С прошивки 1.18.4 можно настроить безопасное состояние каждого выхода выбрать поведение выходов при включении реле.</p>
-<h2 id="_7">Монтаж<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">Монтаж<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../includes/mount-relay.md -->
 <p>Устройство монтируется на стандартную DIN-рейку шириной 35 мм. Клеммный блок «V+ GND A B» с шагом 3.5 мм служит для подключения питания и управления по шине RS-485. Для стабильной связи с устройством важно правильно организовать подключение к шине RS-485, читайте об этом в статье RS-485:Физическое подключение.</p>
 <details class="note">
@@ -1113,7 +1113,7 @@
 <p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
 <p><figure markdown>
-  <a class="glightbox" href="../includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../includes/images/nshvi-press.jpg" width="300" /></a>
+  <a class="glightbox" href="../includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../includes/images/nshvi-press.jpg" width="300"></a>
   <figcaption>Как обжимать наконечники НШВИ</figcaption>
 </figure></p>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
@@ -1124,36 +1124,26 @@
 </details>
 <!-- END INCLUDE -->
 
-<h2 id="_8">Настройка<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h2 id="wiren-board">Подключение к контроллеру Wiren Board<a class="headerlink" href="#wiren-board" title="Permanent link">&para;</a></h2>
-<h3 id="_9">Выбор шаблона<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="_8">Настройка<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<h2 id="wiren-board">Подключение к контроллеру Wiren Board<a class="headerlink" href="#wiren-board" title="Permanent link">¶</a></h2>
+<h3 id="_9">Выбор шаблона<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <p>Чтобы устройство появилось на вкладке Devices в веб-интерфейсе контроллера Wiren Board, добавьте новое serial-устройство и выберите один из шаблонов:</p>
 <ul>
 <li>в текущем релизе — WB-MR6C v.2, WB-MR6LV/x, WB-MR6HV/x,</li>
 <li>в старых версиях ПО — WB-MR6C.</li>
 </ul>
-<h3 id="_10">Управление устройством и просмотр значений<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_10">Управление устройством и просмотр значений<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
 <p>В веб-интерфейсе вы можете управлять выходами устройства и просматривать полученные с него значения. Список отображаемых каналов можно изменить через настройки устройства, доступные на странице выбора шаблона.</p>
 <p>С помощью виртуальных выключателей K 1­ — K 6 можно управлять выходами модуля и следить за их состоянием. Если реле будет выключено или включено через внешний вход — это отразится в веб-интерфейсе.</p>
 <p>Переключатели Input 1 ­— Input 6 показывают текущее состояние входов реле и недоступны для изменения.</p>
 <p>Счетчики нажатий/включений отображаются в полях Input 1 counter­ — Input 6 counter. Значения счетчиков хранятся в оперативной памяти микроконтроллера реле и обнуляются при сбросе питания.</p>
 <p>О восстановлении состояния реле после перебоя питания описано в разделе Режим работы реле при возобновлении питания.</p>
-<h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">&para;</a></h2>
+<h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<details class="note">
-<summary>Параметры порта по умолчанию</summary>
-<p><!-- BEGIN INCLUDE default-params.md -->
-| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
-|-----------------------|-------------------------------------|---------------------------|
-| 9600                  | Baud rate                           | Скорость, бит/с           |
-| 8                     | Data bits                           | Количество битов данных   |
-| None                  | Parity                              | Бит чётности              |
-| 2                     | Stop bits                           | Количество стоповых битов |</p>
-<!-- END INCLUDE -->
-</details>
-<!-- BEGIN INCLUDE default-params.md -->
+<p>Параметры порта по умолчанию</p>
+<!-- BEGIN INCLUDE default-settings.md -->
 <table>
 <thead>
 <tr>
@@ -1191,7 +1181,7 @@
 <p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
 <!-- END INCLUDE -->
 
-<h2 id="_11">Обновление прошивки<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_11">Обновление прошивки<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 <details class="note">
@@ -1209,7 +1199,7 @@
 </details>
 <!-- END INCLUDE -->
 
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.19.0</label><label for="__tabbed_4_2">fw &lt; 1.19.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.19.0</label><label for="__tabbed_4_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>При использовании загрузчика версии не ниже 1.2.х настройки хранящиеся в памяти модуля не пропадают при обновлении прошивки.</p>
@@ -1219,9 +1209,9 @@
 </div>
 </div>
 </div>
-<h2 id="_12">Известные неисправности<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h2 id="_13">Ревизии<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h2 id="_14">Изображения и чертежи<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_12">Известные неисправности<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<h2 id="_13">Ревизии<a class="headerlink" href="#_13" title="Permanent link">¶</a></h2>
+<h2 id="_14">Изображения и чертежи<a class="headerlink" href="#_14" title="Permanent link">¶</a></h2></div>
 
   <hr>
 <div class="md-source-file">

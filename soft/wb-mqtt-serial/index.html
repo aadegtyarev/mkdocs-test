@@ -944,37 +944,37 @@
 
   <h1>wb-mqtt-serial</h1>
 
-<p>Serial device &lt;==&gt; MQTT bridge which follows <a href="https://github.com/wirenboard/conventions/blob/main/README.md">Wiren Board MQTT Conventions</a>.
+<div><p>Serial device &lt;==&gt; MQTT bridge which follows <a href="https://github.com/wirenboard/conventions/blob/main/README.md">Wiren Board MQTT Conventions</a>.
 It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a> family of programmable automation controllers.</p>
 <p>Драйвер master-slave протоколов для устройств, работающих через
 последовательный порт. Драйвер предназначен для устройств <a href="https://wirenboard.com/ru">Wiren Board</a> и соответствует <a href="https://github.com/wirenboard/conventions/blob/main/README.md">Конвенции Wiren Board MQTT</a>.</p>
 <p><strong>Содержание</strong>
-- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Описание">Описание</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Поддерживаемые-протоколы">Поддерживаемые протоколы</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Управление-драйвером">Управление драйвером</a>
-- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Файл-конфигурации-и-шаблоны">Файл конфигурации и шаблоны</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Общая-информация">Общая информация</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Шаблоны-конфигурации">Шаблоны конфигурации</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Перевод-названий-параметров-устройств">Перевод названий параметров устройств</a>
-- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Особенности-работы-драйвера">Особенности работы драйвера</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Таймауты-и-количество-неудачных-циклов">Таймауты и количество неудачных циклов</a><br />
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Замечания-для-TCP-или-MODBUS-TCP-порта">Замечания для TCP или MODBUS TCP порта</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Диаграмма-таймаутов-цикла-опроса">Диаграмма таймаутов цикла опроса</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Объединенное-чтение-регистров-и-его-авто-отключение">Объединенное чтение регистров и его авто-отключение</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Прямое-чтение-и-запись-в-порт">Прямое чтение и запись в порт</a>
-- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Протоколы">Протоколы</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Поддержка-различных-протоколов-на-одной-шине">Поддержка различных протоколов на одной шине</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Широковещательные-сообщения">Широковещательные сообщения</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Энергомера-ГОСТ-МЭК-61107">Энергомера ГОСТ МЭК 61107</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#НЕВА-МТ-32х-ГОСТ-МЭК-61107">НЕВА МТ 32х ГОСТ МЭК 61107</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#dlmscosem-и-сподэс">DLMS/COSEM и СПОДЭС</a>
+- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">Описание</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B">Поддерживаемые протоколы</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%BE%D0%BC">Управление драйвером</a>
+- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A4%D0%B0%D0%B9%D0%BB-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%B8-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B">Файл конфигурации и шаблоны</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9E%D0%B1%D1%89%D0%B0%D1%8F-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F">Общая информация</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8">Шаблоны конфигурации</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4-%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2">Перевод названий параметров устройств</a>
+- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0">Особенности работы драйвера</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A2%D0%B0%D0%B9%D0%BC%D0%B0%D1%83%D1%82%D1%8B-%D0%B8-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BD%D0%B5%D1%83%D0%B4%D0%B0%D1%87%D0%BD%D1%8B%D1%85-%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%B2">Таймауты и количество неудачных циклов</a><br>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%97%D0%B0%D0%BC%D0%B5%D1%87%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B4%D0%BB%D1%8F-TCP-%D0%B8%D0%BB%D0%B8-MODBUS-TCP-%D0%BF%D0%BE%D1%80%D1%82%D0%B0">Замечания для TCP или MODBUS TCP порта</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%82%D0%B0%D0%B9%D0%BC%D0%B0%D1%83%D1%82%D0%BE%D0%B2-%D1%86%D0%B8%D0%BA%D0%BB%D0%B0-%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B0">Диаграмма таймаутов цикла опроса</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9E%D0%B1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2-%D0%B8-%D0%B5%D0%B3%D0%BE-%D0%B0%D0%B2%D1%82%D0%BE-%D0%BE%D1%82%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5">Объединенное чтение регистров и его авто-отключение</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9F%D1%80%D1%8F%D0%BC%D0%BE%D0%B5-%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%B2-%D0%BF%D0%BE%D1%80%D1%82">Прямое чтение и запись в порт</a>
+- <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D1%8B">Протоколы</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D1%85-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D1%88%D0%B8%D0%BD%D0%B5">Поддержка различных протоколов на одной шине</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A8%D0%B8%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%B5%D1%89%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F">Широковещательные сообщения</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D0%BC%D0%B5%D1%80%D0%B0-%D0%93%D0%9E%D0%A1%D0%A2-%D0%9C%D0%AD%D0%9A-61107">Энергомера ГОСТ МЭК 61107</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9D%D0%95%D0%92%D0%90-%D0%9C%D0%A2-32%D1%85-%D0%93%D0%9E%D0%A1%D0%A2-%D0%9C%D0%AD%D0%9A-61107">НЕВА МТ 32х ГОСТ МЭК 61107</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#dlmscosem-%D0%B8-%D1%81%D0%BF%D0%BE%D0%B4%D1%8D%D1%81">DLMS/COSEM и СПОДЭС</a>
   - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Somfy-SDN">Somfy SDN</a>
   - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#WinDeco">WinDeco</a>
   - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Dooya">Dooya</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Меркурий-200">Меркурий 200</a>
-  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#Таблица-шаблонов-device_type">Таблица шаблонов device_type</a></p>
-<h2 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">Поддерживаемые протоколы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%9C%D0%B5%D1%80%D0%BA%D1%83%D1%80%D0%B8%D0%B9-200">Меркурий 200</a>
+  - <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/README.md#%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D0%BE%D0%B2-device_type">Таблица шаблонов device_type</a></p>
+<h2 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="_2">Поддерживаемые протоколы<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <p>Драйвер wb-mqtt-serial поддерживает устройства, работающие по протоколам:
 - <a href="https://modbus.org">Modbus</a>,
 - <a href="http://smart.uniel.ru">Uniel</a>,
@@ -988,7 +988,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 - <a href="https://www.somfy.com">Somfy SDN</a>,
 - WinDeco,
 - Dooya.</p>
-<h3 id="_3">Управление драйвером<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">Управление драйвером<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <p>По умолчанию драйвер установлен на всех контроллерах Wiren Board и запускается автоматически при наличии непустого конфигурационного файла <code>/etc/wb-mqtt-serial.conf</code>. При первоначальной установке пакета создаётся конфигурационный файл, в котором не описано ни одного подключенного устройства. Добавьте устройства в <code>/etc/wb-mqtt-serial.conf</code>, либо воспользуйтесь онлайн-редактором настроек для начала работы.</p>
 <p>Настройка пользователем производится через веб-интерфейс контроллера, но вы можете управлять им вручную:
 - <code>systemctl start wb-mqtt-serial</code> — запустить
@@ -1000,13 +1000,13 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code># service wb-mqtt-serial stop
 # wb-mqtt-serial -c /etc/wb-mqtt-serial.conf -d
 </code></pre></div></td></tr></table></div>
-<h2 id="_4">Файл конфигурации и шаблоны<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">Общая информация<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="_4">Файл конфигурации и шаблоны<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h3 id="_5">Общая информация<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>Конфигурационный файл построен по трёхуровневой схеме:
 порты (ports) -&gt; устройства (devices) -&gt; каналы (channels).</p>
 <p>Конфигурация устройства device может быть задана двумя способами: вручную прописать все параметры или задать только несколько параметров.</p>
 <p>Пример файла конфигурации с описанием параметров:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1051,29 +1051,29 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <span class="normal">43</span>
 <span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code>{
     // По DeviceType драйвер будет искать в папках с шаблонами описаний устройств
-    &quot;device_type&quot; : &quot;DeviceType&quot;,
+    "device_type" : "DeviceType",
 
     // отображаемое имя устройства. Публикуется как
     // .../meta/name в MQTT
     // По умолчанию name берется из шаблона и добавляется slave_id, т.е.
-    // &quot;name&quot; + &quot; &quot; + &quot;slave_id&quot;
-    &quot;name&quot; : &quot;somename&quot;,
+    // "name" + " " + "slave_id"
+    "name" : "somename",
 
     // уникальный идентификатор устройства в MQTT.
     // каждый элемент в devices должен иметь уникальный id
-    // topic&#39;и, относящиеся в MQTT к данному устройству,
+    // topic'и, относящиеся в MQTT к данному устройству,
     // имеют общий префикс /devices/&lt;идентификатор топика&gt;/...
     // также по умолчанию берется из шаблона с добавлением slave_id:
-    // &quot;deviceID&quot; + &quot;_&quot; + slave_id
-    &quot;id&quot; : &quot;deviceID&quot;,
+    // "deviceID" + "_" + slave_id
+    "id" : "deviceID",
 
     // идентификатор slave
-    &quot;slave_id&quot; : slaveID,
+    "slave_id" : slaveID,
 
     // включить/выключить устройство. В случае задания
-    // &quot;enabled&quot;: false опрос устройства и запись значений
+    // "enabled": false опрос устройства и запись значений
     // его каналов не происходит. По умолчанию - true.
-    &quot;enabled&quot; : true,
+    "enabled" : true,
 
     // если используется шаблон устройства, определения
     // каналов совмещаются. Если имя (name) в определении
@@ -1085,15 +1085,15 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
     // интервалов опроса каналов. Если канал с таким же
     // именем, как канал в определении устройства, отсутствует
     // в шаблоне, создаётся новый канал.
-    &quot;channels&quot;: [
+    "channels": [
         {
-            // имя канала. topic&#39;и, соответствующие каналу,
-            &quot;name&quot; : &quot;Temp 1&quot;,
-            &quot;read_period_ms&quot;: 10000
+            // имя канала. topic'и, соответствующие каналу,
+            "name" : "Temp 1",
+            "read_period_ms": 10000
         }
     ]
 }
-</code></pre></div></td></tr></table></div></p>
+</code></pre></div></td></tr></table></div>
 <p>Ниже приведён пример конфигурационного файла <code>/etc/wb-mqtt-serial.conf</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
@@ -1496,363 +1496,363 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
     // Опция -d командной строки wb-mqtt-serial также
     // включает отладочную печать и имеет приоритет над
     // данной опцией.
-    &quot;debug&quot;: false,
+    "debug": false,
 
     // Задаёт интервал в секундах, в течение которого неизменяющиеся значения не будут публиковаться в MQTT.
     // По истечении интервала полученное значение будет опубликовано, даже если оно не изменилось.
     // Минимальный интервал - 5 секунд.
     // Если установлено отрицательное значение, то значения будут публиковаться только при изменении. Это поведение по умолчанию.
-    &quot;max_unchanged_interval&quot;: -1,
+    "max_unchanged_interval": -1,
 
     // Задаёт максимальное число чтений регистров в секунду.
     // Не влияет на чтение регистров с заданным интервалом опроса.
     // Для снижения нагрузки на процессор рекомендуется задавать значение не более 100 для WB6 и не более 800 для WB7
-    &quot;rate_limit&quot;: 100,
+    "rate_limit": 100,
 
     // список портов
-    &quot;ports&quot;: [
+    "ports": [
         {
             // тип порта:
-            // - &quot;serial&quot;: последовательные порты RS-485 или RS-232. Это значение выбирается по умолчанию.
-            // - &quot;tcp&quot;: serial over TCP/IP. Пакеты, формируемые для работы с последовательными портами, передаются без изменений через TCP/IP.
-            // - &quot;modbus tcp&quot;: передача по MODBUS TCP. В секции устройств с таким типом порта могут использоваться только те, что поддерживают MODBUS.
-            &quot;port_type&quot;: &quot;serial&quot;,
+            // - "serial": последовательные порты RS-485 или RS-232. Это значение выбирается по умолчанию.
+            // - "tcp": serial over TCP/IP. Пакеты, формируемые для работы с последовательными портами, передаются без изменений через TCP/IP.
+            // - "modbus tcp": передача по MODBUS TCP. В секции устройств с таким типом порта могут использоваться только те, что поддерживают MODBUS.
+            "port_type": "serial",
 
             // устройство, соответствующее порту RS-485 (если выбран тип порта serial)
-            &quot;path&quot; : &quot;/dev/ttyRS485-1&quot;,
+            "path" : "/dev/ttyRS485-1",
 
             // IP адрес или имя хоста (если выбран тип порта TCP или MODBUS TCP)
-            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            "address": "127.0.0.1",
 
             // TCP порт (если выбран тип порта TCP или MODBUS TCP)
-            &quot;port&quot;: 3000,
+            "port": 3000,
 
             // скорость порта
-            &quot;baud_rate&quot;: 9600,
+            "baud_rate": 9600,
 
             // чётность - N, O или E (по умолчанию - N)
-            &quot;parity&quot;: &quot;N&quot;,
+            "parity": "N",
 
             // количество бит данных (по умолчанию - 8)
-            &quot;data_bits&quot;: 8,
+            "data_bits": 8,
 
             // количество стоп-бит
-            &quot;stop_bits&quot;: 2,
+            "stop_bits": 2,
 
             // Максимальное время ответа устройств, подключенных к этому порту, в миллисекундах
             // Если не установлено, то принимается равным 500 мс
             // Этот параметр задан в шаблонах описания устройств, переопределять его можно только в случае некорректной работы с устройствами
-            &quot;response_timeout_ms&quot;: 100,
+            "response_timeout_ms": 100,
 
             // Дополнительная задержка перед каждой отправкой данных в порт в микросекундах
             // Если при работе с устройством теряются пакеты — попробуйте увеличить значение этого параметра.
             // Для соответствия протоколу Modbus RTU, установите этот параметр в значение не менее 3.5 символа при выбранной скорости — это не нужно для устройств Wiren Board, но может потребоваться для устройств сторонних производителей. Нужное значение рассчитывается по формуле: guard_interval_us = (3.5*11*106)/(скорость в бит/с). Например, для скорости 9600 бит/с guard_interval_us = (3.5*11*106)/9600 = 4000 мкс.
-            &quot;guard_interval_us&quot;: 1000,
+            "guard_interval_us": 1000,
 
             // Таймаут соединения (только для TCP или MODBUS TCP порта).
-            // Если в течение указанного времени ни по одному устройству на порту не поступило данных (а также истек &quot;connection_max_fail_cycles&quot;),
+            // Если в течение указанного времени ни по одному устройству на порту не поступило данных (а также истек "connection_max_fail_cycles"),
             // TCP соединение будет разорвано и произойдет попытка переподключения
-            &quot;connection_timeout_ms&quot;: 5000,
+            "connection_timeout_ms": 5000,
 
             // Количество неудачных циклов опроса (только для TCP или MODBUS TCP порта)
-            // Если в течение указанного количества циклов опроса ни по одному устройству на порту не поступило данных (а также истек &quot;connection_timeout_ms&quot;),
+            // Если в течение указанного количества циклов опроса ни по одному устройству на порту не поступило данных (а также истек "connection_timeout_ms"),
             // TCP соединение будет разорвано и произойдет попытка переподключения
-            &quot;connection_max_fail_cycles&quot;: 2,
+            "connection_max_fail_cycles": 2,
 
             // включить/выключить порт. В случае задания
-            // &quot;enabled&quot;: false опрос порта и запись значений
+            // "enabled": false опрос порта и запись значений
             // каналов в устройства на данном порту не происходит.
             // По умолчанию - true.
-            &quot;enabled&quot;: true,
+            "enabled": true,
 
             // список устройств на данном порту
-            &quot;devices&quot; : [
+            "devices" : [
                 {
                     // тип устройства, в системе должен быть корректный шаблон для этого типа
-                    &quot;device_type&quot;: &quot;MSU34+TLP&quot;,
+                    "device_type": "MSU34+TLP",
 
                     // отображаемое имя устройства. Публикуется как
                     // .../meta/name в MQTT
-                    &quot;name&quot;: &quot;MSU34+TLP&quot;,
+                    "name": "MSU34+TLP",
 
                     // уникальный идентификатор устройства в MQTT.
                     // каждое элемент в devices должен иметь уникальный id
-                    // topic&#39;и, относящиеся в MQTT к данному устройству,
+                    // topic'и, относящиеся в MQTT к данному устройству,
                     // имеют общий префикс /devices/&lt;идентификатор топика&gt;/...
-                    &quot;id&quot;: &quot;msu34tlp&quot;,
+                    "id": "msu34tlp",
 
                     // идентификатор устройства. 
                     // Если не указан, то используются широковещательные запросы
-                    &quot;slave_id&quot;: 2,
+                    "slave_id": 2,
 
                     // включить/выключить устройство. В случае задания
-                    // &quot;enabled&quot;: false опрос устройства и запись значений
+                    // "enabled": false опрос устройства и запись значений
                     // его каналов не происходит. По умолчанию - true.
-                    &quot;enabled&quot;: true,
+                    "enabled": true,
 
-                    // протокол передачи устройства, если не задан, то используется &quot;modbus&quot;
-                    &quot;protocol&quot;: &quot;modbus&quot;,
+                    // протокол передачи устройства, если не задан, то используется "modbus"
+                    "protocol": "modbus",
 
-                    // максимальное количество считываемых &quot;пустых&quot; регистров.
+                    // максимальное количество считываемых "пустых" регистров.
                     // Драйвер в целях оптимизации может считывать регистры
-                    // &quot;пачкой&quot;. При этом, если какие-либо регистры не
+                    // "пачкой". При этом, если какие-либо регистры не
                     // были включены в конфигурацию, но в целях ускорения
-                    // опроса (чтобы не разрывать &quot;пачку&quot;) их всё-таки
+                    // опроса (чтобы не разрывать "пачку") их всё-таки
                     // можно считывать, можно указать значение max_reg_hole
                     // больше 0. В данный момент поддерживается только
                     // устройствами Modbus.
-                    &quot;max_reg_hole&quot;: 10,
+                    "max_reg_hole": 10,
 
                     // то же самое, что max_reg_hole, но для однобитовых
                     // регистров (coils и discrete inputs в Modbus). В данный
                     // момент поддерживается только устройствами Modbus.
-                    &quot;max_bit_hole&quot;: 80,
+                    "max_bit_hole": 80,
 
                     // Включить режим непрерывного чтения регистров.
                     // Поддерживается только в устройствах Wiren Board
-                    &quot;enable_wb_continuous_read&quot;: true,
+                    "enable_wb_continuous_read": true,
 
                     // максимальное количество регистров в одной пакетной операции
                     // чтения. В данный момент поддерживается только устройствами
                     // Modbus.
-                    &quot;max_read_registers&quot;: 10,
+                    "max_read_registers": 10,
 
                     // минимальное количество регистров в одной пакетной операции
                     // чтения. В данный момент поддерживается только устройствами
                     // Modbus.
-                    &quot;min_read_registers&quot;: 1,
+                    "min_read_registers": 1,
 
                     // Максимальное время ответа устройства в миллисекундах.
                     // Если не установлено, то принимается равным 500 мс. 
                     // Если значение этого параметра, установленное для порта, больше указанного здесь, используется значение порта.
                     // Этот параметр задан в шаблонах описания устройств, переопределять его можно только в случае некорректной работы с устройством.
-                    &quot;response_timeout_ms&quot;: 100,
+                    "response_timeout_ms": 100,
 
                     // Минимально необходимая задержка между посылками в миллисекундах.
                     // Используется в некоторых протоколах для определения границ посылок.
                     // Этот параметр задан в шаблонах описания устройств, переопределять его можно только в случае некорректной работы с устройством.
                     // По умолчанию 20 мс
-                    &quot;frame_timeout_ms&quot;: 100,
+                    "frame_timeout_ms": 100,
 
                     // Дополнительная задержка перед каждой отправкой данных в порт в микросекундах.
                     // Если не установлено, то используется значение, заданное в соответствующем параметре порта.
-                    &quot;guard_interval_us&quot;: 0,
+                    "guard_interval_us": 0,
 
                     // (При возникновении ошибки) Интервал после последнего успешного обмена данными с устройством,
-                    // по истечении которого (а также &quot;device_max_fail_cycles&quot;) устройство будет помечено отключенным и будет опрашиваться в ограниченном режиме
-                    &quot;device_timeout_ms&quot;: 3000,
+                    // по истечении которого (а также "device_max_fail_cycles") устройство будет помечено отключенным и будет опрашиваться в ограниченном режиме
+                    "device_timeout_ms": 3000,
 
                     // Количество неудачных циклов опроса устройства
-                    // Если в течение указанного количества полных циклов опроса ни по одному регистру устройства не поступило данных (а также истек &quot;device_timeout_ms&quot;),
+                    // Если в течение указанного количества полных циклов опроса ни по одному регистру устройства не поступило данных (а также истек "device_timeout_ms"),
                     // устройство будет помечено отключенным и будет опрашиваться в ограниченном режиме
-                    &quot;device_max_fail_cycles&quot;: 2,
+                    "device_max_fail_cycles": 2,
 
                     // пароль для доступа к устройству, массив байт
-                    &quot;password&quot;: [1, 2, 3],
+                    "password": [1, 2, 3],
 
                     // уровень доступа при опросе устройства,
                     // используется для обмена с счётчиками электроэнергии
-                    &quot;access_level&quot;: 1,
+                    "access_level": 1,
 
                     // Параметр, заданный в шаблоне устройства
-                    &quot;param1&quot;: 10,
+                    "param1": 10,
 
                     // список каналов устройства
-                    &quot;channels&quot;: [
+                    "channels": [
                         {
                             // имя канала, используется в диагностических сообщениях и, 
-                            // если не задан параметр id, для формирования названия MQTT topic&#39;ов канала
-                            &quot;name&quot; : &quot;Temp 1&quot;,
+                            // если не задан параметр id, для формирования названия MQTT topic'ов канала
+                            "name" : "Temp 1",
 
-                            // имя MQTT контрола канала. topic&#39;и, соответствующие каналу,
+                            // имя MQTT контрола канала. topic'и, соответствующие каналу,
                             // публикуются как /devices/&lt;идентификатор устройства&gt;/controls/&lt;ID канала&gt;
                             // если не задан, то используется значение параметра name
-                            &quot;id&quot; : &quot;Temp&quot;,
+                            "id" : "Temp",
 
                             // Включает канал в цикл опроса. По умолчанию, равен true.
-                            &quot;enabled&quot;: true,
+                            "enabled": true,
 
                             // тип регистра
                             // возможные значения для Modbus:
-                            // &quot;coil&quot; - 1 бит, чтение/запись
-                            // &quot;discrete&quot; - 1 бит, только чтение
-                            // &quot;holding&quot; - 16 бит, чтение/запись, код функции на запись выбирается автоматически, в зависимости от размера
-                            // &quot;input&quot; - 16 бит, только чтение
-                            // &quot;holding_single&quot; - то же что и holding однако регистры записываются всегда по одному, кодом 06
-                            // &quot;holding_multi&quot; - то же что и holding однако регистры записываются всегда кодом 16
-                            &quot;reg_type&quot; : &quot;input&quot;,
+                            // "coil" - 1 бит, чтение/запись
+                            // "discrete" - 1 бит, только чтение
+                            // "holding" - 16 бит, чтение/запись, код функции на запись выбирается автоматически, в зависимости от размера
+                            // "input" - 16 бит, только чтение
+                            // "holding_single" - то же что и holding однако регистры записываются всегда по одному, кодом 06
+                            // "holding_multi" - то же что и holding однако регистры записываются всегда кодом 16
+                            "reg_type" : "input",
 
                             // адрес регистра
-                            // Можно читать отдельные биты регистра, для этого запишите адрес в формате: &quot;address&quot;:&quot;reg:shift:width&quot;, где reg — адрес регистра, shift — смещение от начала, а width — количество считываемых битов. 
-                            // Например, &quot;address&quot;:&quot;109:1:2&quot; — прочитать второй и третий биты регистра, расположенного по адресу 109.
-                            &quot;address&quot; : 0,
+                            // Можно читать отдельные биты регистра, для этого запишите адрес в формате: "address":"reg:shift:width", где reg — адрес регистра, shift — смещение от начала, а width — количество считываемых битов. 
+                            // Например, "address":"109:1:2" — прочитать второй и третий биты регистра, расположенного по адресу 109.
+                            "address" : 0,
 
                             // тип элемента управления, например,
-                            // &quot;temperature&quot;, &quot;text&quot;, &quot;switch&quot;
+                            // "temperature", "text", "switch"
 
-                            &quot;type&quot;: &quot;temperature&quot;,
+                            "type": "temperature",
 
                             // формат канала. Задаётся для регистров типа
-                            // &quot;holding&quot; и &quot;input&quot;. Возможные значения:
-                            // &quot;u16&quot; - беззнаковое 16-битное целое
+                            // "holding" и "input". Возможные значения:
+                            // "u16" - беззнаковое 16-битное целое
                             //         (используется по умолчанию)
-                            // &quot;s16&quot; - знаковое 16-битное целое
-                            // &quot;u8&quot; - беззнаковое 8-битное целое
-                            // &quot;s8&quot; - знаковое 8-битное целое
-                            // &quot;u32&quot; - беззнаковое 32-битное целое (big-endian).
+                            // "s16" - знаковое 16-битное целое
+                            // "u8" - беззнаковое 8-битное целое
+                            // "s8" - знаковое 8-битное целое
+                            // "u32" - беззнаковое 32-битное целое (big-endian).
                             //     (занимает 2 регистра, начиная с указанного)
-                            // &quot;s32&quot; - знаковое 32-битное целое (big-endian).
+                            // "s32" - знаковое 32-битное целое (big-endian).
                             //     (занимает 2 регистра, начиная с указанного)
-                            // &quot;s64&quot; - знаковое 64-битное целое (big-endian).
+                            // "s64" - знаковое 64-битное целое (big-endian).
                             //     (занимает 4 регистра, начиная с указанного)
-                            // &quot;u64&quot; - беззнаковое 64-битное целое (big-endian).
+                            // "u64" - беззнаковое 64-битное целое (big-endian).
                             //     (занимает 4 регистра, начиная с указанного)
                             //
-                            // &quot;float&quot; - число с плавающей точкой IEEE 754. 32 bit. (big-endian).
+                            // "float" - число с плавающей точкой IEEE 754. 32 bit. (big-endian).
                             //     (занимает 2 регистра, начиная с указанного)
-                            // &quot;double&quot; - число с плавающей точкой двойной точности IEEE 754. 64 bit. (big-endian).
+                            // "double" - число с плавающей точкой двойной точности IEEE 754. 64 bit. (big-endian).
                             //     (занимает 4 регистра, начиная с указанного)
-                            // &quot;char8&quot; - однобайтовый символ в кодировке ASCII
-                            // &quot;string&quot; - строка с настраиваемым количеством символов.
+                            // "char8" - однобайтовый символ в кодировке ASCII
+                            // "string" - строка с настраиваемым количеством символов.
                             //            Для протокола modbus строки считываются по одному символу на регистр из младшего байта. 
 
-                            &quot;format&quot;: &quot;s8&quot;,
+                            "format": "s8",
 
                             // Порядок 16-битных слов для каналов, имеющих размер больше 16 бит.
                             // Возможные значения:
-                            //  &quot;big_endian&quot; (по-умолчанию): [0xAA 0xBB] [0xCC 0xDD] =&gt; 0xAABBCCDD
-                            //  &quot;little_endian&quot;:  [0xAA 0xBB] [0xCC 0xDD] =&gt; 0xCCDDAABB
-                            &quot;word_order&quot; : &quot;big_endian&quot;,
+                            //  "big_endian" (по-умолчанию): [0xAA 0xBB] [0xCC 0xDD] =&gt; 0xAABBCCDD
+                            //  "little_endian":  [0xAA 0xBB] [0xCC 0xDD] =&gt; 0xCCDDAABB
+                            "word_order" : "big_endian",
 
                             // Период чтения данного канала в миллисекундах
                             // Рекомендуется использовать для каналов, данные от которых надо получать с минимальными задержками
                             // Чтение каналов с заданным периодом имеет больший приоритет, чем чтение других каналов
                             // Если не указан, чтение будет производиться в свободное от опроса других каналов время
-                            &quot;read_period_ms&quot;: 10,
+                            "read_period_ms": 10,
 
                             // Интервал в миллисекундах, который должен пройти между двумя последовательными чтениями канала.
-                            // Учитывается, если не задан параметр &quot;read_period_ms&quot;.
+                            // Учитывается, если не задан параметр "read_period_ms".
                             // Не рекомендуется к использованию, поддерживается для обратной совместимости с ранее созданными конфигурационными файлами.
                             // Вместо него рекомендуется использовать read_period_ms.
-                            &quot;read_rate_limit_ms&quot;: 10000,
+                            "read_rate_limit_ms": 10000,
 
                             // значение, получаемое при последовательном чтении диапазона регистров, если устройство не поддерживает запрашиваемый регистр.
                             // Этот параметр используется некоторыми протоколами, чтобы определить доступность регистров устройства.
-                            &quot;unsupported_value&quot;: &quot;0xFFFE&quot;,
+                            "unsupported_value": "0xFFFE",
 
                             // максимальное значение регистра, используется для построения интерфейса веб-конфигуратора
-                            &quot;max&quot;: 100,
+                            "max": 100,
 
                             // коэффициент, на который умножается значение регистра перед публикацией в MQTT
-                            &quot;scale&quot;: 0.5,
+                            "scale": 0.5,
 
                             // значение, которое прибавляется к значению регистра перед публикацией в MQTT
-                            &quot;offset&quot;: -12.5,
+                            "offset": -12.5,
 
                             // порядок, до которого будет округляться значение после всех преобразований
-                            &quot;round_to&quot;: 0.1,
+                            "round_to": 0.1,
 
                             // использовать события расширенного modbus, вместо опроса
                             // (если поддерживается прошивкой устройства)
-                            &quot;sporadic&quot;: false,
+                            "sporadic": false,
 
                             // доступен ли канал для записи через MQTT
-                            &quot;readonly&quot;: true,
+                            "readonly": true,
 
                             // значение, которое будет записано в регистр, при записи единицы в on-топик в MQTT
-                            &quot;on_value&quot;: &quot;0xFF&quot;,
+                            "on_value": "0xFF",
 
                             // значение, которое будет записано в регистр, при записи нуля в on-топик в MQTT
-                            &quot;off_value&quot;: &quot;0xAA&quot;,
+                            "off_value": "0xAA",
 
                             // значение регистра, полученное от устройства, которое обозначает ошибку
-                            &quot;error_value&quot;: &quot;0xAA&quot;,
+                            "error_value": "0xAA",
 
-                            // Длина строки в символах. Необходимая опция, если выбран формат &quot;string&quot;
-                            &quot;string_data_size&quot;: 5
+                            // Длина строки в символах. Необходимая опция, если выбран формат "string"
+                            "string_data_size": 5
                         },
                         {
                             // Ещё один канал
-                            &quot;name&quot; : &quot;Illuminance&quot;,
-                            &quot;reg_type&quot; : &quot;input&quot;,
-                            &quot;address&quot; : 1,
-                            &quot;type&quot;: &quot;text&quot;
+                            "name" : "Illuminance",
+                            "reg_type" : "input",
+                            "address" : 1,
+                            "type": "text"
                         },
                         {
-                            &quot;name&quot; : &quot;Pressure&quot;,
-                            &quot;reg_type&quot; : &quot;input&quot;,
-                            &quot;address&quot; : 2,
-                            &quot;type&quot;: &quot;text&quot;,
-                            &quot;scale&quot;: 0.075
+                            "name" : "Pressure",
+                            "reg_type" : "input",
+                            "address" : 2,
+                            "type": "text",
+                            "scale": 0.075
                         },
                         {
-                            &quot;name&quot; : &quot;Temp 2&quot;,
-                            &quot;reg_type&quot; : &quot;input&quot;,
-                            &quot;address&quot; : 3,
-                            &quot;type&quot;: &quot;temperature&quot;,
-                            &quot;format&quot;: &quot;s8&quot;
+                            "name" : "Temp 2",
+                            "reg_type" : "input",
+                            "address" : 3,
+                            "type": "temperature",
+                            "format": "s8"
                         }
                     ]
                 },
                 {
                     // ещё одно устройство на канале
-                    &quot;name&quot;: &quot;DRB88&quot;,
-                    &quot;id&quot;: &quot;drb88&quot;,
-                    &quot;enabled&quot;: true,
-                    &quot;slave_id&quot;: 22,
+                    "name": "DRB88",
+                    "id": "drb88",
+                    "enabled": true,
+                    "slave_id": 22,
 
                     // секция инициализации
-                    &quot;setup&quot;: [
+                    "setup": [
                         {
                             // название регистра
                             // Выводится в случае включённой отладочной печати.
-                            &quot;title&quot;: &quot;Input 0 type&quot;,
+                            "title": "Input 0 type",
 
                             // адрес регистра
-                            &quot;address&quot;: 1,
+                            "address": 1,
 
                             // значение для записи
-                            &quot;value&quot;: 1,
+                            "value": 1,
 
-                            // тип регистра, если не указан, то для Modbus используется &quot;holding&quot;
-                            &quot;reg_type&quot; : &quot;input&quot;,
+                            // тип регистра, если не указан, то для Modbus используется "holding"
+                            "reg_type" : "input",
 
                             // формат регистра, для Modbus по умолчанию u16
-                            &quot;format&quot;: &quot;s8&quot;
+                            "format": "s8"
                         },
                         {
-                            &quot;title&quot;: &quot;Input 0 module&quot;,
-                            &quot;address&quot;: 3,
-                            &quot;value&quot;: 3
+                            "title": "Input 0 module",
+                            "address": 3,
+                            "value": 3
                         }
                     ],
-                    &quot;channels&quot;: [
+                    "channels": [
                         {
-                            &quot;name&quot; : &quot;Relay 1&quot;,
-                            &quot;reg_type&quot; : &quot;coil&quot;,
-                            &quot;address&quot; : 0,
-                            &quot;type&quot;: &quot;switch&quot;
+                            "name" : "Relay 1",
+                            "reg_type" : "coil",
+                            "address" : 0,
+                            "type": "switch"
                         },
                         {
-                            &quot;name&quot; : &quot;Relay 2&quot;,
-                            &quot;reg_type&quot; : &quot;coil&quot;,
-                            &quot;address&quot; : 1,
-                            &quot;type&quot;: &quot;switch&quot;
+                            "name" : "Relay 2",
+                            "reg_type" : "coil",
+                            "address" : 1,
+                            "type": "switch"
                         },
                         // ...
                         {
-                            &quot;name&quot; : &quot;Input 2&quot;,
-                            &quot;reg_type&quot; : &quot;input&quot;,
-                            &quot;address&quot; : 1,
-                            &quot;type&quot;: &quot;switch&quot;,
-                            &quot;on_value&quot;: 101
+                            "name" : "Input 2",
+                            "reg_type" : "input",
+                            "address" : 1,
+                            "type": "switch",
+                            "on_value": 101
                         },
                         {
-                            &quot;name&quot; : &quot;Input 3&quot;,
-                            &quot;reg_type&quot; : &quot;input&quot;,
-                            &quot;address&quot; : 2,
-                            &quot;type&quot;: &quot;switch&quot;,
-                            &quot;on_value&quot;: 101
+                            "name" : "Input 3",
+                            "reg_type" : "input",
+                            "address" : 2,
+                            "type": "switch",
+                            "on_value": 101
                         },
                         // ...
                     ]
@@ -1861,24 +1861,24 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
         },
         {
             // ещё один порт со своим набором устройств
-            &quot;path&quot; : &quot;/dev/ttyNSC1&quot;,
-            &quot;baud_rate&quot;: 9600,
-            &quot;parity&quot;: &quot;N&quot;,
-            &quot;data_bits&quot;: 8,
-            &quot;stop_bits&quot;: 1,
-            &quot;enabled&quot;: true,
-            &quot;devices&quot; : [
+            "path" : "/dev/ttyNSC1",
+            "baud_rate": 9600,
+            "parity": "N",
+            "data_bits": 8,
+            "stop_bits": 1,
+            "enabled": true,
+            "devices" : [
                 {
-                    &quot;name&quot;: &quot;tM-P3R3&quot;,
-                    &quot;id&quot;: &quot;tmp3r3&quot;,
-                    &quot;enabled&quot;: true,
-                    &quot;slave_id&quot;: 1,
-                    &quot;channels&quot;: [
+                    "name": "tM-P3R3",
+                    "id": "tmp3r3",
+                    "enabled": true,
+                    "slave_id": 1,
+                    "channels": [
                         {
-                            &quot;name&quot; : &quot;Relay 0&quot;,
-                            &quot;reg_type&quot; : &quot;coil&quot;,
-                            &quot;address&quot; : 0,
-                            &quot;type&quot;: &quot;switch&quot;
+                            "name" : "Relay 0",
+                            "reg_type" : "coil",
+                            "address" : 0,
+                            "type": "switch"
                         },
                         // ...
                     ]
@@ -1889,7 +1889,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
     ]
 }
 </code></pre></div></td></tr></table></div>
-<h3 id="_6">Шаблоны конфигурации<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">Шаблоны конфигурации<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>Шаблоны создаются для удобства конфигурации Modbus-устройств.</p>
 <p>Шаблон конфигурации представляет собой .json файл, который содержит информацию о регистрах и параметрах устройства. </p>
 <p>Для примера в <a href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/config.sample.json">файле</a> приведены разные варианты записи параметров:
@@ -1902,7 +1902,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <p>При необходимости внести обратно несовместимые изменения в шаблон, его необходимо отметить устаревшим (добавить <code>"deprecated": true</code>) и создать его копию (при этом в <code>device_type</code>  нового шаблона добавить префикс с версией <code>tpl1_</code>, <code>tpl2_</code> и т.д.).</p>
 <p>После добавления шаблона конфигурации вы можете выбрать новое устройство из выпадающего списка в настройках serial устройств в веб-интерфейсе контроллера Wiren Board.</p>
 <p>Пример шаблона:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
 <span class="normal">  4</span>
@@ -2072,7 +2072,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <span class="normal">168</span>
 <span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code>{
     // Название типа устройства, оно указывается в поле device_type в файле настроек
-    &quot;device_type&quot;: &quot;Device type name&quot;,
+    "device_type": "Device type name",
 
     // Группа устройств в выпадающем списке в настройках последовательного порта в веб-интерфейсе контроллера
     // Если не задано устройство будет отображаться внизу списка 
@@ -2097,88 +2097,88 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
     // g-motor-control — управление двигателями (преобразователи частоты)
     // g-custom — произвольные устройства
 
-    &quot;group&quot;: &quot;g-wb&quot;,
+    "group": "g-wb",
 
     // Название типа устройства, которое будет отображаться в веб-конфигураторе.
     // Необязательный параметр. Если не указан, используется device_type.
-    &quot;title&quot;: &quot;Device&quot;,
+    "title": "Device",
 
     // Признак того, что шаблон устарел, он не будет доступен для выбора при добавлении устройства в веб-конфигураторе
     // Также для такого шаблона будут игнорироваться возможные ошибки валидации на соответствие JSON схеме
-    &quot;deprecated&quot;: true,
+    "deprecated": true,
 
-    &quot;device&quot;: {
+    "device": {
         // отображаемое имя устройства. Публикуется как
         // .../meta/name в MQTT
-        &quot;name&quot;: &quot;New device&quot;,
+        "name": "New device",
 
         // Остальные параметры устройства, описанные выше в примере конфигурационного файла, кроме slave_id
         ...
 
         // Шаблон может иметь собственную секцию с настройками
-        &quot;setup&quot;: [
+        "setup": [
             {
-                &quot;title&quot;: &quot;s1&quot;,
-                &quot;address&quot;: 20000,
-                &quot;value&quot;: &quot;0xfff2&quot;
+                "title": "s1",
+                "address": 20000,
+                "value": "0xfff2"
             },
             ...
         ],
 
         // Секция с описанием параметров устройства.
         // Значение параметра можно задать в файле конфигурации или через веб-конфигуратор
-        &quot;parameters&quot;: [
+        "parameters": [
             {
                 // Имя параметра, которе будет использовано в конфигурационном файле
-                &quot;id&quot;: &quot;param1&quot;,
+                "id": "param1",
 
                 // Название параметра в веб-конфигураторе
-                &quot;title&quot;: &quot;s22&quot;,
+                "title": "s22",
 
                 // Адрес регистра параметра
-                &quot;address&quot;: 9992,
+                "address": 9992,
 
                 // Адрес регистра параметра только для записи (задается при необходимости).
-                // Если задан, то чтение параметра производится по адресу, указанному в &quot;address&quot;,
-                // а запись — по адресу, указанному в &quot;write_address&quot;.
-                // При этом, если параметр &quot;address&quot; не указывать, то будет доступна только запись по адресу в &quot;write_address&quot;.
-                &quot;write_address&quot;: 9995
+                // Если задан, то чтение параметра производится по адресу, указанному в "address",
+                // а запись — по адресу, указанному в "write_address".
+                // При этом, если параметр "address" не указывать, то будет доступна только запись по адресу в "write_address".
+                "write_address": 9995
 
                 // Тип регистра
-                &quot;reg_type&quot; : &quot;input&quot;,
+                "reg_type" : "input",
 
                 // Формат регистра
-                &quot;format&quot;: &quot;s8&quot;,
+                "format": "s8",
 
                 // Список возможных значений
-                &quot;enum&quot;: [1, 2, 3],
+                "enum": [1, 2, 3],
 
                 // Надписи в списке выбора в веб-конфигураторе
-                &quot;enum_titles&quot;: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot; ],
+                "enum_titles": ["one", "two", "three" ],
 
                 // Значение по умолчанию в веб-конфигураторе
-                &quot;default&quot;: 2,
+                "default": 2,
 
                 // Минимально возможное значение
-                &quot;min&quot;: 1,
+                "min": 1,
 
                 // Максимально возможное значение
-                &quot;max&quot;: 3,
+                "max": 3,
 
                 // Коэффициент, на который делится значение параметра перед записью в регистр
-                &quot;scale&quot;: 2,
+                "scale": 2,
 
                 // Значение, которое прибавляется к значению параметра перед записью в регистр
-                &quot;offset&quot;: 10,
+                "offset": 10,
 
                 // Этот параметр должен быть обязательно задан в wb-mqtt-serial.conf
-                &quot;required&quot;: true,
+                "required": true,
 
                 // Порядок отображения параметра в веб-конфигураторе
-                &quot;order&quot;: 1,
+                "order": 1,
 
                 // Группа, к которой относится параметр
-                &quot;group&quot;: &quot;group1&quot;,
+                "group": "group1",
 
                 // Условие, при выполнении которого, значение параметра будет записано в устройство
                 // В состав условия могут входить целые числа, названия других параметров, 
@@ -2188,62 +2188,62 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
                 // то операции сравнения (&gt;, &lt;, &gt;=, &lt;=, ==) с ним возвращают false, операция проверки неравенства (!=) - возвращает true.
                 // Функция isDefined позволяет определить задан ли параметр в конфигурационном файле
                 // Условие также определяет доступность параметра для редактирования в интерфейсе веб-конфигуратора
-                &quot;condition&quot;: &quot;isDefined(param1)&amp;&amp;(param2==1)||(param3&gt;5)&quot;,
+                "condition": "isDefined(param1)&amp;&amp;(param2==1)||(param3&gt;5)",
 
                 // Признак того, что значение параметра не записывается в регистры устройства.
                 // Может быть использовано для организации настроек в веб-конфигураторе.
                 // В зависимости от значения будут отображены только нужные каналы и параметры.
                 // В дальнейшем значения таких параметров будет читаться из устройств.
-                &quot;readonly&quot;: true
+                "readonly": true
             }
         ],
 
         // Список каналов
-        &quot;channels&quot;: [
+        "channels": [
             // Пример канала, описывающий данные одного регистра
             {
-                &quot;name&quot;: &quot;Temperature&quot;,
-                &quot;reg_type&quot;: &quot;input&quot;,
-                &quot;format&quot;: &quot;s32&quot;,
-                &quot;address&quot;: &quot;0x0504&quot;,
-                &quot;group&quot;: &quot;group1&quot;,
+                "name": "Temperature",
+                "reg_type": "input",
+                "format": "s32",
+                "address": "0x0504",
+                "group": "group1",
 
                 // Условие, при выполнении которого, канал будет доступен для опроса
-                &quot;condition&quot;: &quot;(param2==1)||(param3==5)&quot;
+                "condition": "(param2==1)||(param3==5)"
             },
             ...
         ],
 
         // Группы используются для удобной организации интерфейса веб-конфигуратора
         // и не влияют на структуру конфигурационного файл
-        &quot;groups&quot;: [
+        "groups": [
             // Описание группы
             {
                 // Уникальное имя группы, отображается в веб-конфигураторе
-                &quot;title&quot;: &quot;Group 1&quot;,
+                "title": "Group 1",
 
                 // Идентификатор группы
-                &quot;id&quot;: &quot;group1&quot;,
+                "id": "group1",
 
                 // Позиция группы в списке каналов
                 // Если не задана, группа будет расположена перед остальными каналами
-                &quot;order&quot;: 3,
+                "order": 3,
 
                 // Группа вложена в другую группу
-                &quot;group&quot;: &quot;group2&quot;,
+                "group": "group2",
 
                 // Описание группы
-                &quot;description&quot;: &quot;Group description&quot;
+                "description": "Group description"
             },
             ...
         ]
     }
 }
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_7">Перевод названий параметров устройств<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+</code></pre></div></td></tr></table></div>
+<h3 id="_7">Перевод названий параметров устройств<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>Переводы используются в веб-конфигураторе для формирования интерфейса настройки устройств. Они описываются в шаблоне устройства в секции <code>translations</code>. Эта секция содержит переводы строк, которые могут встречаться в названиях параметров, отчетах об ошибках и т.д. Секция содержит набор параметров <code>"Язык": "Строка на английском": "Перевод"</code>.
 Например:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2281,50 +2281,50 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code>{
-    &quot;device_type&quot;: &quot;Example&quot;,
-    &quot;title&quot;: &quot;Device&quot;,
-    &quot;device&quot;: {
-        &quot;name&quot;: &quot;Example device&quot;,
-        &quot;channels&quot;: [
+    "device_type": "Example",
+    "title": "Device",
+    "device": {
+        "name": "Example device",
+        "channels": [
             {
-                &quot;name&quot;: &quot;Temperature&quot;,
-                &quot;reg_type&quot;: &quot;holding&quot;,
-                &quot;address&quot;: 1,
-                &quot;group&quot;: &quot;group 1&quot;
+                "name": "Temperature",
+                "reg_type": "holding",
+                "address": 1,
+                "group": "group 1"
             }
         ],
-        &quot;parameters&quot;: [
+        "parameters": [
             {
-                &quot;id&quot;: &quot;timeout&quot;,
-                &quot;title&quot;: &quot;Timeout&quot;,
-                &quot;address&quot;: 9992,
-                &quot;group&quot;: &quot;group 1&quot;
+                "id": "timeout",
+                "title": "Timeout",
+                "address": 9992,
+                "group": "group 1"
             }
         ],
-        &quot;groups&quot;: [
+        "groups": [
             {
-                &quot;title&quot;: &quot;Group 1&quot;,
-                &quot;id&quot;: &quot;group1&quot;,
-                &quot;order&quot;: 3
+                "title": "Group 1",
+                "id": "group1",
+                "order": 3
             }
         ],
-        &quot;translations&quot;: {
-            &quot;ru&quot;: {
-                &quot;Device&quot;: &quot;Устройство&quot;,
-                &quot;Temperature&quot;: &quot;Температура&quot;,
-                &quot;Timeout&quot;: &quot;Задержка&quot;,
-                &quot;Group 1&quot;: &quot;Группа 1&quot;
+        "translations": {
+            "ru": {
+                "Device": "Устройство",
+                "Temperature": "Температура",
+                "Timeout": "Задержка",
+                "Group 1": "Группа 1"
             }
         }
     }
 }
-</code></pre></div></td></tr></table></div></p>
-<h2 id="_8">Особенности работы драйвера<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">Таймауты и количество неудачных циклов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+</code></pre></div></td></tr></table></div>
+<h2 id="_8">Особенности работы драйвера<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<h3 id="_9">Таймауты и количество неудачных циклов<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <p>Циклом опроса устройства считается внутренний цикл опроса драйвера внутри которого был опрошен хотя бы один из регистров данного устройства.</p>
 <p><code>connection_timeout_ms</code> и <code>connection_max_fail_cycles</code> - указываются для порта типа TCP или MODBUS TCP. Необходимы для автоматического восстановления соединения. Если в течение <code>connection_timeout_ms</code> и более чем <code>connection_max_fail_cycles</code> подряд циклов опроса все устройства были отключены, соединение сбрасывается и происходит попытка переподключения. Можно использовать только один тип таймаута, для этого нужно выставить значение 0 другому типу таймаута (например, чтобы осуществлять обнаружение разрыва соединения только по времени, нужно выставить "<code>connection_max_fail_cycles</code>": 0). При большом количестве устройств на порту, длительность цикла опроса устройств может сильно варьироваться в зависимости от числа отвечающих устройств, т.к. они вносят дополнительные задержки на ожидание ответа, поэтому если нужно обозначить минимальное количество циклов опроса до отключения вне зависимости от числа устройств, можно использовать вариант <code>connection_max_fail_cycles</code>. При использовании только <code>connection_timeout_ms</code>, на количество попыток обращения к порту будут влиять другие временные настройки, такие как <code>poll_interval</code>, <code>guard_interval</code>, <code>response_timeout</code> и при их изменении возможно придется подстраивать значение connection_timeout_ms. Если же нужно исключить срабатывание таймаута на каких-то кратковременных случайных ошибках, которые не стоит считать обрывом связи, то нужно использовать <code>connection_timeout_ms</code>. При использовании параметров вместе, таймаут сработает только когда выполнятся оба условия, т.е. пройдет нужное время и количество циклов.</p>
 <p><code>device_timeout_ms</code> и <code>device_max_fail_cycles</code> - указываются для устройства. По семантике аналогичен <code>connection_timeout_ms</code> и <code>connection_max_fail_cycles</code>, но только для устройства. Нужен для выявления отключения устройства для повторной отправки setup - секции при переподключении. Если в течение <code>device_timeout_ms</code> и более чем <code>device_max_fail_cycles</code> подряд циклов ни один из опрошенных регистров не был успешно прочитан, то устройство будет помечено как отсоединенное и будет опрашиваться в ограниченном режиме, т.е. при наличии у устройства setup - секции, драйвер будет пытаться записать ее, а в противном случае, будет пытаться опросить устройство. Если первое обращение к устройству в ограниченном режиме закончилось ошибкой, драйвер считает что устройство все еще отключено и больше не опрашивает его в этом цикле. Это позволяет тратить меньше времени на отключенные устройства. Первый успешный запрос к устройству будет расценен как переподключение устройства.</p>
-<h4 id="_10">Значения по умолчанию<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_10">Значения по умолчанию<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -2351,7 +2351,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 </tr>
 </tbody>
 </table>
-<h4 id="tcp-modbus-tcp">Замечания для TCP или MODBUS TCP порта<a class="headerlink" href="#tcp-modbus-tcp" title="Permanent link">&para;</a></h4>
+<h4 id="tcp-modbus-tcp">Замечания для TCP или MODBUS TCP порта<a class="headerlink" href="#tcp-modbus-tcp" title="Permanent link">¶</a></h4>
 <p>При использовании TCP мостов, драйвер не видит разницы между двумя ситуациями:</p>
 <ul>
 <li>физически отключены все устройства от моста</li>
@@ -2360,14 +2360,14 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <p>так как в обоих случаях никаких данных драйвер не получает. Поэтому, в этом случае, connection_timeout для порта и device_timeout для устройств истекают одновременно.</p>
 <p>Это влечет за собой периодический сброс TCP соединения и переподключение к мосту в ситуации когда физически отключены все устройства от моста, хотя с самим TCP соединением проблем нет.</p>
 <p>В ситуации когда хотя бы одно из опрашиваемых устройств подключено к мосту без проблем с TCP соединением, TCP подключение не будет сбрасываться, а таймаут будет отсчитываться только для отключенных устройств.</p>
-<h3 id="_11">Диаграмма таймаутов цикла опроса<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/doc/timeouts.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Диаграмма таймаутов цикла опроса" src="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/doc/timeouts.svg" /></a></p>
-<h3 id="-">Объединенное чтение регистров и его авто-отключение<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<h3 id="_11">Диаграмма таймаутов цикла опроса<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/doc/timeouts.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Диаграмма таймаутов цикла опроса" src="https://raw.githubusercontent.com/wirenboard/wb-mqtt-serial/master/doc/timeouts.svg"></a></p>
+<h3 id="-">Объединенное чтение регистров и его авто-отключение<a class="headerlink" href="#-" title="Permanent link">¶</a></h3>
 <p>Для ускорения опроса регистров устройств, драйвер объединяет чтение соседних регистров в один запрос (см. <code>max_reg_hole</code>, <code>max_bit_hole</code>), однако, считывание т.н. "пустых" регистров может привести к ошибкам на некоторых устройствах. Как только драйвер получает от устройства ошибку при считывании множества регистров, среди которых есть пустые, которая могла быть вызвана чтением пустых регистров (для Modbus: ILLEGAL_DATA_ADDRESS, ILLEGAL_DATA_VALUE), драйвер перестает объединённо считывать эти регистры.
 Устройства Wiren Board поддерживают <a href="https://wirenboard.com/wiki/Modbus#%D0%A0%D0%B5%D0%B6%D0%B8%D0%BC_%D1%81%D0%BF%D0%BB%D0%BE%D1%88%D0%BD%D0%BE%D0%B3%D0%BE_%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2">режим сплошного чтения регистров</a>. Для его активации надо установить параметр <code>enable_wb_continuous_read</code> в шаблоне или настройках устройства.</p>
-<h3 id="_12">Список сконфигурированных портов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_12">Список сконфигурированных портов<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
 <p>Список портов можно получить, выполнив MQTT RPC запрос <code>wb-mqtt-serial/ports/Load</code>. Он возвращает JSON массив следующего вида:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2382,24 +2382,24 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>[
    {
-       &quot;baud_rate&quot;: 9600,
-       &quot;data_bits&quot;: 8,
-       &quot;parity&quot;: &quot;N&quot;,
-       &quot;path&quot;: &quot;/dev/ttyRS485-2&quot;,
-       &quot;stop_bits&quot;: 1
+       "baud_rate": 9600,
+       "data_bits": 8,
+       "parity": "N",
+       "path": "/dev/ttyRS485-2",
+       "stop_bits": 1
    },
    {
-       &quot;address&quot;: &quot;127.0.0.1&quot;,
-       &quot;port&quot;: 2000
+       "address": "127.0.0.1",
+       "port": 2000
    },
    ...
 ]
-</code></pre></div></td></tr></table></div></p>
-<h3 id="_13">Прямое чтение и запись в порт<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+</code></pre></div></td></tr></table></div>
+<h3 id="_13">Прямое чтение и запись в порт<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <p>Существует возможность выполнить запись и чтение из порта посредством MQTT RPC запроса. Выполнение запроса встраивается в цикл опроса устройств таким образом, что запрос выполнится с высоким приоритетом сразу после окончания текущего цикла опроса. 
 Для упрощенного использования данного функционала написана <a href="https://github.com/wirenboard/python-mqtt-rpc/">Python-библиотека</a>. Также по <a href="https://github.com/wirenboard/modbus-utils-rpc">ссылке</a> доступна утилита для работы с modbus-устройствами при помощи RPC-функционала wb-mqtt-serial.
 Для выполнения запроса необходимо отправить в топик <code>wb-mqtt-serial/port/Load/client_id</code>, где client_id - произвольное имя клиента, посылающего запрос, сообщение типа JSON со следующими параметрами:</p>
-<h4 id="_14">Параметры<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<h4 id="_14">Параметры<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -2448,7 +2448,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 </tr>
 </tbody>
 </table>
-<h5 id="_15">Обязательные параметры запроса в последовательный порт<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h5>
+<h5 id="_15">Обязательные параметры запроса в последовательный порт<a class="headerlink" href="#_15" title="Permanent link">¶</a></h5>
 <table>
 <thead>
 <tr>
@@ -2479,7 +2479,7 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 </tr>
 </tbody>
 </table>
-<h5 id="tcp">Обязательные параметры запроса в TCP порт<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h5>
+<h5 id="tcp">Обязательные параметры запроса в TCP порт<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h5>
 <table>
 <thead>
 <tr>
@@ -2567,52 +2567,52 @@ It's designed to be used on <a href="https://wirenboard.com/en/">Wiren Board</a>
 </table>
 <p>Примеры выполнения запросов:
 1. Успешное выполнение запроса:
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {&quot;params&quot;: {&quot;total_timeout&quot;: 10000, &quot;response_size&quot;: 8, &quot;format&quot;: &quot;HEX&quot;, &quot;path&quot;: &quot;/dev/ttyRS485-2&quot;, &quot;baud_rate&quot;: 9600, &quot;parity&quot; : &quot;N&quot;, &quot;data_bits&quot; : 8, &quot;stop_bits&quot; : 2, &quot;msg&quot;: &quot;0A03008000018499&quot;}, &quot;id&quot; : 1}
-RPC Client &lt;- {&quot;error&quot;:null,&quot;id&quot;:1,&quot;result&quot;:{&quot;response&quot;:&quot;1605000aff00af1f&quot;}}
-</code></pre></div></td></tr></table></div></p>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {"params": {"total_timeout": 10000, "response_size": 8, "format": "HEX", "path": "/dev/ttyRS485-2", "baud_rate": 9600, "parity" : "N", "data_bits" : 8, "stop_bits" : 2, "msg": "0A03008000018499"}, "id" : 1}
+RPC Client &lt;- {"error":null,"id":1,"result":{"response":"1605000aff00af1f"}}
+</code></pre></div></td></tr></table></div>
 <ol>
 <li>
 <p>Ошибка разбора JSON запроса
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {&quot;params&quot;&quot;path&quot;: &quot;/dev/ttyRS485-34534&quot;, &quot;response_size&quot;: 8, &quot;total_timeout&quot;: 10000, &quot;msg&quot;: &quot;1605000aff00af1f&quot;, &quot;format&quot;: &quot;HEX&quot;}, &quot;id&quot;: 1}
-RPC Client &lt;-{&quot;error&quot;:{&quot;code&quot;:-32700,&quot;message&quot;:&quot;Parse error&quot;},&quot;id&quot;:null}
-</code></pre></div></td></tr></table></div></p>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {"params""path": "/dev/ttyRS485-34534", "response_size": 8, "total_timeout": 10000, "msg": "1605000aff00af1f", "format": "HEX"}, "id": 1}
+RPC Client &lt;-{"error":{"code":-32700,"message":"Parse error"},"id":null}
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Ошибка выполнения запроса (ошибка ввода-вывода)
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {&quot;params&quot;: {&quot;total_timeout&quot;: 10000, &quot;response_size&quot;: 8, &quot;format&quot;: &quot;HEX&quot;, &quot;path&quot;: &quot;/dev/ttyRS485-2&quot;, &quot;baud_rate&quot;: 9600, &quot;parity&quot; : &quot;N&quot;, &quot;data_bits&quot; : 8, &quot;stop_bits&quot; : 2, &quot;msg&quot;: &quot;0A03008000018499&quot;}, &quot;id&quot; : 1}
-RPC Client &lt;- {&quot;error&quot;:{&quot;code&quot;:-32000,&quot;data&quot;:&quot;Port IO error: request timed out&quot;,&quot;message&quot;:&quot;Server error&quot;},&quot;id&quot;:1,&quot;result&quot;:null}
-</code></pre></div></td></tr></table></div></p>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {"params": {"total_timeout": 10000, "response_size": 8, "format": "HEX", "path": "/dev/ttyRS485-2", "baud_rate": 9600, "parity" : "N", "data_bits" : 8, "stop_bits" : 2, "msg": "0A03008000018499"}, "id" : 1}
+RPC Client &lt;- {"error":{"code":-32000,"data":"Port IO error: request timed out","message":"Server error"},"id":1,"result":null}
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Ошибка выполнения запроса (запрос в несуществующий порт)
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {&quot;params&quot;: {&quot;total_timeout&quot;: 10000, &quot;response_size&quot;: 8, &quot;format&quot;: &quot;HEX&quot;, &quot;path&quot;: &quot;/dev/ttyRS485-31337&quot;, &quot;baud_rate&quot;: 9600, &quot;parity&quot; : &quot;N&quot;, &quot;data_bits&quot; : 8, &quot;stop_bits&quot; : 2, &quot;msg&quot;: &quot;0A03008000018499&quot;}, &quot;id&quot; : 1}
-RPC Client -&gt; {&quot;error&quot;:{&quot;code&quot;:-32000,&quot;data&quot;:&quot;Requested port doesn&#39;t exist&quot;,&quot;message&quot;:&quot;Server error&quot;},&quot;id&quot;:1,&quot;result&quot;:null}
-</code></pre></div></td></tr></table></div></p>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {"params": {"total_timeout": 10000, "response_size": 8, "format": "HEX", "path": "/dev/ttyRS485-31337", "baud_rate": 9600, "parity" : "N", "data_bits" : 8, "stop_bits" : 2, "msg": "0A03008000018499"}, "id" : 1}
+RPC Client -&gt; {"error":{"code":-32000,"data":"Requested port doesn't exist","message":"Server error"},"id":1,"result":null}
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Таймаут выполнения запроса (слишком малое значение таймаута)
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {&quot;params&quot;: {&quot;response_size&quot;: 8, &quot;format&quot;: &quot;HEX&quot;, &quot;path&quot;: &quot;/dev/ttyRS485-2&quot;, &quot;baud_rate&quot;: 9600, &quot;parity&quot; : &quot;N&quot;, &quot;data_bits&quot; : 8, &quot;stop_bits&quot; : 2, &quot;msg&quot;: &quot;0A03008000018499&quot;, &quot;total_timeout&quot;: 10}, &quot;id&quot; : 1}
-RPC Client &lt;- {&quot;error&quot;:{&quot;code&quot;:-32600,&quot;data&quot;:&quot;Request handler is not responding @ src/rpc_handler.cpp:179&quot;,&quot;message&quot;:&quot;Request timeout&quot;},&quot;id&quot;:1,&quot;result&quot;:null}
-</code></pre></div></td></tr></table></div></p>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>RPC Client -&gt; {"params": {"response_size": 8, "format": "HEX", "path": "/dev/ttyRS485-2", "baud_rate": 9600, "parity" : "N", "data_bits" : 8, "stop_bits" : 2, "msg": "0A03008000018499", "total_timeout": 10}, "id" : 1}
+RPC Client &lt;- {"error":{"code":-32600,"data":"Request handler is not responding @ src/rpc_handler.cpp:179","message":"Request timeout"},"id":1,"result":null}
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
-<h2 id="_16">Протоколы<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<h3 id="_17">Поддержка различных протоколов на одной шине<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h2 id="_16">Протоколы<a class="headerlink" href="#_16" title="Permanent link">¶</a></h2>
+<h3 id="_17">Поддержка различных протоколов на одной шине<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
 <p>Возможно использование устройств, работающих по различным протоколам, на одном порту. При этом следует учитывать особенности конкретных протоколов.  </p>
 <p>Например, фреймы устройств Uniel начинаются с байта 0xff, устройств ИВТМ - с байта 0x24 ('$'), в случае же протоколов Modbus, Меркурий 230 и Милур первым байтом фрейма является идентификатор slave, поэтому при совмещении подобных устройств следует внимательно подходить к выбору slave id - у устройств Милур, например, slave id по умолчанию равен 0xff, что приводит к конфликту с устройствами Uniel. </p>
 <p>Устройства Милур требуют дополнительных задержек при опросе (заданы в шаблоне) и при использовании на одной шине с другими устройствами могут снизить скорость опроса. </p>
 <p>Некоторые устройства, поддерживающие дополнительные протоколы, могут оказаться несовместимыми с теми или иными протоколами на той же шине, например, было замечено, что устройства с поддержкой протокола A-BUS производства "Разумный дом" не могут работать на одной шине с устройствами Uniel. </p>
 <p>Работа устройств ИВТМ на одной шине с устройствами, работающими по другим протоколам, не проверялась. Проверенная рабочая комбинация: Modbus + Milur (slave_id != 0xff) + Uniel на одной шине.</p>
-<h3 id="modbus">Modbus<a class="headerlink" href="#modbus" title="Permanent link">&para;</a></h3>
-<h3 id="_18">Широковещательные сообщения<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="modbus">Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h3>
+<h3 id="_18">Широковещательные сообщения<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
 <p>Протоколы <code>Меркурий 230</code>, <code>Энергомера ГОСТ МЭК 61107</code>,
 <code>НЕВА МТ 32х ГОСТ МЭК 61107</code> поддерживают отправку широковещательных сообщений, если не указывать идентификатор устройства, или указать вместо него пустую строку. Это можно использовать, если на шине только одно устройство такого типа, и его адрес неизвестен. При этом нельзя на одном порту одновременно использовать широковещательные сообщения <code>Энергомера ГОСТ МЭК 61107</code> и <code>НЕВА МТ 32х ГОСТ МЭК 61107</code>.</p>
-<h3 id="61107">Энергомера ГОСТ МЭК 61107<a class="headerlink" href="#61107" title="Permanent link">&para;</a></h3>
+<h3 id="61107">Энергомера ГОСТ МЭК 61107<a class="headerlink" href="#61107" title="Permanent link">¶</a></h3>
 <p>При любых настройках порта фактический обмен с счётчиками происходит в режиме 9600 7E1, в соответствии с МЭК 61107. </p>
 <p>Реализованы 2 режима обмена:
 - "быстрого группового чтения" без открытия сессии (<code>"device_type": "energomera_iec"</code>);
@@ -2620,14 +2620,14 @@ RPC Client &lt;- {&quot;error&quot;:{&quot;code&quot;:-32600,&quot;data&quot;:&q
 <p>Режим "быстрого группового чтения" специфичен для протокола счётчиков Энергомера и не соответствует стандарту ГОСТ МЭК 61107. Список параметров, доступных для чтения, приведён в Таблице 11 <a href="http://www.energomera.ru/documentations/product/ce301_303_rp.pdf">руководства пользователя счётчиков CE301/303</a>. Поддерживаются только параметры с пустым запросом и с запросом-битовой маской.</p>
 <p>Параметры кодируются в адресе регистра как <code>0xAABBCC</code>, где <code>AA</code> - "тип" параметра, <code>BB</code> - "уточнение", <code>СС</code> - номер бита из битовой маски запроса.</p>
 <p>Режим ГОСТ МЭК 61107 Mode C соответствует стандарту, список параметров, доступных для чтения, можно найти в руководствах конкретных счётчиков. Параметры кодируются в адресе регистра строкой, она должна содержать полный запрос, включая <code>(</code> и <code>)</code>. Например, суммарные показания энергии для счётчика Энергомера СЕ102М будут иметь адрес <code>ET0PE(1)</code>.</p>
-<h3 id="32-61107">НЕВА МТ 32х ГОСТ МЭК 61107<a class="headerlink" href="#32-61107" title="Permanent link">&para;</a></h3>
+<h3 id="32-61107">НЕВА МТ 32х ГОСТ МЭК 61107<a class="headerlink" href="#32-61107" title="Permanent link">¶</a></h3>
 <p>При любых настройках порта фактический обмен с счётчиками происходит в режиме 9600 7E1, в соответствии с МЭК 61107.</p>
 <p>Реализован режим чтения параметров по OBIS-кодам (<a href="https://en.wikipedia.org/wiki/IEC_62056">IEC 62056-6-1:2017</a>) </p>
 <p>OBIS-коды кодируются в адресе регистра следующим образом:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>0xCCDDEEFF
 </code></pre></div></td></tr></table></div>
 <p>где <code>CC</code> - группа С, <code>DD</code> - группа D, <code>EE</code> - группа E, <code>FF</code> - группа F OBIS-кода.</p>
-<h3 id="dlmscosem">DLMS/COSEM и СПОДЭС<a class="headerlink" href="#dlmscosem" title="Permanent link">&para;</a></h3>
+<h3 id="dlmscosem">DLMS/COSEM и СПОДЭС<a class="headerlink" href="#dlmscosem" title="Permanent link">¶</a></h3>
 <p>Физический адрес устройства задаётся в параметре <code>slave_id</code>. Опрашивается логическое устройство с адресом 1.
 Адрес клиента задаётся в параметре <code>dlms_client_address</code>, если он не задан, используется адрес 16 (публичный клиент).
 Тип аутентификации задаётся в параметре <code>dlms_auth</code>.</p>
@@ -2635,33 +2635,33 @@ RPC Client &lt;- {&quot;error&quot;:{&quot;code&quot;:-32600,&quot;data&quot;:&q
 <p>Данные читаются по OBIS-кодам (<a href="https://en.wikipedia.org/wiki/IEC_62056">IEC 62056-6-1:2017</a>). OBIS-коды записываются в адресе регистра строкой, например <code>0.0.96.9.0.255</code>. Поддерживается автоматический разбор данных от объектов с классом <code>register</code>(class_id = 3), остальные классы не поддерживаются.</p>
 <p>Реализован анализ доступных объектов устройства и генерация шаблона. Для этого надо остановить <code>wb-mqtt-serial</code> и запустить его из командной строки с параметром <code>-G</code>. Сгенерированный шаблон будет записан в каталог <code>/etc/wb-mqtt-serial.conf.d/templates</code>.</p>
 <p>Пример команд для генерации шаблона:
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># systemctl stop wb-mqtt-serial</span>
 <span class="c1"># wb-mqtt-serial -G print_all,/dev/ttyMOD3,9600-8-N-1,dlms_hdlc:75,32,low,12345678</span>
 <span class="c1"># systemctl start wb-mqtt-serial</span>
 </code></pre></div></td></tr></table></div>
-Подробнее об опциях параметра <code>-G</code> можно узнать во встроенной справке <code>wb-mqtt-serial -G help</code>.</p>
-<h3 id="somfy-sdn">Somfy SDN<a class="headerlink" href="#somfy-sdn" title="Permanent link">&para;</a></h3>
+Подробнее об опциях параметра <code>-G</code> можно узнать во встроенной справке <code>wb-mqtt-serial -G help</code>.
+<h3 id="somfy-sdn">Somfy SDN<a class="headerlink" href="#somfy-sdn" title="Permanent link">¶</a></h3>
 <p>Тип мотора(<code>node type</code>) можно задать через параметр устройства <code>node_type</code>. По умолчанию используется Sonesse 30.
 Для организации отправки команд можно использовать канал с типом регистра <code>command</code>. </p>
 <p>В этом случае заголовок пакета (<code>MSG</code>) задаётся в адресе регистра. Число, записываемое в такой регистр должно содержать длину в младшем байте. Например, <code>0x03020103</code> будет означать, что в команду будет добавлено 3 байта: 0x01, 0x02, 0x03.</p>
 <p>Для организации запроса статуса или значений настроек можно использовать канал с типом регистра <code>param</code>. В этом случае заголовок запроса (<code>MSG</code>) задаётся в адресе регистра. А заголовок ответа - в параметре <code>response_header</code>. Поддерживается возможность указать смещение и длину данных в ответе.
 Для организации записи настроек надо указать в параметре <code>write_address</code> заголовок setup-пакета.</p>
-<h3 id="windeco">WinDeco<a class="headerlink" href="#windeco" title="Permanent link">&para;</a></h3>
+<h3 id="windeco">WinDeco<a class="headerlink" href="#windeco" title="Permanent link">¶</a></h3>
 <p>Для организации отправки команд можно использовать канал с типом регистра <code>command</code>. В этом случае код команды задаётся в адресе регистра.</p>
-<h3 id="dooya">Dooya<a class="headerlink" href="#dooya" title="Permanent link">&para;</a></h3>
+<h3 id="dooya">Dooya<a class="headerlink" href="#dooya" title="Permanent link">¶</a></h3>
 <p>Для организации отправки команд управления можно использовать канал с типом регистра <code>command</code>.
 Для организации доступа к настройкам можно использовать канал с типом регистра <code>param</code>.
 Во всех случаях адрес данных задаётся в адресе регистра.</p>
-<h3 id="200">Меркурий 200<a class="headerlink" href="#200" title="Permanent link">&para;</a></h3>
+<h3 id="200">Меркурий 200<a class="headerlink" href="#200" title="Permanent link">¶</a></h3>
 <p>Типы регистров:
 - param8 - восьмибитное число
 - param16 - 16-тибитное число
 - param24 - 24-тибитное число
 - param32 - 32-тибитное число</p>
 <p>Код команды задаётся в адресе регистра, при этом младший байт задаёт смещение данных в ответе.</p>
-<h3 id="device_type">Таблица шаблонов device_type<a class="headerlink" href="#device_type" title="Permanent link">&para;</a></h3>
+<h3 id="device_type">Таблица шаблонов device_type<a class="headerlink" href="#device_type" title="Permanent link">¶</a></h3>
 <p>Сгруппирована по протоколам.</p>
 <p><strong>Modbus-RTU</strong></p>
 <table>
@@ -2859,7 +2859,7 @@ RPC Client &lt;- {&quot;error&quot;:{&quot;code&quot;:-32600,&quot;data&quot;:&q
 |                     Device                     | device_type    | id_prefix      | name_prefix           |
 |:----------------------------------------------:|:--------------:|:--------------:|:---------------------:|
 | Мотор управления шторами Dooya DT82            | Dooya 82       | dooya          |  Dooya 82             |
-| Мотор управления шторами Akko AM82             | Dooya 82       | dooya          |  Dooya 82             |</p>
+| Мотор управления шторами Akko AM82             | Dooya 82       | dooya          |  Dooya 82             |</p></div>
 
   <hr>
 <div class="md-source-file">
