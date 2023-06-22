@@ -1220,7 +1220,7 @@
 <p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
 <p><figure markdown>
-  <a class="glightbox" href="/relay/includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="/relay/includes/images/nshvi-press.jpg" width="300"></a>
+  <a class="glightbox" href="../includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../includes/images/nshvi-press.jpg" width="300"></a>
   <figcaption>Как обжимать наконечники НШВИ</figcaption>
 </figure></p>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
@@ -1390,6 +1390,7 @@
 <!-- END INCLUDE -->
 
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
+<!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 <details class="note">
 <summary>Обновление прошивки с контроллера Wiren Board</summary>
@@ -1405,6 +1406,9 @@
 </code></pre></div></td></tr></table></div>
 <p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
 </details>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE ../includes/fw-update-save-data.md -->
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">fw ≥ 1.19.0</label><label for="__tabbed_5_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1415,6 +1419,8 @@
 </div>
 </div>
 </div>
+<!-- END INCLUDE -->
+
 <h2 id="_18">Известные неисправности<a class="headerlink" href="#_18" title="Permanent link">¶</a></h2>
 <p>Если вы столкнулись со странным поведением устройства, в первую очередь проверьте список известных неисправностей. Возможно, вы столкнулись с известной проблемой и она уже решена в новых прошивках или ревизиях устройства.</p>
 <p><a href="errata/">Список известных неисправностей</a></p>
