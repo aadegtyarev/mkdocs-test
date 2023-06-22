@@ -499,7 +499,43 @@
 
 <div><p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>Параметры порта по умолчанию</p>
+<details class="note">
+<summary>Параметры порта по умолчанию</summary>
+</details>
+<!-- BEGIN INCLUDE default-settings.md -->
+<table>
+<thead>
+<tr>
+<th>Значение по умолчанию</th>
+<th>Название параметра в веб-интерфейсе</th>
+<th>Параметр</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9600</td>
+<td>Baud rate</td>
+<td>Скорость, бит/с</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data bits</td>
+<td>Количество битов данных</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Parity</td>
+<td>Бит чётности</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stop bits</td>
+<td>Количество стоповых битов</td>
+</tr>
+</tbody>
+</table>
+<!-- END INCLUDE -->
+
 <!-- BEGIN INCLUDE default-settings.md -->
 <table>
 <thead>

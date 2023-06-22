@@ -1142,7 +1142,43 @@
 <!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>Параметры порта по умолчанию</p>
+<details class="note">
+<summary>Параметры порта по умолчанию</summary>
+</details>
+<!-- BEGIN INCLUDE default-settings.md -->
+<table>
+<thead>
+<tr>
+<th>Значение по умолчанию</th>
+<th>Название параметра в веб-интерфейсе</th>
+<th>Параметр</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9600</td>
+<td>Baud rate</td>
+<td>Скорость, бит/с</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data bits</td>
+<td>Количество битов данных</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Parity</td>
+<td>Бит чётности</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stop bits</td>
+<td>Количество стоповых битов</td>
+</tr>
+</tbody>
+</table>
+<!-- END INCLUDE -->
+
 <!-- BEGIN INCLUDE default-settings.md -->
 <table>
 <thead>
@@ -1192,7 +1228,7 @@
 <p>Обновить прошивку определённого устройства:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-fw<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
 </code></pre></div></td></tr></table></div>
-<p>Обновление загрузчика. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
+<p>Обновить загрузчик. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-bl<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
 </code></pre></div></td></tr></table></div>
 <p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
