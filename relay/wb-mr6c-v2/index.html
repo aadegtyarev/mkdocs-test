@@ -1181,7 +1181,7 @@
 </ul>
 <details class="info">
 <summary>Анимация</summary>
-<p><a class="glightbox" href="images/indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикаторы WB-MR6C v.2" src="images/indicators.gif" width="400px"></a></p>
+<p><a class="glightbox" href="images/indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикаторы WB-MR6C v.2" src="images/indicators.gif"></a></p>
 </details>
 <h3 id="_4">Входы<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>Входы реле выведены на разъёмные клеммники с номерами и общей клеммой iGND, работают по принципу «Сухой контакт».</p>
@@ -1227,7 +1227,7 @@
 <p>Внутри установлены 6 реле Hongfa HF32FV-16 с нормально открытыми контактами. Выходы объединены в две группы, каждая со своим общим проводом: COM1 и COM2. На выходы COM1 и COM2 можно подключить разные фазы. Допустимую мощность и тип коммутируемой нагрузки смотреть в статье Рекомендации по выбору реле.</p>
 <details class="info">
 <summary>Схема контактов реле</summary>
-<p><a class="glightbox" href="images/relay-contacts.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C v.2" src="images/relay-contacts.png" width="400px"></a></p>
+<p><a class="glightbox" href="images/relay-contacts.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Контакты реле WB-MR6C v.2" src="images/relay-contacts.png"></a></p>
 </details>
 <p>С прошивки 1.18.4 можно настроить безопасное состояние каждого выхода выбрать поведение выходов при включении реле.</p>
 <h2 id="_7">Монтаж<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
@@ -1239,7 +1239,7 @@
 Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
-<p><a class="glightbox" href="../../includes/other/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../../includes/other/images/nshvi-press.jpg" width="400"></a></p>
+<p><a class="glightbox" href="../../includes/other/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../../includes/other/images/nshvi-press.jpg"></a></p>
 <!-- END INCLUDE -->
 <p>При включении реле модуль импульсно потребляет большую мощность (см. потребление). Используйте блок питания с запасом по мощности. При питании по длинному кабелю учитывайте падение напряжения на нем.</p>
 <p>Срабатывание дискретных входов происходит при их замыкании на землю iGND. Возникающий ток невелик (~2 мА), так что тип кнопки или выключателя может быть любым. Также не играет роли длина и сечение кабеля. Но для предотвращения наводок от близко расположенных силовых линий лучше использовать витую пару и подключать землю iGND ко второй жиле пары. Подробнее про подключение клемм iGND смотрите в инструкции.</p>
@@ -1255,7 +1255,7 @@
 <p>На схеме K1, K2, K4, K5 подключена нагрузка: водонагреватель, вентилятор и две лампы — светодиодная и накаливания.</p>
 <p>В примере на картинке выходы K2, K4, K5 могут управляться как выключателями, так и по шине RS-485. Выход K1 — только по шине RS-485. Выключатель OFF ALL обесточивает все выходы модуля реле K1 – K6. Назначение входов можно изменить с помощью Mapping-матрицы.</p>
 <p>Подробнее о выборе типа выключателей и других настройках модуля читайте в разделе Настройка.</p>
-<p><a class="glightbox" href="images/installation.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Пример монтажа" src="images/installation.png" width="400px"></a></p>
+<p><a class="glightbox" href="images/installation.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Пример монтажа" src="images/installation.png"></a></p>
 </details>
 <h2 id="wiren-board">Работа с контроллером Wiren Board<a class="headerlink" href="#wiren-board" title="Permanent link">¶</a></h2>
 <h3 id="_8">Выбор шаблона<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
@@ -1278,7 +1278,7 @@
 <p>Счетчики нажатий/включений отображаются в полях Input 1 counter­ — Input 6 counter. Значения счетчиков хранятся в оперативной памяти микроконтроллера реле и обнуляются при сбросе питания.</p>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="images/devices-view.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="WB-MR6C v.2 в веб-интерфейсе контроллера" src="images/devices-view.png" width="400px"></a></p>
+<p><a class="glightbox" href="images/devices-view.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="WB-MR6C v.2 в веб-интерфейсе контроллера" src="images/devices-view.png"></a></p>
 <h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
@@ -1335,7 +1335,7 @@
 <p>При отключении реакции на срабатывание входов вы всё равно сможете передать состояния и счётчики на контроллер для использования в сценариях автоматизации.</p>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-select-input-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Выбор режима" src="../includes/images/wb-mr6c-v2-select-input-mode.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-select-input-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Выбор режима" src="../includes/images/wb-mr6c-v2-select-input-mode.png"></a></p>
 <h3 id="_13">Управление с выключателей<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-press-actions.md -->
 <p>При выборе режима mapping-матрицы для кнопок, вы сможете настроить действия с выходами для каждого их четырёх типов нажатий, что позволит делать сценарные и проходные выключатели. Как это работает, смотрите в разделе Распознавание типов нажатий.</p>
@@ -1360,13 +1360,13 @@
 <!-- END INCLUDE -->
 
 <p>Нулевой вход по умолчанию отключает все реле.</p>
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-press-events-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Привязка действия к нажатиям" src="../includes/images/wb-mr6c-v2-press-events-action.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-press-events-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Привязка действия к нажатиям" src="../includes/images/wb-mr6c-v2-press-events-action.png"></a></p>
 <h3 id="mapping-">Управление по mapping-матрице<a class="headerlink" href="#mapping-" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-magging-matric-classic.md -->
 <p>Классическая mapping-матрица позволяет назначать дейтсвия с выходом на фронты сигнала на входе модуля.</p>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mapping-матрица" src="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mapping-матрица" src="../includes/images/wb-mr6c-v2-mapping-matrix-action.png"></a></p>
 <h3 id="_14">Антидребезг<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-debounce.md -->
 <p>Для любого из входов реле вы можете настроить фильтр антидребезга в параметре Время подавления дребезга (мс).</p>
@@ -1382,7 +1382,7 @@
 </div>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-debounce.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Антидребезг" src="../includes/images/wb-mr6c-v2-debounce.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-debounce.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Антидребезг" src="../includes/images/wb-mr6c-v2-debounce.png"></a></p>
 <h3 id="_15">Состояния выходов при подаче питания<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-state-after-power-on.md -->
 <p>Вы можете настроить поведение устройства при подаче питания:</p>
@@ -1393,7 +1393,7 @@
 </ul>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-after-power-on.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Состояние при подаче питания" src="../includes/images/wb-mr6c-v2-state-after-power-on.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-after-power-on.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Состояние при подаче питания" src="../includes/images/wb-mr6c-v2-state-after-power-on.png"></a></p>
 <h3 id="_16">Безопасный режим<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-safety-mode.md -->
 <p>Безопасный режим позволяет остановить технологические процессы в случае, если контроль над модулем утрачен, например, перебит кабель RS-485. Рекомендуем учитывать возможность потери связи с контроллером при проектировании систем управления.</p>
@@ -1412,8 +1412,8 @@
 </details>
 <!-- END INCLUDE -->
 
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Управление с входов в безопасном режиме" src="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" width="400px"></a></p>
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Таймер безопасного режима" src="../includes/images/wb-mr6c-v2-state-safety-mode.png" width="400px"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Управление с входов в безопасном режиме" src="../includes/images/wb-mr6c-v2-input-control-safety-mode.png"></a></p>
+<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Таймер безопасного режима" src="../includes/images/wb-mr6c-v2-state-safety-mode.png"></a></p>
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
 <!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
@@ -1568,7 +1568,7 @@ Corel Draw 2018 (шрифт — Ubuntu): <a href="../../includes/other/files/wb-
 <p>Autocad 2013 DXF: <a href="files/wb-mr6c-v2.dxf.zip">wb-mr6c-v2.dxf.zip</a></p>
 <p>Autocad PDF: <a href="files/wb-mr6c-v2.pdf">wb-mr6c-v2.pdf</a></p>
 </details>
-<p><a class="glightbox" href="../../includes/other/images/din-3u.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="DIN 3U" src="../../includes/other/images/din-3u.png" width="400px"></a></p></div>
+<p><a class="glightbox" href="../../includes/other/images/din-3u.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="DIN 3U" src="../../includes/other/images/din-3u.png"></a></p></div>
 
   <hr>
 <div class="md-source-file">
