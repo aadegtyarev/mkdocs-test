@@ -3,7 +3,7 @@
 При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.
 
 {%
-   include-markdown "docs/includes/modbus-default-settings.md"
+   include-markdown "includes/modbus-default-settings.md"
 %}
 
 В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.

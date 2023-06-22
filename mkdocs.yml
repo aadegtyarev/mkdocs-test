@@ -46,7 +46,6 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
-      slugify: !!python/name:pymdownx.slugs.uslugify
       toc_depth: 3
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test

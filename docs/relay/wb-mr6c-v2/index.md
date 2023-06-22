@@ -161,7 +161,7 @@
 
 ## Монтаж Snippet
 
---8<-- "../includes/mount-relay.md"
+--8<-- "relay/includes/mount-relay.md"
 
 ## Настройка
 
@@ -189,7 +189,7 @@
 ## Работа по Modbus
 
 {%
-   include-markdown "docs/includes/modbus.md"
+   include-markdown "includes/modbus.md"
 %}
 
 ## Обновление прошивки
