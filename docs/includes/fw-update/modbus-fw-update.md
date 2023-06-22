@@ -29,6 +29,7 @@
 ??? example "Обновление или восстановление прошивки с компьютера"
 
     Вам понадобится:
+
     - компьютер с ОС Windows или Linux;
     - утилита wb-mcu-fw-flasher, скачать: версии для [Windows](../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3.zip) и [Linux](../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3_amd64-all.deb);
     - адаптер USB-RS485;
