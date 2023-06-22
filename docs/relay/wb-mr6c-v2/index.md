@@ -260,6 +260,9 @@
     include "revisions.md"
     %}
 
+{{ read_csv('docs/relay/wb-mr6c-v2/revisions.csv') }}
+
+{{ read_raw('docs/relay/wb-mr6c-v2/revisions.md') }}
 
 ## Изображения и чертежи
 

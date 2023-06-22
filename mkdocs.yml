@@ -34,6 +34,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - mkdocs-video
+  - table-reader
 
 markdown_extensions:
   - pymdownx.details
