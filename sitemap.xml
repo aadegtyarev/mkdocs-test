@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/git/includes/wb-mqtt-serial/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/plc/wb6/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/plc/wb7/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/mount-relay/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/</loc>
-         <lastmod>2023-06-21</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
