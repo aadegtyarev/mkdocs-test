@@ -238,13 +238,10 @@
 
 ## Обновление прошивки
 
-{%
-   include-markdown "../../includes/fw-update/modbus-fw-update.md"
-%}
+{{ read_raw('docs/includes/fw-update/modbus-fw-update.md') }}
 
-{%
-   include-markdown "../includes/fw-update-save-data.md"
-%}
+{{ read_raw('docs/relay/includes/fw-update-save-data.md') }}
+
 
 ## Известные неисправности
 
@@ -260,14 +257,16 @@
 
 ## Изображения и чертежи
 
-{%
-   include-markdown "../../includes/other/wb-library.md"
-%}
+??? info "CorelDraw, Autocad и SVG"
 
-SVG: [wb-mr6c-v2.svg.zip](files/wb-mr6c-v2.svg.zip)
+    {%
+    include-markdown "../../includes/other/wb-library.md"
+    %}
 
-Autocad 2013 DXF: [wb-mr6c-v2.dxf.zip](files/wb-mr6c-v2.dxf.zip)
+    SVG: [wb-mr6c-v2.svg.zip](files/wb-mr6c-v2.svg.zip)
 
-Autocad PDF: [wb-mr6c-v2.pdf](files/wb-mr6c-v2.pdf)
+    Autocad 2013 DXF: [wb-mr6c-v2.dxf.zip](files/wb-mr6c-v2.dxf.zip)
+
+    Autocad PDF: [wb-mr6c-v2.pdf](files/wb-mr6c-v2.pdf)
 
 ![DIN 3U](../../includes/images/din-3u.png)
