@@ -1233,26 +1233,42 @@
 
 <h2 id="wiren-board">Подключение к контроллеру Wiren Board<a class="headerlink" href="#wiren-board" title="Permanent link">¶</a></h2>
 <h3 id="_8">Выбор шаблона<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../../includes/webui/device-template-select.md -->
 <p>Чтобы устройство появилось на вкладке Devices в веб-интерфейсе контроллера Wiren Board, добавьте новое serial-устройство и выберите шаблон</p>
+<!-- END INCLUDE -->
+
 <ul>
 <li>в текущем релизе — WB-MR6C v.2, WB-MR6LV/x, WB-MR6HV/x,</li>
 <li>в старых версиях ПО — WB-MR6C.</li>
 </ul>
 <h3 id="_9">Управление устройством и просмотр значений<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../../includes/webui/device-view-and-control.md -->
 <p>В веб-интерфейсе вы можете управлять выходами устройства и просматривать полученные с него значения. Список отображаемых каналов можно изменить через настройки устройства, доступные на странице выбора шаблона.</p>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE ../includes/webui-view-6ch.md -->
 <p>С помощью виртуальных выключателей K 1­ — K 6 можно управлять выходами модуля и следить за их состоянием. Если реле будет выключено или включено через внешний вход — это отразится в веб-интерфейсе.</p>
 <p>Переключатели Input 1 ­— Input 6 показывают текущее состояние входов реле и недоступны для изменения.</p>
 <p>Счетчики нажатий/включений отображаются в полях Input 1 counter­ — Input 6 counter. Значения счетчиков хранятся в оперативной памяти микроконтроллера реле и обнуляются при сбросе питания.</p>
+<!-- END INCLUDE -->
+
 <h2 id="_10">Настройка<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
 <h3 id="_11">Как настраивать<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../../includes/modbus/howto-device-set-up.md -->
 <p>При использовании контроллера Wiren Board нужно просто добавить модуль в конфигурацию и дальше настраивать его можно мышкой в веб-интерфейсе контроллера.</p>
 <p>Кроме этого, можно записывать значения в Modbus-регистры с компьютера или другого ПЛК. Для этого вам понадобится адаптер USB-RS485 и одна из программ, например, Rilheva Modbus Poll или modbus_client.</p>
+<!-- END INCLUDE -->
+
 <h3 id="_12">Режимы работы входов<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-inputs-mode.md -->
 <p>По умолчанию входы модуля управляют выходами с такими же номерами, а нулевой вход отключает все выходы одновременно. Нулевой вход есть только в трёх- и шестиканальных реле.</p>
 <p>В параметре <strong>Режим работы</strong> вы можете выбрать тип выключателя, отключить реакцию на нажатия или задать сложную логику через Mapping-матрицу.</p>
 <p>При отключении реакции на срабатывание входов вы всё равно сможете передать состояния и счётчики на контроллер для использования в сценариях автоматизации.</p>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-select-input-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Выбор режима" src="../includes/images/wb-mr6c-v2-select-input-mode.png"></a></p>
 <h3 id="_13">Управление с выключателей<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-press-actions.md -->
 <p>При выборе режима mapping-матрицы для кнопок, вы сможете настроить действия с выходами для каждого их четырёх типов нажатий, что позволит делать сценарные и проходные выключатели. Как это работает, смотрите в разделе Распознавание типов нажатий.</p>
 <p>Доступны настройки:</p>
 <ul>
@@ -1272,12 +1288,18 @@
 <summary>Видео: Обработка нажатий в устройствах Wiren Board</summary>
 <p><a class="glightbox" href="https://www.youtube.com/embed/lBGJm6FlS7Q" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/embed/lBGJm6FlS7Q" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </details>
+<!-- END INCLUDE -->
+
 <p>Нулевой вход по умолчанию отключает все реле.</p>
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-press-events-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Привязка действия к нажатиям" src="../includes/images/wb-mr6c-v2-press-events-action.png"></a></p>
 <h3 id="mapping-">Управление по mapping-матрице<a class="headerlink" href="#mapping-" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-magging-matric-classic.md -->
 <p>Классическая mapping-матрица позволяет назначать дейтсвия с выходом на фронты сигнала на входе модуля.</p>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mapping-матрица" src="../includes/images/wb-mr6c-v2-mapping-matrix-action.png"></a></p>
 <h3 id="_14">Антидребезг<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-debounce.md -->
 <p>Для любого из входов реле вы можете настроить фильтр антидребезга в параметре Время подавления дребезга (мс).</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.17.8</label><label for="__tabbed_4_2">fw &lt; 1.17.8</label></div>
 <div class="tabbed-content">
@@ -1289,16 +1311,22 @@
 </div>
 </div>
 </div>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-debounce.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Антидребезг" src="../includes/images/wb-mr6c-v2-debounce.png"></a></p>
 <h3 id="_15">Состояния выходов при подаче питания<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-state-after-power-on.md -->
 <p>Вы можете настроить поведение устройства при подаче питания:</p>
 <ul>
 <li>Перевести выход в безопасное состояние — для каждого выхода состояние выбирается пользователем в параметре Состояния реле при подаче питания.</li>
 <li>Восстановить последнее состояние — если каналы реле до обесточивания были включены, то после подачи питания они так же включатся.</li>
 <li>Состояние соответствующее состоянию входов — при старте модуль установит выходы в состояние по формуле: Вход N замкнут → Выход N включён, где N — номер входа/выхода. Работает только, если вход в режиме «Выключатель с фиксацией».</li>
 </ul>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-after-power-on.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Состояние при подаче питания" src="../includes/images/wb-mr6c-v2-state-after-power-on.png"></a></p>
 <h3 id="_16">Безопасный режим<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<!-- BEGIN INCLUDE ../includes/settings-safety-mode.md -->
 <p>Безопасный режим позволяет остановить технологические процессы в случае, если контроль над модулем утрачен, например, перебит кабель RS-485. Рекомендуем учитывать возможность потери связи с контроллером при проектировании систем управления.</p>
 <p>Таймер безопасного режима начинает отсчёт после каждого успешно обработанного (принятого) пакета Modbus и при достижении установленного времени — реле переходит в безопасный режим. При возобновлении связи, реле вернётся к обычной работе. По умолчанию таймер установлен в значение 10 секунд.</p>
 <p>Для каждого выхода можно настроить безопасное состояние и необходимость перехода в него в случае потери связи.</p>
@@ -1313,21 +1341,55 @@
 <summary>Видео: Безопасный режим в модулях реле Wiren Board</summary>
 <p><a class="glightbox" href="https://www.youtube.com/embed/dXNHMv4hdXg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/embed/dXNHMv4hdXg" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </details>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Управление с входов в безопасном режиме" src="../includes/images/wb-mr6c-v2-input-control-safety-mode.png"></a></p>
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Таймер безопасного режима" src="../includes/images/wb-mr6c-v2-state-safety-mode.png"></a></p>
 <h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h2>
+<!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>Параметры порта по умолчанию:
-| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
-|-----------------------|-------------------------------------|---------------------------|
-| 9600                  | Baud rate                           | Скорость, бит/с           |
-| 8                     | Data bits                           | Количество битов данных   |
-| None                  | Parity                              | Бит чётности              |
-| 2                     | Stop bits                           | Количество стоповых битов |</p>
+<p>Параметры порта по умолчанию:</p>
+<!-- BEGIN INCLUDE default-settings.md -->
+<table>
+<thead>
+<tr>
+<th>Значение по умолчанию</th>
+<th>Название параметра в веб-интерфейсе</th>
+<th>Параметр</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9600</td>
+<td>Baud rate</td>
+<td>Скорость, бит/с</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data bits</td>
+<td>Количество битов данных</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Parity</td>
+<td>Бит чётности</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stop bits</td>
+<td>Количество стоповых битов</td>
+</tr>
+</tbody>
+</table>
+<!-- END INCLUDE -->
+
 <p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
 <p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
+<!-- END INCLUDE -->
+
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
+<!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 <details class="note">
 <summary>Обновление прошивки с контроллера Wiren Board</summary>
@@ -1342,6 +1404,9 @@
 </code></pre></div></td></tr></table></div>
 <p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
 </details>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE ../includes/fw-update-save-data.md -->
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">fw ≥ 1.19.0</label><label for="__tabbed_5_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1352,6 +1417,8 @@
 </div>
 </div>
 </div>
+<!-- END INCLUDE -->
+
 <h2 id="_18">Известные неисправности<a class="headerlink" href="#_18" title="Permanent link">¶</a></h2>
 <h2 id="_19">Ревизии<a class="headerlink" href="#_19" title="Permanent link">¶</a></h2>
 <h2 id="_20">Изображения и чертежи<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2></div>
