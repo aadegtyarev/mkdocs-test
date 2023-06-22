@@ -93,7 +93,7 @@
 
 ### Индикация
 
-![WB-MR6C v.2](images/wb-mr6cv2-indicators.gif){width="300" align=right}
+![WB-MR6C v.2](images/wb-mr6cv2-indicators.gif){width="200" align=right}
 
 В модуле есть индикаторы, которые помогут определить его состояние без подключения к контроллеру:
 
