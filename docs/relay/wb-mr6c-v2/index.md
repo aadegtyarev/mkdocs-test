@@ -185,13 +185,13 @@
 ## Работа по Modbus
 
 {%
-   include-markdown "../../includes/modbus.md"
+   include-markdown "../../includes/modbus/in-devices.md"
 %}
 
 ## Обновление прошивки
 
 {%
-   include-markdown "../../includes/modbus-fw-update.md"
+   include-markdown "../../includes/fw-update/modbus-fw-update.md"
 %}
 
 === "fw ≥ 1.19.0"
