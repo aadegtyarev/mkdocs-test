@@ -22,6 +22,7 @@ theme:
     - content.action.edit
     - search.suggest
     - search.highlight
+    - navigation.indexes
     - navigation.top
     - toc.integrate
   language: ru
