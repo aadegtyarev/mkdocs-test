@@ -28,13 +28,13 @@ theme:
 
 plugins:
   - include-markdown
-#  - external-markdown
   - glightbox
   - search
   - git-revision-date-localized:
       enable_creation_date: true
   - mkdocs-video
   - table-reader
+  - external-markdown
 
 markdown_extensions:
   - pymdownx.details
