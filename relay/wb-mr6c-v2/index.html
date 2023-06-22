@@ -1052,16 +1052,12 @@
 </details>
 <h2 id="_2">Общий принцип работы<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="_3">Индикация<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" href="images/wb-mr6cv2-indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="images/wb-mr6cv2-indicators.gif" width="300"></a></p>
 <p>В модуле есть индикаторы, которые помогут определить его состояние без подключения к контроллеру:</p>
 <ul>
 <li>S — статус обмена по Modbus: загорается при подаче низковольтного питания на модуль и мигает в момент опроса по шине RS-485. В режиме загрузчика редко мигает. При загрузке новой прошивки перестает менять свое состояние.</li>
 <li>1–6 — состояние выходов: горит — реле замкнуто.</li>
 </ul>
-<figure>
-<p><a class="glightbox" href="images/wb-mr6cv2-indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикация реле WB-MR6C" src="images/wb-mr6cv2-indicators.gif" width="300"></a>
-  </p>
-<figcaption>Индикация реле WB-MR6C</figcaption>
-</figure>
 <h3 id="_4">Входы<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>Входы реле выведены на разъёмные клеммники с номерами и общей клеммой iGND, работают по принципу «Сухой контакт».</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">fw ≥ 1.15.0</label><label for="__tabbed_1_2">fw &lt; 1.15.0</label></div>
