@@ -188,18 +188,6 @@
    include-markdown "docs/includes/modbus.md"
 %}
 
-{%
-   include-markdown "includes/modbus.md"
-%}
-
-{%
-   include-markdown "/includes/modbus.md"
-%}
-
-{%
-   include-markdown "/home/runner/work/mkdocs-test/docs/includes/modbus.md"
-%}
-
 ## Обновление прошивки
 
 В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт возможность расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.
