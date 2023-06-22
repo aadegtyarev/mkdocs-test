@@ -22,9 +22,7 @@ theme:
     - content.action.edit
     - search.suggest
     - search.highlight
-    - navigation.indexes
     - navigation.top
-    - navigation.tabs
     - toc.integrate
   language: ru
   primary: green
