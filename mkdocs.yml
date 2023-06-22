@@ -16,7 +16,6 @@ theme:
     - content.tabs.link
     - content.action.edit
     - search.highlight
-    - toc.integrate
   language: ru
   primary: blue
 
