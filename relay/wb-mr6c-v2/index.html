@@ -1091,6 +1091,7 @@
 <p>Модуль может распознавать четыре типа нажатий: короткое, длинное, двойное, короткое, а затем длинное.</p>
 <p>Обработку нажатий можно использовать на контроллере, куда по Modbus передаются специальные счётчики для каждого типа нажатий, или в самом устройстве для управления выходами.</p>
 <p>Параметры распознавания нажатий можно изменять в настройках.</p>
+<p><a class="glightbox" href="https://www.youtube.com/live/lBGJm6FlS7Q?" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/live/lBGJm6FlS7Q?" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </div>
 <div class="tabbed-block">
 <p>Не поддерживается.</p>
@@ -1142,17 +1143,7 @@
 <!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<details class="note">
-<summary>Параметры порта по умолчанию</summary>
-<p><!-- BEGIN INCLUDE default-settings.md -->
-| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
-|-----------------------|-------------------------------------|---------------------------|
-| 9600                  | Baud rate                           | Скорость, бит/с           |
-| 8                     | Data bits                           | Количество битов данных   |
-| None                  | Parity                              | Бит чётности              |
-| 2                     | Stop bits                           | Количество стоповых битов |</p>
-<!-- END INCLUDE -->
-</details>
+<p>Параметры порта по умолчанию:</p>
 <!-- BEGIN INCLUDE default-settings.md -->
 <table>
 <thead>
