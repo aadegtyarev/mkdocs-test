@@ -186,18 +186,22 @@
 
 {%
    include-markdown "docs/includes/modbus.md"
+   rewrite-relative-urls=false
 %}
 
 {%
    include-markdown "includes/modbus.md"
+   rewrite-relative-urls=false
 %}
 
 {%
    include-markdown "/includes/modbus.md"
+   rewrite-relative-urls=false
 %}
 
 {%
    include-markdown "/docs/includes/modbus.md"
+   rewrite-relative-urls=false
 %}
 
 ## Обновление прошивки
