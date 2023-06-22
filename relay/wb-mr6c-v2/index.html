@@ -909,7 +909,7 @@
 
 
 <div><h1 id="wb-mr6c-v2">Модуль реле WB-MR6C v.2<a class="headerlink" href="#wb-mr6c-v2" title="Permanent link">¶</a></h1>
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="../includes/images/wb-mr6c-v2-small.png" width="300"></a></p>
+<p><a class="glightbox" href="images/wb-mr6c-v2-small.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="WB-MR6C v.2" src="images/wb-mr6c-v2-small.png" width="300"></a></p>
 <h2 id="_1">Описание<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>Шестиканальные модули реле WB-MR6C v.2 выпускаются для систем промышленной и домашней автоматизации и предназначены для прямого управления светодиодными, люминесцентными светильниками, лампами накаливания и другими нагрузками номиналом до 10 А (2 кВт). Также могут использоваться как модули ввода-вывода общего назначения.</p>
 <p>Благодаря специальной конструкции реле, каждый канал может выдерживать длительный ток до 16 А и пусковые токи до 80 А. Обратите внимание, что из-за конструкции клеммников, суммарный номинальный коммутируемый ток на группу из трёх каналов 20 А.</p>
@@ -1153,12 +1153,10 @@
 <td>Габаритные размеры (Д x Ш x В)</td>
 <td>53 x 90 x 58 мм</td>
 </tr>
-<tr>
-<td>Масса (с коробкой)</td>
-<td>155 г</td>
-</tr>
 </tbody>
 </table>
+<p>|
+| Масса (с коробкой) | 155 г                                                                                                                                                                                                                                                                |</p>
 </details>
 <h2 id="_2">Общий принцип работы<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="_3">Индикация<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
@@ -1169,7 +1167,7 @@
 </ul>
 <details class="info">
 <summary>Анимация</summary>
-<p><a class="glightbox" href="../includes/images/wb-mr6c-v2-indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикаторы WB-MR6C v.2" src="../includes/images/wb-mr6c-v2-indicators.gif"></a></p>
+<p><a class="glightbox" href="images/wb-mr6c-v2-indicators.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Индикаторы WB-MR6C v.2" src="images/wb-mr6c-v2-indicators.gif"></a></p>
 </details>
 <h3 id="_4">Входы<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>Входы реле выведены на разъёмные клеммники с номерами и общей клеммой iGND, работают по принципу «Сухой контакт».</p>
@@ -1321,41 +1319,13 @@
 <h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">¶</a></h2>
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
-<p>Параметры порта по умолчанию:</p>
-<!-- BEGIN INCLUDE default-settings.md -->
-<table>
-<thead>
-<tr>
-<th>Значение по умолчанию</th>
-<th>Название параметра в веб-интерфейсе</th>
-<th>Параметр</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>9600</td>
-<td>Baud rate</td>
-<td>Скорость, бит/с</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Data bits</td>
-<td>Количество битов данных</td>
-</tr>
-<tr>
-<td>None</td>
-<td>Parity</td>
-<td>Бит чётности</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Stop bits</td>
-<td>Количество стоповых битов</td>
-</tr>
-</tbody>
-</table>
-<!-- END INCLUDE -->
-
+<p>Параметры порта по умолчанию:
+| Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
+|-----------------------|-------------------------------------|---------------------------|
+| 9600                  | Baud rate                           | Скорость, бит/с           |
+| 8                     | Data bits                           | Количество битов данных   |
+| None                  | Parity                              | Бит чётности              |
+| 2                     | Stop bits                           | Количество стоповых битов |</p>
 <p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
 <p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
