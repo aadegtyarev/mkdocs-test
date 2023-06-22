@@ -6,6 +6,7 @@ nav:
         - Wiren Board 7: plc/wb7/index.md
         - Wiren Board 6: plc/wb6/index.md
     - Реле:
+        - relay/index.md
         - WB-MR6C v.2: relay/wb-mr6c-v2/index.md
     - Софт:
         - wb-mqtt-serial: git/includes/wb-mqtt-serial.md
@@ -15,7 +16,9 @@ theme:
   features:
     - content.tabs.link
     - content.action.edit
+    - search.suggest
     - search.highlight
+    - navigation.indexes
   language: ru
   primary: blue
 
@@ -40,7 +43,7 @@ markdown_extensions:
   - toc:
       permalink: true
       slugify: !!python/name:pymdownx.slugs.uslugify
-      toc_depth: 2
+      toc_depth: 3
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test
 edit_uri: edit/main/docs/
