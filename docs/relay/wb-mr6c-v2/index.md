@@ -154,7 +154,7 @@
 ## Монтаж
 
 {%
-   include-markdown "../includes/mount-relay.md"
+   include "../includes/mount-relay.md"
 %}
 
 ## Подключение к контроллеру Wiren Board
@@ -162,7 +162,7 @@
 ### Выбор шаблона
 
 {%
-   include-markdown "../../includes/webui/device-template-select.md"
+   include "../../includes/webui/device-template-select.md"
 %}
 
 - в текущем релизе — WB-MR6C v.2, WB-MR6LV/x, WB-MR6HV/x,
@@ -171,11 +171,11 @@
 ### Управление устройством и просмотр значений
 
 {%
-   include-markdown "../../includes/webui/device-view-and-control.md"
+   include "../../includes/webui/device-view-and-control.md"
 %}
 
 {%
-   include-markdown "../includes/webui-view-6ch.md"
+   include "../includes/webui-view-6ch.md"
 %}
 
 ## Настройка
@@ -183,13 +183,13 @@
 ### Как настраивать
 
 {%
-   include-markdown "../../includes/modbus/howto-device-set-up.md"
+   include "../../includes/modbus/howto-device-set-up.md"
 %}
 
 ### Режимы работы входов
 
 {%
-   include-markdown "../includes/settings-inputs-mode.md"
+   include "../includes/settings-inputs-mode.md"
 %}
 
 ![Выбор режима](../includes/images/wb-mr6c-v2-select-input-mode.png)
@@ -197,7 +197,7 @@
 ### Управление с выключателей
 
 {%
-   include-markdown "../includes/settings-press-actions.md"
+   include "../includes/settings-press-actions.md"
 %}
 
 Нулевой вход по умолчанию отключает все реле.
@@ -207,7 +207,7 @@
 ### Управление по mapping-матрице
 
 {%
-   include-markdown "../includes/settings-magging-matric-classic.md"
+   include "../includes/settings-magging-matric-classic.md"
 %}
 
 ![Mapping-матрица](../includes/images/wb-mr6c-v2-mapping-matrix-action.png)
@@ -215,7 +215,7 @@
 ### Антидребезг
 
 {%
-   include-markdown "../includes/settings-debounce.md"
+   include "../includes/settings-debounce.md"
 %}
 
 ![Антидребезг](../includes/images/wb-mr6c-v2-debounce.png)
@@ -223,7 +223,7 @@
 ### Состояния выходов при подаче питания
 
 {%
-   include-markdown "../includes/settings-state-after-power-on.md"
+   include "../includes/settings-state-after-power-on.md"
 %}
 
 ![Состояние при подаче питания](../includes/images/wb-mr6c-v2-state-after-power-on.png)
@@ -231,7 +231,7 @@
 ### Безопасный режим
 
 {%
-   include-markdown "../includes/settings-safety-mode.md"
+   include "../includes/settings-safety-mode.md"
 %}
 
 ![Управление с входов в безопасном режиме](../includes/images/wb-mr6c-v2-input-control-safety-mode.png)
@@ -241,17 +241,17 @@
 ## Работа по Modbus
 
 {%
-   include-markdown "../../includes/modbus/in-devices.md"
+   include "../../includes/modbus/in-devices.md"
 %}
 
 ## Обновление прошивки
 
 {%
-   include-markdown "../../includes/fw-update/modbus-fw-update.md"
+   include "../../includes/fw-update/modbus-fw-update.md"
 %}
 
 {%
-   include-markdown "../includes/fw-update-save-data.md"
+   include "../includes/fw-update-save-data.md"
 %}
 
 ## Известные неисправности
