@@ -33,7 +33,7 @@ plugins:
   - search
   - git-revision-date-localized:
       enable_creation_date: true
-#  - mkdocs-video
+  - mkdocs-video
   - table-reader
 
 markdown_extensions:
