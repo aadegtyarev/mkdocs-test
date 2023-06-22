@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/relay/includes/mount-relay/">
+        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/other/mount-klemmy/">
       
       
       
@@ -17,7 +17,7 @@
     
     
       
-        <title>Mount relay - Wiren Board Docs</title>
+        <title>Mount klemmy - Wiren Board Docs</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mount relay
+              Mount klemmy
             
           </span>
         </div>
@@ -334,7 +334,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Реле</a>
+          <a href="../../../relay/">Реле</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -357,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wb-mr6c-v2/" class="md-nav__link">
+      <a href="../../../relay/wb-mr6c-v2/" class="md-nav__link">
         WB-MR6C v.2
       </a>
     </li>
@@ -505,7 +505,7 @@
                   
 
   
-    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/relay/includes/mount-relay.md" title="Редактировать страницу" class="md-content__button md-icon">
+    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/other/mount-klemmy.md" title="Редактировать страницу" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -513,22 +513,12 @@
   
 
 
-  <h1>Mount relay</h1>
+  <h1>Mount klemmy</h1>
 
-<div><p>Устройство монтируется на стандартную DIN-рейку шириной 35 мм. Клеммный блок «V+ GND A B» с шагом 3.5 мм служит для подключения питания и управления по шине RS-485. Для стабильной связи с устройством важно правильно организовать подключение к шине RS-485, читайте об этом в статье RS-485:Физическое подключение.</p>
-<details class="tip">
-<summary>Общие рекомендации</summary>
-<p><!-- BEGIN INCLUDE ../../includes/other/mount-klemmy.md -->
-Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
+<div><p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
 <p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
 <p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
-<p><a class="glightbox" href="../../includes/other/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../../includes/other/images/nshvi-press.jpg" width="400"></a></p>
-<!-- END INCLUDE -->
-<p>При включении реле модуль импульсно потребляет большую мощность (см. потребление). Используйте блок питания с запасом по мощности. При питании по длинному кабелю учитывайте падение напряжения на нем.</p>
-<p>Срабатывание дискретных входов происходит при их замыкании на землю iGND. Возникающий ток невелик (~2 мА), так что тип кнопки или выключателя может быть любым. Также не играет роли длина и сечение кабеля. Но для предотвращения наводок от близко расположенных силовых линий лучше использовать витую пару и подключать землю iGND ко второй жиле пары. Подробнее про подключение клемм iGND смотрите в инструкции.</p>
-<p>Сечение проводов, подключаемых к винтовым зажимам выходов реле, должно соответствовать мощности коммутируемой нагрузки. Винтовые зажимы принимают провод сечением 2.5–4 мм2. Выбрать правильное сечение провода для подключения нагрузки поможет таблица Допустимый длительный ток для проводов и шнуров.</p>
-<p>Модуль реле необходимо устанавливать таким образом, чтобы удовлетворять требованиям электробезопасности и не допускать случайного касания контактов, находящихся под высоким напряжением. Устройство должно эксплуатироваться при рекомендованных условиях окружающей среды.</p>
-</details></div>
+<p><a class="glightbox" href="images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="images/nshvi-press.jpg" width="400"></a></p></div>
 
   <hr>
 <div class="md-source-file">
@@ -539,7 +529,7 @@
       
         <br>
         Дата создания:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>
