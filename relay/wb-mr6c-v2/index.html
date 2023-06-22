@@ -1139,7 +1139,7 @@
 <p>Счетчики нажатий/включений отображаются в полях Input 1 counter­ — Input 6 counter. Значения счетчиков хранятся в оперативной памяти микроконтроллера реле и обнуляются при сбросе питания.</p>
 <p>О восстановлении состояния реле после перебоя питания описано в разделе Режим работы реле при возобновлении питания.</p>
 <h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">&para;</a></h2>
-<!-- BEGIN INCLUDE ../../includes/modbus.md -->
+<!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
 <p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
 <p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
 <p>?? note "Параметры порта по умолчанию"</p>
@@ -1153,7 +1153,7 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- BEGIN INCLUDE modbus-default-settings.md --&gt;
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- BEGIN INCLUDE default-settings.md --&gt;
 **Параметры порта по умолчанию**
 
 | Значение по умолчанию | Название параметра в веб-интерфейсе | Параметр                  |
@@ -1170,7 +1170,7 @@
 <!-- END INCLUDE -->
 
 <h2 id="_11">Обновление прошивки<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<!-- BEGIN INCLUDE ../../includes/modbus-fw-update.md -->
+<!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
 <details class="note">
 <summary>Обновление прошивки с контроллера Wiren Board</summary>
@@ -1183,7 +1183,7 @@
 <p>Обновление загрузчика. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-bl<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
 </code></pre></div></td></tr></table></div>
-<p>Другие параметры утилиты обновления смотрите в документации <a href="/mkdocs-test/soft/wb-mcu-fw-updater/index.md">wb-mcu-fw-updater</a>.</p>
+<p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
 </details>
 <!-- END INCLUDE -->
 

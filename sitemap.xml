@@ -6,17 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus-default-settings/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/fw-update/modbus-fw-update/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus-fw-update/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus/default-settings/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus/in-devices/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
