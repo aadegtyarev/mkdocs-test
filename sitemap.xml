@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr-errata/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/fw-update-save-data/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
@@ -137,11 +142,6 @@
     </url>
     <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/</loc>
-         <lastmod>2023-06-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/wb-mr6c-v2/errata/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
