@@ -21,6 +21,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/webui/device-template-select/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/webui/device-view-and-control/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/plc/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
