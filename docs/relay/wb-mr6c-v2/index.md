@@ -138,7 +138,7 @@
 
     Параметры распознавания нажатий можно изменять в настройках.
 
-    ![type:video](https://www.youtube.com/live/lBGJm6FlS7Q?)
+    ![type:video](https://www.youtube.com/live/lBGJm6FlS7Q?feature=share)
 
 === "fw < 1.17.0"
 
