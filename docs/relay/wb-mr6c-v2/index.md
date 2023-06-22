@@ -184,6 +184,12 @@
 
 ![WB-MR6C v.2 в веб-интерфейсе контроллера](images/devices-view.png){width="400px"}
 
+## Работа по Modbus
+
+{%
+   include-markdown "../../includes/modbus/in-devices.md"
+%}
+
 ## Настройка
 
 ### Как настраивать
@@ -244,11 +250,6 @@
 
 ![Таймер безопасного режима](../includes/images/wb-mr6c-v2-state-safety-mode.png){width="400px"}
 
-## Работа по Modbus
-
-{%
-   include-markdown "../../includes/modbus/in-devices.md"
-%}
 
 ## Обновление прошивки
 
