@@ -185,7 +185,7 @@
 ## Работа по Modbus
 
 {%
-   include-markdown "docs/includes/modbus.md"
+   include "docs/includes/modbus.md"
 %}
 
 ## Обновление прошивки
