@@ -16,7 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus/howto-device-set-up/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/includes/modbus/in-devices/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/includes/tech-tables/dimensions/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -51,7 +61,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/fw-update-save-data/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/mount-relay/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-debounce/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-inputs-mode/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-magging-matric-classic/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-press-actions/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-safety-mode/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/settings-state-after-power-on/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/relay/includes/webui-view-6ch/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
