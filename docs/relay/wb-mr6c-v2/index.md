@@ -262,7 +262,7 @@
 ## Изображения и чертежи
 
 {%
-   include-markdown "../../includes/zip/wb-library.cdr.zip.md"
+   include-markdown "../../includes/other/wb-library.md"
 %}
 
 SVG: [wb-mr6c-v2.svg.zip](wb-mr6c-v2.svg.zip)
