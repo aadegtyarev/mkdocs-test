@@ -28,7 +28,7 @@ theme:
 
 plugins:
 #  - include-markdown
-#  - external-markdown
+  - external-markdown
   - glightbox
   - search
   - git-revision-date-localized:
