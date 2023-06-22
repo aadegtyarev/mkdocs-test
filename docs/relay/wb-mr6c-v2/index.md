@@ -138,7 +138,9 @@
 
     Параметры распознавания нажатий можно изменять в настройках.
 
-    ![type:video](https://www.youtube.com/embed/lBGJm6FlS7Q)
+    ??? note "Видео: Обработка нажатий в устройствах Wiren Board"
+
+        ![type:video](https://www.youtube.com/embed/lBGJm6FlS7Q)
 
 === "fw < 1.17.0"
 
