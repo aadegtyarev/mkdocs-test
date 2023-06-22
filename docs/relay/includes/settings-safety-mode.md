@@ -13,6 +13,6 @@
 Во всех случаях настройки mapping-матриц игнорируются.
 
 
-??? note "Видео: Безопасный режим в модулях реле Wiren Board"
+??? info "Видео: Безопасный режим в модулях реле Wiren Board"
 
     ![type:video](https://www.youtube.com/embed/dXNHMv4hdXg)
