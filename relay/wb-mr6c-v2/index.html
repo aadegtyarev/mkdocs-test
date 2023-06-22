@@ -1413,7 +1413,7 @@
 <!-- END INCLUDE -->
 
 <p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
-<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
+<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с.</p>
 <!-- END INCLUDE -->
 
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
@@ -1436,12 +1436,14 @@
 </details>
 <details class="example">
 <summary>Обновление или восстановление прошивки с компьютера</summary>
-<p>Вам понадобится:
-- компьютер с ОС Windows или Linux;
-- утилита wb-mcu-fw-flasher, скачать: версии для <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3.zip">Windows</a> и <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3_amd64-all.deb">Linux</a>;
-- адаптер USB-RS485;
-- сигнатура прошивки устройства, которая хранится в регистрах 290-301;
-- файл прошивки для нужной сигнатуры, который можно скачать в репозитории http://fw-releases.wirenboard.com/?prefix=fw/</p>
+<p>Вам понадобится:</p>
+<ul>
+<li>компьютер с ОС Windows или Linux;</li>
+<li>утилита wb-mcu-fw-flasher, скачать: версии для <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3.zip">Windows</a> и <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3_amd64-all.deb">Linux</a>;</li>
+<li>адаптер USB-RS485;</li>
+<li>сигнатура прошивки устройства, которая хранится в регистрах 290-301;</li>
+<li>файл прошивки для нужной сигнатуры, который можно скачать в репозитории http://fw-releases.wirenboard.com/?prefix=fw/</li>
+</ul>
 <p>Записать прошивку из файла в устройство:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Linux</label><label for="__tabbed_5_2">Windows</label></div>
 <div class="tabbed-content">
