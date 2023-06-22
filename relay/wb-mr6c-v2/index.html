@@ -624,6 +624,10 @@
             
           
         
+          
+            
+          
+        
       
       
         
@@ -668,6 +672,20 @@
     <li class="md-nav__item">
       <a href="../../soft/wb-mcu-fw-updater/" class="md-nav__link">
         wb-mcu-fw-updater
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soft/wb-mcu-fw-flasher/" class="md-nav__link">
+        wb-mcu-fw-flasher
       </a>
     </li>
   
@@ -1413,12 +1431,49 @@
 <p>Обновить загрузчик. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-bl<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
 </code></pre></div></td></tr></table></div>
+<p>Если во время прошивки что-то пойдёт не так, просто запустите процесс повторно и утилита восстановит устройство.</p>
 <p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
+</details>
+<details class="example">
+<summary>Обновление или восстановление прошивки с компьютера</summary>
+<p>Вам понадобится:
+- компьютер с ОС Windows или Linux;
+- утилита wb-mcu-fw-flasher, скачать: версии для <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3.zip">Windows</a> и <a href="../../soft/wb-mcu-fw-flasher/files/wb-mcu-fw-flasher_1.0.3_amd64-all.deb">Linux</a>;
+- адаптер USB-RS485;
+- сигнатура прошивки устройства, которая хранится в регистрах 290-301;
+- файл прошивки для нужной сигнатуры, который можно скачать в репозитории http://fw-releases.wirenboard.com/?prefix=fw/</p>
+<p>Записать прошивку из файла в устройство:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Linux</label><label for="__tabbed_5_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher<span class="w"> </span>-j<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher_1.0.3.exe<span class="w"> </span>-j<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Восстановление прошивки, если устройство находится в бутлодере, то есть зелёный индикатор постоянно мигает раз в секунду:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Linux</label><label for="__tabbed_6_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher_1.0.3.exe<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Подробнее смотрите в документации <a href="../../soft/wb-mcu-fw-flasher/">wb-mcu-fw-flasher</a>.</p>
 </details>
 <!-- END INCLUDE -->
 
 <!-- BEGIN INCLUDE ../includes/fw-update-save-data.md -->
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">fw ≥ 1.19.0</label><label for="__tabbed_5_2">fw &lt; 1.19.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">fw ≥ 1.19.0</label><label for="__tabbed_7_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>При использовании загрузчика версии не ниже 1.2.х настройки хранящиеся в памяти модуля не пропадают при обновлении прошивки.</p>

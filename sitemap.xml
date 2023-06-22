@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mcu-fw-flasher/</loc>
+         <lastmod>2023-06-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mcu-fw-updater/</loc>
          <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
