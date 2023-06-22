@@ -1003,29 +1003,155 @@
 </table>
 <p>Входы</p>
 <p>В модуле есть 7 изолированных входов Inputs 0—6. По умолчанию входы 1-6 управляют выходами с такими же номерами, а вход 0 отключает все реле. Но вы можете изменить их поведение в настройках.</p>
-<p>{%
-    include "../includes/teth-tables-inputs.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Тип входов</td>
+<td>«Сухой контакт», групповая изоляция  Напряжение на входе ~12 В.  Ток при замыкании входа ~2 мА</td>
+</tr>
+<tr>
+<td>Допустимое напряжение</td>
+<td>от -20 В до +40 В</td>
+</tr>
+<tr>
+<td>Частота и длительность импульсов</td>
+<td>До 10 Гц (T &gt; 50 мс) - по умолчанию   До 1 кГц при уменьшении времени защиты от дребезга   До 5 кГц (с версии прошивки 1.15.0)   (смотри таблицу ревизий)</td>
+</tr>
+<tr>
+<td>Функции</td>
+<td>Входы общего назначения, счет сигналов, измерение частоты (с версии прошивки 1.15.0), прямое управление каналами реле, одновременное отключение всей нагрузки, гибкая настройка взаимодействия с реле с помощью mapping-матрицы (с версии прошивки 1.9.0)</td>
+</tr>
+</tbody>
+</table>
 <p>Индикация</p>
-<p>{%
-    include "../../includes/tech-tables/indication.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Индикация питания и обмена данными</td>
+<td>Зеленый светодиод Status (под верхней этикеткой)</td>
+</tr>
+<tr>
+<td>Индикация состояния каналов реле</td>
+<td>Оранжевые светодиоды 1, 2.. (под верхней этикеткой)</td>
+</tr>
+</tbody>
+</table>
 <p>Управление</p>
-<p>{%
-    include "../../includes/tech-tables/control.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Интерфейс управления</td>
+<td>RS-485</td>
+</tr>
+<tr>
+<td>Изоляция интерфейса</td>
+<td>Неизолированный</td>
+</tr>
+<tr>
+<td>Протокол обмена данными</td>
+<td>Modbus RTU, адрес задается программно, заводские настройки указаны на наклейке</td>
+</tr>
+<tr>
+<td>Параметры интерфейса RS-485</td>
+<td>Задаются программно, по умолчанию:  скорость — 9600 бит/с; данные — 8 бит; бит чётности — нет (N); стоп-биты — 2</td>
+</tr>
+<tr>
+<td>Готовность к работе после подачи питания</td>
+<td>~2 c</td>
+</tr>
+</tbody>
+</table>
 <p>Условия эксплуатации</p>
-<p>{%
-    include "../../includes/tech-tables/terms-of-use.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Температура воздуха</td>
+<td>От −40 до +80 °С</td>
+</tr>
+<tr>
+<td>Относительная влажность</td>
+<td>До 95 %, без конденсации влаги</td>
+</tr>
+<tr>
+<td>Климатическое исполнение по ГОСТ 15150-69</td>
+<td>O2.1*</td>
+</tr>
+<tr>
+<td>Гарантийный срок</td>
+<td>2 года</td>
+</tr>
+<tr>
+<td>Срок службы</td>
+<td>5 лет</td>
+</tr>
+</tbody>
+</table>
 <p>Клеммники и сечение проводов</p>
-<p>{%
-    include "../../includes/tech-tables/klemmy.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Рекомендуемое сечение провода с НШВИ</td>
+<td>для входов управления: 0.35 – 1 мм2 — одинарные, 0.35 – 0.5 мм2 — сдвоенные провода,  для силовых входов:  до 2.5 мм2 — одинарные, до 1.5 мм2 — сдвоенные провода</td>
+</tr>
+<tr>
+<td>Длина стандартной втулки НШВИ</td>
+<td>8 мм</td>
+</tr>
+<tr>
+<td>Момент затяжки винтов</td>
+<td>для входов управления: 0.2 Н∙м, для силовых выходов: 0.5 Н∙м</td>
+</tr>
+</tbody>
+</table>
 <p>Габариты</p>
-<p>{%
-    include "../../includes/tech-tables/dimensions-3u.md"
-%}</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ширина, DIN-юнитов</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Габаритные размеры (Д x Ш x В)</td>
+<td>53 x 90 x 58 мм</td>
+</tr>
+</tbody>
+</table>
 <p>Масса (с коробкой): 155 г</p>
 </details>
 <h2 id="_2">Общий принцип работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1087,83 +1213,287 @@
 </details>
 <p>С прошивки 1.18.4 можно настроить безопасное состояние каждого выхода выбрать поведение выходов при включении реле.</p>
 <h2 id="_7">Монтаж<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>{%
-   include-markdown "../includes/mount-relay.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/mount-relay.md -->
+<p>Устройство монтируется на стандартную DIN-рейку шириной 35 мм. Клеммный блок «V+ GND A B» с шагом 3.5 мм служит для подключения питания и управления по шине RS-485. Для стабильной связи с устройством важно правильно организовать подключение к шине RS-485, читайте об этом в статье RS-485:Физическое подключение.</p>
+<details class="note">
+<summary>Общие рекомендации</summary>
+<p>Рекомендуем для монтажа использовать гибкие многожильные провода с обжатием концов втулочными наконечниками (НШВИ — наконечник штыревой втулочный изолированный).</p>
+<p>При снятии изоляции провод должен зачищаться ровно по длине гильзы (можно зачистить больше, а потом откусить выступающий излишек). Для обжима (опрессовывания) используйте пресс-клещи (кримпер, «обжимка»). При монтаже обжатый наконечником провод не разрушается винтовым зажимом и надежно фиксируется.</p>
+<p><figure markdown>
+  <a class="glightbox" href="../includes/images/nshvi-press.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Как обжимать наконечники НШВИ" src="../includes/images/nshvi-press.jpg" width="300" /></a>
+  <figcaption>Как обжимать наконечники НШВИ</figcaption>
+</figure></p>
+<p>Не прикладывайте чрезмерное усилие при завинчивании клеммы — это приводит к разрушению винтового разъема.</p>
+<p>При включении реле модуль импульсно потребляет большую мощность (см. потребление). Используйте блок питания с запасом по мощности. При питании по длинному кабелю учитывайте падение напряжения на нем.</p>
+<p>Срабатывание дискретных входов происходит при их замыкании на землю iGND. Возникающий ток невелик (~2 мА), так что тип кнопки или выключателя может быть любым. Также не играет роли длина и сечение кабеля. Но для предотвращения наводок от близко расположенных силовых линий лучше использовать витую пару и подключать землю iGND ко второй жиле пары. Подробнее про подключение клемм iGND смотрите в инструкции.</p>
+<p>Сечение проводов, подключаемых к винтовым зажимам выходов реле, должно соответствовать мощности коммутируемой нагрузки. Винтовые зажимы принимают провод сечением 2.5–4 мм2. Выбрать правильное сечение провода для подключения нагрузки поможет таблица Допустимый длительный ток для проводов и шнуров.</p>
+<p>Модуль реле необходимо устанавливать таким образом, чтобы удовлетворять требованиям электробезопасности и не допускать случайного касания контактов, находящихся под высоким напряжением. Устройство должно эксплуатироваться при рекомендованных условиях окружающей среды.</p>
+</details>
+<!-- END INCLUDE -->
+
 <h2 id="wiren-board">Работа с контроллером Wiren Board<a class="headerlink" href="#wiren-board" title="Permanent link">&para;</a></h2>
 <h3 id="_8">Выбор шаблона<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../../includes/webui/device-template-select.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/webui/device-template-select.md -->
+<p>Чтобы устройство появилось на вкладке Devices в веб-интерфейсе контроллера Wiren Board, добавьте новое serial-устройство и выберите шаблон</p>
+<!-- END INCLUDE -->
+
 <ul>
 <li>в текущем релизе — WB-MR6C v.2, WB-MR6LV/x, WB-MR6HV/x,</li>
 <li>в старых версиях ПО — WB-MR6C.</li>
 </ul>
 <h3 id="_9">Управление устройством и просмотр значений<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../../includes/webui/device-view-and-control.md"
-%}</p>
-<p>{%
-   include-markdown "../includes/webui-view-6ch.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/webui/device-view-and-control.md -->
+<p>В веб-интерфейсе вы можете управлять выходами устройства и просматривать полученные с него значения. Список отображаемых каналов можно изменить через настройки устройства, доступные на странице выбора шаблона.</p>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE ../includes/webui-view-6ch.md -->
+<p>С помощью виртуальных выключателей K 1­ — K 6 можно управлять выходами модуля и следить за их состоянием. Если реле будет выключено или включено через внешний вход — это отразится в веб-интерфейсе.</p>
+<p>Переключатели Input 1 ­— Input 6 показывают текущее состояние входов реле и недоступны для изменения.</p>
+<p>Счетчики нажатий/включений отображаются в полях Input 1 counter­ — Input 6 counter. Значения счетчиков хранятся в оперативной памяти микроконтроллера реле и обнуляются при сбросе питания.</p>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="images/devices-view.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="WB-MR6C v.2 в веб-интерфейсе контроллера" src="images/devices-view.png" /></a></p>
 <h2 id="_10">Настройка<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="_11">Как настраивать<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../../includes/modbus/howto-device-set-up.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/modbus/howto-device-set-up.md -->
+<p>При использовании контроллера Wiren Board нужно просто добавить модуль в конфигурацию и дальше настраивать его можно мышкой в веб-интерфейсе контроллера.</p>
+<p>Кроме этого, можно записывать значения в Modbus-регистры с компьютера или другого ПЛК. Для этого вам понадобится адаптер USB-RS485 и одна из программ, например, Rilheva Modbus Poll или modbus_client.</p>
+<!-- END INCLUDE -->
+
 <h3 id="_12">Режимы работы входов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-inputs-mode.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-inputs-mode.md -->
+<p>По умолчанию входы модуля управляют выходами с такими же номерами, а нулевой вход отключает все выходы одновременно. Нулевой вход есть только в трёх- и шестиканальных реле.</p>
+<p>В параметре <strong>Режим работы</strong> вы можете выбрать тип выключателя, отключить реакцию на нажатия или задать сложную логику через Mapping-матрицу.</p>
+<p>При отключении реакции на срабатывание входов вы всё равно сможете передать состояния и счётчики на контроллер для использования в сценариях автоматизации.</p>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-select-input-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Выбор режима" src="../includes/images/wb-mr6c-v2-select-input-mode.png" /></a></p>
 <h3 id="_13">Управление с выключателей<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-press-actions.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-press-actions.md -->
+<p>При выборе режима mapping-матрицы для кнопок, вы сможете настроить действия с выходами для каждого их четырёх типов нажатий, что позволит делать сценарные и проходные выключатели. Как это работает, смотрите в разделе Распознавание типов нажатий.</p>
+<p>Доступны настройки:</p>
+<ul>
+<li>Время длинного нажатия (мс) — время в мс, которое разделяет длинные и короткие нажатия. Если нажатие длится больше указанного времени, оно считается длинным, иначе — коротким.</li>
+<li>Время ожидания второго нажатия (мс) — время в мс, которое создает «окно» указанной длительности после завершения короткого нажатия. Если второе нажатие попадет в это окно, нажатие будет считаться двойным, иначе — одиночным.</li>
+<li>Время подавления дребезга (мс) — время в мс, в течение которого сигнал на входном клеммнике должен иметь неизменный уровень, после чего он будет зафиксирован и обработан алгоритмом распознавания нажатий. При работе с нажатиями, значение должно быть в 5-10 раз меньше, чем время ожидания второго нажатия.</li>
+<li>Период опроса для каждого счётчика — чтобы обрабатывать нажатия программно на контроллере, включите опрос нужных счётчиков и настройте период опроса по инструкции.</li>
+</ul>
+<p>Детектирование двойных вносит задержку на детектирование одиночных. Например, при настройке по умолчанию (300 мс) событие одиночного нажатия произойдет через 300 мс после отпускания кнопки. Если вам не нужны двойные и короткие, а затем длинные нажатия, то Время ожидания двойного нажатия нужно установить на 0 мс. Тогда событие одиночного нажатия произойдет сразу после отпускания кнопки.</p>
+<p>Распознавание нажатий выполняется после подавления дребезга. Это означает, что при настройке Время подавления дребезга по умолчанию (50 мс) любые нажатия длительностью менее 50 мс будут игнорироваться. Точно так же это влияет на скорость реакции при отпускании кнопки: отпускание будет зафиксировано через 50 мс после фактического отпускания кнопки. Время подавления дребезга следует подбирать к конкретной кнопке таким образом, чтобы вносимая задержка была минимальной, но не было ложных срабатываний, например, двойное нажатие вместо одиночного.</p>
+<p>Настройки входов по умолчанию:</p>
+<ul>
+<li>каждый вход управляет соответствующим реле, т.е. вход номер 2 управляет реле номер 2;</li>
+<li>режим работы для входов — выключатель с фиксацией.</li>
+</ul>
+<details class="note">
+<summary>Видео: Обработка нажатий в устройствах Wiren Board</summary>
+<p><a class="glightbox" href="https://www.youtube.com/embed/lBGJm6FlS7Q" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="type:video" src="https://www.youtube.com/embed/lBGJm6FlS7Q" /></a></p>
+</details>
+<!-- END INCLUDE -->
+
 <p>Нулевой вход по умолчанию отключает все реле.</p>
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-press-events-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Привязка действия к нажатиям" src="../includes/images/wb-mr6c-v2-press-events-action.png" /></a></p>
 <h3 id="mapping-">Управление по mapping-матрице<a class="headerlink" href="#mapping-" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-magging-matric-classic.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-magging-matric-classic.md -->
+<p>Классическая mapping-матрица позволяет назначать дейтсвия с выходом на фронты сигнала на входе модуля.</p>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mapping-матрица" src="../includes/images/wb-mr6c-v2-mapping-matrix-action.png" /></a></p>
 <h3 id="_14">Антидребезг<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-debounce.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-debounce.md -->
+<p>Для любого из входов реле вы можете настроить фильтр антидребезга в параметре Время подавления дребезга (мс).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.17.8</label><label for="__tabbed_4_2">fw &lt; 1.17.8</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Возможные значения от 0 до 250 мс, по умолчанию — 50 мс.</p>
+</div>
+<div class="tabbed-block">
+<p>Возможные значения от 0 до 100 мс, по умолчанию — 50 мс.</p>
+</div>
+</div>
+</div>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-debounce.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Антидребезг" src="../includes/images/wb-mr6c-v2-debounce.png" /></a></p>
 <h3 id="_15">Состояния выходов при подаче питания<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-state-after-power-on.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-state-after-power-on.md -->
+<p>Вы можете настроить поведение устройства при подаче питания:</p>
+<ul>
+<li>Перевести выход в безопасное состояние — для каждого выхода состояние выбирается пользователем в параметре Состояния реле при подаче питания.</li>
+<li>Восстановить последнее состояние — если каналы реле до обесточивания были включены, то после подачи питания они так же включатся.</li>
+<li>Состояние соответствующее состоянию входов — при старте модуль установит выходы в состояние по формуле: Вход N замкнут → Выход N включён, где N — номер входа/выхода. Работает только, если вход в режиме «Выключатель с фиксацией».</li>
+</ul>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-after-power-on.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Состояние при подаче питания" src="../includes/images/wb-mr6c-v2-state-after-power-on.png" /></a></p>
 <h3 id="_16">Безопасный режим<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>{%
-   include-markdown "../includes/settings-safety-mode.md"
-%}</p>
+<!-- BEGIN INCLUDE ../includes/settings-safety-mode.md -->
+<p>Безопасный режим позволяет остановить технологические процессы в случае, если контроль над модулем утрачен, например, перебит кабель RS-485. Рекомендуем учитывать возможность потери связи с контроллером при проектировании систем управления.</p>
+<p>Таймер безопасного режима начинает отсчёт после каждого успешно обработанного (принятого) пакета Modbus и при достижении установленного времени — реле переходит в безопасный режим. При возобновлении связи, реле вернётся к обычной работе. По умолчанию таймер установлен в значение 10 секунд.</p>
+<p>Для каждого выхода можно настроить безопасное состояние и необходимость перехода в него в случае потери связи.</p>
+<p>Можно настроить поведение управления с входов:</p>
+<ul>
+<li>Не блокировать — если было разрешено управление с входов, то оно сохраняется.</li>
+<li>Блокировать в безопасном режиме — управлять реле с входов будет нельзя.</li>
+<li>Разрешить только в безопасном режиме — если управление с входов было заблокировано в настройках, в безопасном режиме реле можно будет управлять.</li>
+</ul>
+<p>Во всех случаях настройки mapping-матриц игнорируются.</p>
+<details class="note">
+<summary>Видео: Безопасный режим в модулях реле Wiren Board</summary>
+<p><a class="glightbox" href="https://www.youtube.com/embed/dXNHMv4hdXg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="type:video" src="https://www.youtube.com/embed/dXNHMv4hdXg" /></a></p>
+</details>
+<!-- END INCLUDE -->
+
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Управление с входов в безопасном режиме" src="../includes/images/wb-mr6c-v2-input-control-safety-mode.png" /></a></p>
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-state-safety-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Таймер безопасного режима" src="../includes/images/wb-mr6c-v2-state-safety-mode.png" /></a></p>
 <h2 id="modbus">Работа по Modbus<a class="headerlink" href="#modbus" title="Permanent link">&para;</a></h2>
-<p>{%
-   include-markdown "../../includes/modbus/in-devices.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/modbus/in-devices.md -->
+<p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
+<p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
+<p>Параметры порта по умолчанию:</p>
+<!-- BEGIN INCLUDE default-settings.md -->
+<table>
+<thead>
+<tr>
+<th>Значение по умолчанию</th>
+<th>Название параметра в веб-интерфейсе</th>
+<th>Параметр</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9600</td>
+<td>Baud rate</td>
+<td>Скорость, бит/с</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data bits</td>
+<td>Количество битов данных</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Parity</td>
+<td>Бит чётности</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stop bits</td>
+<td>Количество стоповых битов</td>
+</tr>
+</tbody>
+</table>
+<!-- END INCLUDE -->
+
+<p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
+<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с, см. Настройка параметров обмена данными</p>
+<!-- END INCLUDE -->
+
 <h2 id="_17">Обновление прошивки<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
-<p>{%
-   include-markdown "../../includes/fw-update/modbus-fw-update.md"
-%}</p>
-<p>{%
-   include-markdown "../includes/fw-update-save-data.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/fw-update/modbus-fw-update.md -->
+<p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
+<details class="note">
+<summary>Обновление прошивки с контроллера Wiren Board</summary>
+<p>Чтобы обновить прошивку подключённого и настроенного в контроллере устройства, надо зайти на контроллер по SSH и выполнить одну из команд ниже.</p>
+<p>Обновить прошивки всех подключённых и настроенных на контроллере устройств:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-all
+</code></pre></div></td></tr></table></div>
+<p>Обновить прошивку определённого устройства:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-fw<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
+</code></pre></div></td></tr></table></div>
+<p>Обновить загрузчик. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-bl<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
+</code></pre></div></td></tr></table></div>
+<p>Другие параметры утилиты обновления смотрите в документации <a href="../../soft/wb-mcu-fw-updater/">wb-mcu-fw-updater</a>.</p>
+</details>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE ../includes/fw-update-save-data.md -->
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">fw ≥ 1.19.0</label><label for="__tabbed_5_2">fw &lt; 1.19.0</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>При использовании загрузчика версии не ниже 1.2.х настройки хранящиеся в памяти модуля не пропадают при обновлении прошивки.</p>
+</div>
+<div class="tabbed-block">
+<p>При обновлении прошивки настройки из памяти модуля будут стёрты. Чтобы не терять настройки — обновите прошивку и загрузчик.</p>
+</div>
+</div>
+</div>
+<!-- END INCLUDE -->
+
 <h2 id="_18">Известные неисправности<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <p>Если вы столкнулись со странным поведением устройства, в первую очередь проверьте список известных неисправностей. Возможно, вы столкнулись с известной проблемой и она уже решена в новых прошивках или ревизиях устройства.</p>
 <p><a href="errata/">Список известных неисправностей</a></p>
 <h2 id="_19">Ревизии<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <details class="info">
 <summary>Список ревизий устройства</summary>
-<p>{%
-include "revisions.md"
-%}</p>
+<p>Номер партии (Batch №) указан на наклейке на боковой поверхности корпуса или на печатной плате.</p>
+<table>
+<thead>
+<tr>
+<th>Ревизия</th>
+<th>Партии</th>
+<th>Дата выпуска</th>
+<th>Отличия от предыдущей ревизии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.6</td>
+<td>v3.6B, v3.6C, v3.6C/2, v3.6D, v3.6D/1, v3.6E, v3.6F, v3.6G, v3.6H, v3.6H/1, v3.6I - ...</td>
+<td>09.2022 - ...</td>
+<td>Стандартная версия:  С 7.62мм клеммниками для COM1/2. Другой вид серийных номеров (изменена микросхема eeprom)</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>v3.6A</td>
+<td>08.2022 - 09.2022</td>
+<td>С 7.62мм клеммниками для COM1/2</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>v4.2A - v4.2E</td>
+<td>04.2022 - 08.2022</td>
+<td>Изменена трассировка платы</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>v4.0A (/2, /2/3), v4.0B - v4.0D</td>
+<td>01.2022 - 04.2022</td>
+<td>Изменена трассировка платы; новая ревизия платы микроконтроллера. Без конденсаторов на входах (улучшено быстродействие входов). Без варисторов на выходах реле</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>v3.4M - v3.4N</td>
+<td>10.2021 - 12.2021</td>
+<td>Без конденсаторов на входах (улучшено быстродействие входов)</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>v3.4L/1</td>
+<td>10.2021</td>
+<td>Партия без варисторов</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>v3.4H - v3.4L</td>
+<td>07.2021 - 10.2021</td>
+<td>На микроконтроллере GD32</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>v3.4G</td>
+<td>05.2021</td>
+<td>На микроконтроллере STM32F042K6T6</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>v3.4A - v3.4F</td>
+<td>07.2020 - 04.2021</td>
+<td>Новая версия WB-MR6C v.2 — с более мощными реле</td>
+</tr>
+</tbody>
+</table>
 </details>
 <table>
 <thead>
@@ -1323,9 +1653,10 @@ include "revisions.md"
 </tbody>
 </table>
 <h2 id="_20">Изображения и чертежи<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
-<p>{%
-   include-markdown "../../includes/other/wb-library.md"
-%}</p>
+<!-- BEGIN INCLUDE ../../includes/other/wb-library.md -->
+<p>Corel Draw 2018 (шрифт — Ubuntu): <a href="../../includes/files/wb-library.cdr.zip">wb-library.cdr.zip</a></p>
+<!-- END INCLUDE -->
+
 <p>SVG: <a href="files/wb-mr6c-v2.svg.zip">wb-mr6c-v2.svg.zip</a></p>
 <p>Autocad 2013 DXF: <a href="files/wb-mr6c-v2.dxf.zip">wb-mr6c-v2.dxf.zip</a></p>
 <p>Autocad PDF: <a href="files/wb-mr6c-v2.pdf">wb-mr6c-v2.pdf</a></p>
