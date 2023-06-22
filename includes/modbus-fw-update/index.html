@@ -448,41 +448,18 @@
   <h1>Modbus fw update</h1>
 
 <p>В устройствах Wiren Board можно обновлять прошивку по протоколу Modbus. Это даёт позволяет расширять функциональные возможности устройств и устранять ошибки в прошивке на месте монтажа.</p>
-<p>?? note "Обновление прошивки с контроллера Wiren Board"</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Обновить прошивки всех подключённых и настроенных на контроллере устройств:
-
-```bash
-wb-mcu-fw-updater update-all
-```
-
-Обновить прошивку определённого устройства:
-
-```bash
-wb-mcu-fw-updater update-fw &lt;порт, на котором находится устройство&gt; -a &lt;modbus адрес устройства&gt;
-```
-
-Обновление загрузчика. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.
-
-```bash
-wb-mcu-fw-updater update-bl &lt;порт, на котором находится устройство&gt; -a &lt;modbus адрес устройства&gt;
-```
+<details class="note">
+<summary>Обновление прошивки с контроллера Wiren Board</summary>
+<p>Обновить прошивки всех подключённых и настроенных на контроллере устройств:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-all
 </code></pre></div></td></tr></table></div>
+<p>Обновить прошивку определённого устройства:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-fw<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
+</code></pre></div></td></tr></table></div>
+<p>Обновление загрузчика. Загрузчик обновляется редко, а сама процедура обновления потенциально опасная. Поэтому не обновляйте загрузчик без особой нужды.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-updater<span class="w"> </span>update-bl<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;
+</code></pre></div></td></tr></table></div>
+</details>
 
   <hr>
 <div class="md-source-file">
