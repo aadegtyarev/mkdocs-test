@@ -84,7 +84,7 @@
     Габариты
 
     {%
-        include-markdown "../../includes/tech-tables/dimensions.md"
+        include "../../includes/tech-tables/dimensions.md"
     %}
 
 ## Общий принцип работы
