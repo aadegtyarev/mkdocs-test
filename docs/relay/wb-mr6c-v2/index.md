@@ -159,6 +159,10 @@
    include-markdown "../includes/mount-relay.md"
 %}
 
+## Монтаж Snippet
+
+--8<-- "../includes/mount-relay.md"
+
 ## Настройка
 
 ## Подключение к контроллеру Wiren Board
@@ -183,6 +187,10 @@
 О восстановлении состояния реле после перебоя питания описано в разделе Режим работы реле при возобновлении питания.
 
 ## Работа по Modbus
+
+{%
+   include-markdown "docs/includes/modbus.md"
+%}
 
 ## Обновление прошивки
 
