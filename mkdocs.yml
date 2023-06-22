@@ -37,8 +37,7 @@ plugins:
 
 markdown_extensions:
   - pymdownx.details
-  - pymdownx.superfences:
-      preserve_tabs: true
+  - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.highlight:
       linenums: true
