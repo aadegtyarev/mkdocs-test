@@ -4,9 +4,10 @@
 
 ??? note "Параметры порта по умолчанию"
 
-    {{{ read_csv('default-params.csv) }}
+    {{ read_csv("default-params.csv") }}
 
-{{ read_csv('default-params.csv) }}
+
+{{ read_csv("default-params.csv") }}
 
 В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.
 
