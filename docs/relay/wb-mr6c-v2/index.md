@@ -286,4 +286,4 @@
 
     Autocad PDF: [wb-mr6c-v2.pdf](files/wb-mr6c-v2.pdf)
 
-![DIN 3U](../../includes/images/din-3u.png)
+![DIN 3U](../../includes/images/din-3u.png){width="400px"}
