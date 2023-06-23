@@ -50,18 +50,24 @@
 
     {%
         include "../../includes/tech-tables/indication.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
     **Управление**
 
     {%
         include "../../includes/tech-tables/control.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
     **Условия эксплуатации**
 
     {%
         include "../../includes/tech-tables/terms-of-use.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
 
@@ -69,12 +75,16 @@
 
     {%
         include "../../includes/tech-tables/klemmy.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
     **Габариты**
 
     {%
         include "../../includes/tech-tables/dimensions-3u.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
     Масса (с коробкой): 155 г
@@ -147,6 +157,8 @@
 
 {%
    include-markdown "../includes/mount-relay.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ??? tip "Пример монтажа"
@@ -180,10 +192,14 @@
 
 {%
    include-markdown "../../includes/webui/device-view-and-control.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 {%
    include-markdown "../includes/webui-view-6ch.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![WB-MR6C v.2 в веб-интерфейсе контроллера](images/devices-view.png)
@@ -192,6 +208,8 @@
 
 {%
    include-markdown "../../includes/modbus/in-devices.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ## Настройка
@@ -200,12 +218,16 @@
 
 {%
    include-markdown "../../includes/modbus/howto-device-set-up.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ### Режимы работы входов
 
 {%
    include-markdown "../includes/settings-inputs-mode.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![Выбор режима](../includes/images/wb-mr6c-v2-select-input-mode.png)
@@ -214,6 +236,8 @@
 
 {%
    include-markdown "../includes/settings-press-actions.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 Нулевой вход по умолчанию отключает все реле.
@@ -224,6 +248,8 @@
 
 {%
    include-markdown "../includes/settings-magging-matric-classic.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![Mapping-матрица](../includes/images/wb-mr6c-v2-mapping-matrix-action.png)
@@ -232,6 +258,8 @@
 
 {%
    include-markdown "../includes/settings-debounce.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![Антидребезг](../includes/images/wb-mr6c-v2-debounce.png)
@@ -240,6 +268,8 @@
 
 {%
    include-markdown "../includes/settings-state-after-power-on.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![Состояние при подаче питания](../includes/images/wb-mr6c-v2-state-after-power-on.png)
@@ -248,6 +278,8 @@
 
 {%
    include-markdown "../includes/settings-safety-mode.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ![Управление с входов в безопасном режиме](../includes/images/wb-mr6c-v2-input-control-safety-mode.png)
@@ -259,10 +291,14 @@
 
 {%
    include-markdown "../../includes/fw-update/modbus-fw-update.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 {%
    include-markdown "../includes/fw-update-save-data.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 ## Известные неисправности
@@ -283,6 +319,8 @@
 
     {%
     include-markdown "../../includes/other/wb-library.md"
+    start="<!--include-start-->"
+    end="<!--include-end-->"
     %}
 
     SVG: [wb-mr6c-v2.svg.zip](files/wb-mr6c-v2.svg.zip)
