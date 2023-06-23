@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/modbus/in-devices/">
+        <link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/includes/webui/change-access-level/">
       
       
       
@@ -17,7 +17,7 @@
     
     
       
-        <title>In devices - Wiren Board Docs</title>
+        <title>Change access level - Wiren Board Docs</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              In devices
+              Change access level
             
           </span>
         </div>
@@ -505,7 +505,7 @@
                   
 
   
-    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/modbus/in-devices.md" title="Редактировать страницу" class="md-content__button md-icon">
+    <a href="https://github.com/aadegtyarev/mkdocs-test/edit/main/docs/includes/webui/change-access-level.md" title="Редактировать страницу" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -513,46 +513,14 @@
   
 
 
-  <h1>In devices</h1>
+  <h1>Change access level</h1>
 
-<div><p>Устройства Wiren Board подключаются через интерфейс RS-485 и управляются по протоколу Modbus RTU. Поддерживаются все основные команды чтения и записи одного или нескольких регистров.</p>
-<p>При использовании контроллера Wiren Board, модули настраиваются мышкой через его веб-интерфейс. В остальных случаях вам нужно использовать сторонние программы, например, modbus_client или Rilheva Modbus Poll.</p>
+<div><p>Для изменения настроек контроллера вам нужен уровень доступа <em>Администратор</em>, который можно выставить в разделе <strong>Настройки</strong> → <strong>Права доступа</strong>.</p>
+<p>После завершения настроек рекомендуем поставить уровень доступа <em>Пользователь</em> или <em>Оператор</em> — это поможет не совершить случайных ошибок при ежедневной работе с веб-интерфейсом.</p>
 <details class="info">
-<summary>Параметры порта по умолчанию</summary>
-<table>
-<thead>
-<tr>
-<th align="right">Значение по умолчанию</th>
-<th align="left">Название параметра в веб-интерфейсе</th>
-<th align="left">Параметр</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">9600</td>
-<td align="left">Baud rate</td>
-<td align="left">Скорость, бит/с</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">Data bits</td>
-<td align="left">Количество битов данных</td>
-</tr>
-<tr>
-<td align="right">nan</td>
-<td align="left">Parity</td>
-<td align="left">Бит чётности</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="left">Stop bits</td>
-<td align="left">Количество стоповых битов</td>
-</tr>
-</tbody>
-</table>
+<summary>Скриншот из веб-интерфейса</summary>
+<p><a href="../images/change-access-level.png">Выбран уровень Администратор</a></p>
 </details>
-<p>В актуальной версии прошивки устанавливать параметр Stop bits необязательно — устройство будет работать без ошибок и в случае, когда количество стоповых битов не совпадает с настройками Modbus-мастер.</p>
-<p>Для ускорения отклика устройств рекомендуем поднять скорость обмена до 115 200 бит/с по <a href="../../../articles/change-devices-modbus-settings/">инструкции</a>.</p>
 <!--include-end--></div>
 
   <hr>
@@ -564,7 +532,7 @@
       
         <br>
         Дата создания:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 23, 2023</span>
       
     
   </small>
