@@ -53,6 +53,9 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test
 edit_uri: edit/main/docs/
