@@ -1372,8 +1372,10 @@
 
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-select-input-mode.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Выбор режима" src="../includes/images/wb-mr6c-v2-select-input-mode.png"></a></p>
 <h3 id="_14">Управление с выключателей<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.17.0</label><label for="__tabbed_4_2">fw &lt; 1.17.0</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <!-- BEGIN INCLUDE ../includes/settings-press-actions.md '&lt;!--include-start--&gt;' '&lt;!--include-end--&gt;' -->
-
 <p>При выборе режима mapping-матрицы для кнопок, вы сможете настроить действия с выходами для каждого их четырёх типов нажатий, что позволит делать сценарные и проходные выключатели. Как это работает, смотрите в разделе <em>Распознавание типов нажатий</em>.</p>
 <details class="info">
 <summary>Диаграмма генерации событий</summary>
@@ -1403,8 +1405,13 @@
 <p><a class="glightbox" href="https://www.youtube.com/embed/lBGJm6FlS7Q" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><div class="video-container"><iframe src="https://www.youtube.com/embed/lBGJm6FlS7Q" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></a></p>
 </details>
 <!-- END INCLUDE -->
-
 <p>Нулевой вход по умолчанию отключает все реле.</p>
+</div>
+<div class="tabbed-block">
+<p>Не поддерживается.</p>
+</div>
+</div>
+</div>
 <p><a class="glightbox" href="../includes/images/wb-mr6c-v2-press-events-action.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Привязка действия к нажатиям" src="../includes/images/wb-mr6c-v2-press-events-action.png"></a></p>
 <h3 id="mapping-">Управление по mapping-матрице<a class="headerlink" href="#mapping-" title="Permanent link">¶</a></h3>
 <!-- BEGIN INCLUDE ../includes/settings-magging-matric-classic.md '&lt;!--include-start--&gt;' '&lt;!--include-end--&gt;' -->
@@ -1417,7 +1424,7 @@
 <!-- BEGIN INCLUDE ../includes/settings-debounce.md '&lt;!--include-start--&gt;' '&lt;!--include-end--&gt;' -->
 
 <p>Для любого из входов реле вы можете настроить фильтр антидребезга в параметре Время подавления дребезга (мс).</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">fw ≥ 1.17.8</label><label for="__tabbed_4_2">fw &lt; 1.17.8</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">fw ≥ 1.17.8</label><label for="__tabbed_5_2">fw &lt; 1.17.8</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Возможные значения от 0 до 250 мс, по умолчанию — 50 мс.</p>
@@ -1493,7 +1500,7 @@
 <li>файл прошивки для нужной сигнатуры, который можно скачать в репозитории http://fw-releases.wirenboard.com/?prefix=fw/</li>
 </ul>
 <p>Записать прошивку из файла в устройство:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Linux</label><label for="__tabbed_5_2">Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Linux</label><label for="__tabbed_6_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher<span class="w"> </span>-j<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
@@ -1506,7 +1513,7 @@
 </div>
 </div>
 <p>Восстановление прошивки, если устройство находится в бутлодере, то есть зелёный индикатор постоянно мигает раз в секунду:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Linux</label><label for="__tabbed_6_2">Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Linux</label><label for="__tabbed_7_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wb-mcu-fw-flasher<span class="w"> </span>-d<span class="w"> </span>&lt;порт,<span class="w"> </span>на<span class="w"> </span>котором<span class="w"> </span>находится<span class="w"> </span>устройство&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;modbus<span class="w"> </span>адрес<span class="w"> </span>устройства&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;путь<span class="w"> </span>к<span class="w"> </span>файлу<span class="w"> </span>прошивки&gt;
@@ -1524,7 +1531,7 @@
 
 <!-- BEGIN INCLUDE ../includes/fw-update-save-data.md '&lt;!--include-start--&gt;' '&lt;!--include-end--&gt;' -->
 
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">fw ≥ 1.19.0</label><label for="__tabbed_7_2">fw &lt; 1.19.0</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">fw ≥ 1.19.0</label><label for="__tabbed_8_2">fw &lt; 1.19.0</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>При использовании загрузчика версии не ниже 1.2.х настройки хранящиеся в памяти модуля не пропадают при обновлении прошивки.</p>
