@@ -9,5 +9,5 @@ search:
 
 ??? info "Скриншот из веб-интерфейса"
 
-    [Выбран уровень Администратор](images/change-access-level.png)
+    ![Выбран уровень Администратор](images/change-access-level.png)
 <!--include-end-->
