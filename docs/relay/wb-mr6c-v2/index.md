@@ -252,7 +252,7 @@
 
     Не поддерживается.
 
-![Привязка действия к нажатиям](../includes/images/wb-mr6c-v2-press-events-action.png)
+    ![Привязка действия к нажатиям](../includes/images/wb-mr6c-v2-press-events-action.png)
 
 ### Управление по mapping-матрице
 
