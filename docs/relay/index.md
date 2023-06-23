@@ -6,4 +6,4 @@
 {{ read_csv('docs/relay/includes/tables/wb-mr-modbus-registers.csv') }}
 
 ## XLSX
-{{ read_excel('docs/relay/includes/tables/wb-mr-modbus-registers.xlsx', , engine='openpyxl') }}
+{{ read_excel('docs/relay/includes/tables/wb-mr-modbus-registers.xlsx', engine='openpyxl') }}
