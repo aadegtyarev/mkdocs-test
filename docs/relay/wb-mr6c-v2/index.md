@@ -42,6 +42,8 @@
 
     {%
         include "../includes/teth-tables-inputs.md"
+        start="<!--include-start-->"
+        end="<!--include-end-->"
     %}
 
     **Индикация**
@@ -166,9 +168,9 @@
 ### Выбор шаблона
 
 {%
-    include-markdown "../../includes/webui/device-template-select.md"
-    start="<!--include-start-->"
-    end="<!--include-end-->"
+   include-markdown "../../includes/webui/device-template-select.md"
+   start="<!--include-start-->"
+   end="<!--include-end-->"
 %}
 
 - в текущем релизе — WB-MR6C v.2, WB-MR6LV/x, WB-MR6HV/x,
