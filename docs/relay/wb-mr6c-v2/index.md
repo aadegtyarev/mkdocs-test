@@ -238,13 +238,19 @@
 
 ### Управление с выключателей
 
-{%
-   include-markdown "../includes/settings-press-actions.md"
-   start="<!--include-start-->"
-   end="<!--include-end-->"
-%}
+=== "fw ≥ 1.17.0"
 
-Нулевой вход по умолчанию отключает все реле.
+    {%
+       include-markdown "../includes/settings-press-actions.md"
+       start="<!--include-start-->"
+       end="<!--include-end-->"
+    %}
+
+    Нулевой вход по умолчанию отключает все реле.
+
+=== "fw < 1.17.0"
+
+    Не поддерживается.
 
 ![Привязка действия к нажатиям](../includes/images/wb-mr6c-v2-press-events-action.png)
 
