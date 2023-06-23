@@ -7,4 +7,4 @@ hide:
 # Карта регистров
 
 ## Общие регистры модулей реле
-{{ read_csv('docs/relay/includes/tables/wb-mr-modbus-registers.csv') }}
+{{ read_csv('docs/relay/includes/tables/wb-mr-modbus-registers.csv', na_filter=False) }}
