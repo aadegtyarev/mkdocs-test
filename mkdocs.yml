@@ -2,9 +2,9 @@ site_name: Wiren Board Docs
 site_url: https://aadegtytarev.github.io/mkdocs-test
 nav:
     - Home: index.md
-        - wb-mqtt-homeui: wb-mqtt-homeui/index.md
-        - wb-mqtt-serial: wb-mqtt-serial/index.md
-        - wb-rules: wb-rules/index.md
+    - wb-mqtt-homeui: wb-mqtt-homeui/index.md
+    - wb-mqtt-serial: wb-mqtt-serial/index.md
+    - wb-rules: wb-rules/index.md
 theme: 
   name: mkdocs
   language: ru
