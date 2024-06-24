@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/soft/wb-rules/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>wb-rules - Wiren Board Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "wb-rules";
+        var mkdocs_page_input_path = "soft/wb-rules/index.md";
+        var mkdocs_page_url = "/mkdocs-test/soft/wb-rules/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Wiren Board Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Софт</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">ПО Wiren Board</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../wb-mqtt-homeui/">wb-mqtt-homeui</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../wb-mqtt-serial/">wb-mqtt-serial</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">wb-rules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Правила</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">Определение правил</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">Типы правил</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dev">Объект dev</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Виртуальные устройства</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">Таймеры</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">Однократные</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">Периодические</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">Просмотр и выполнение правил</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">Управление правилами</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">Пример скрипта</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#meta">Доступ к топикам meta</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api">API создания/управления устройств</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">Встроенные функции и переменные</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#global">global</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#readconfig">readConfig()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definealias">Алиасы defineAlias()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#format">Форматирование строки format()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xformat">Форматирование строки xformat()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#log">Вывод сообщений в лог log.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mqtt-trackmqtt">Подписка на MQTT-топики trackMqtt()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mqtt-publish">Публикация сообщений в MQTT publish()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#spawn">Запуск внешних процессов spawn()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">Модули</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">Расположение</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">Создание модуля</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">Подключение модуля к сценарию</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_16">Сервис оповещений</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_17">Сервис алармов</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_18">Постоянное хранилище</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_19">Изоляция сценариев</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_20">Обходные пути</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_21">Автоматическая перезагрузка сценариев</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_22">Управление логированием</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_23">Установка</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#apt-get">Через apt-get</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_24">Сборка из исходников</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Wiren Board Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Софт</li>
+      <li class="breadcrumb-item active">wb-rules</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/aadegtyarev/mkdocs-test/edit/master/docs/soft/wb-rules/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="wb-rules">wb-rules<a class="headerlink" href="#wb-rules" title="Permanent link">&para;</a></h1>
+<p>Rule engine for Wiren Board, version 2.0</p>
+<p>Движок правил для контроллеров Wiren Board, версия 2.0</p>
+<p><strong>Содержание</strong></p>
+<ul>
+<li><a href="#правила">Правила</a></li>
+<li><a href="#определение-правил">Определение правил</a></li>
+<li><a href="#типы-правил">Типы правил</a></li>
+<li><a href="#объект-dev">Объект dev</a></li>
+<li><a href="#виртуальные-устройства">Виртуальные устройства</a></li>
+<li><a href="#таймеры">Таймеры</a></li>
+<li><a href="#просмотр-и-выполнение-правил">Просмотр и выполнение правил</a></li>
+<li><a href="#управление-правилами">Управление правилами</a></li>
+<li><a href="#пример-скрипта">Пример скрипта</a></li>
+<li><a href="#доступ-к-топикам-meta">Доступ к топикам meta</a></li>
+<li><a href="#api-созданияуправления-устройств">API создания/управления устройств</a></li>
+<li><a href="#встроенные-функции-и-переменные">Встроенные функции и переменные</a></li>
+<li><a href="#модули">Модули</a></li>
+<li><a href="#сервис-оповещений">Сервис оповещений</a></li>
+<li><a href="#сервис-алармов">Сервис алармов</a></li>
+<li><a href="#постоянное-хранилище">Постоянное хранилище</a></li>
+<li><a href="#изоляция-сценариев">Изоляция сценариев</a></li>
+<li><a href="#автоматическая-перезагрузка-сценариев">Автоматическая перезагрузка сценариев</a></li>
+<li><a href="#управление-логированием">Управление логированием</a></li>
+<li><a href="#установка">Установка</a></li>
+</ul>
+<h2 id="_1">Правила<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Правила — специальные скрипты, предназначенные для программирования контроллеров Wiren Board. Правила представляют собой функции с определенным набором параметров.</p>
+<p>Правила пишутся на языке ECMAScript 5 (диалектом которого является Javascript) и загружаются в контроллер в папку <code>/etc/wb-rules</code>.</p>
+<p>Если вы не писали на этом языке, то можете изучить синтаксис и принципы программирования с помощью учебника по JavaScript: https://learn.javascript.ru; но при этом учитавайте отличия и возможности языка ECMAScript 5: https://es5.javascript.ru/.</p>
+<ul>
+<li>вместо <code>alert()</code> используйте <code>log()</code>;</li>
+<li><code>let</code> не поддерживается, попробуйте использовать <code>var</code>;</li>
+<li>не поддерживаются функции-стрелки — это когда пишут <code>var sum = (a, b) =&gt; a + b;</code> вместо <code>var sum = function(a, b) {return a + b;};</code>, второй вариант будет работать.</li>
+</ul>
+<h3 id="_2">Определение правил<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Правила определяются при помощи функции defineRule:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">(</span><span class="nx">name</span><span class="p">,{</span>
+<span class="w">  </span><span class="nx">Тип_правила</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Параметр <strong>name</strong> — произвольное имя правила (не обязательный); <strong>Тип_правила</strong> — указывается один из существующих типов правил (читайте ниже), определяет условия для срабатывания правила; <strong>then</strong> — определяет функцию, которая выполняется при срабатывании правила.
+Например:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;Examle_rule&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mydev/test&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;mydev/test changed&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_3">Типы правил<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>whenChanged.</strong> При задании <code>whenChanged</code> правило срабатывает при любых изменениях значений параметров, указанных в массиве. Каждый параметр задаётся в виде "имя устройства/имя параметра":
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Правило выводит в лог состояние переключателей Devices → Discrete I/O → A1_OUT и Devices → Discrete I/O → A2_OUT</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;test_whenChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;wb-gpio/A1_OUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wb-gpio/A2_OUT&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// топики, при изменении которых сработает правило</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;devName:{}, cellName:{}, newValue:{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">,</span><span class="w"> </span><span class="nx">newValue</span><span class="p">);</span><span class="w"> </span><span class="c1">// вывод сообщения в лог</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Если нужно отслеживать один топик, то вместо массива можно просто задать строку "имя устройства/имя параметра":
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Правило выводит в лог состояние переключателя Devices → Discrete I/O → A1_OUT</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;test_whenChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;wb-gpio/A1_OUT&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// топик, при изменении которого сработает правило</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;devName:{}, cellName:{}, newValue:{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">,</span><span class="w"> </span><span class="nx">newValue</span><span class="p">);</span><span class="w"> </span><span class="c1">// вывод сообщения в лог</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p>В функцию, заданную в значении ключа <code>then</code>, передаются в качестве
+аргументов текущее значение параметра <code>newValue</code>, имя устройства <code>devName</code> и имя параметра <code>cellName</code>, изменение которого привело к срабатыванию правила.</p>
+<p>В случае, если правило сработало из-за изменения функции, фигурирующей в <code>whenChanged</code>, в качестве единственного аргумента в <code>then</code> передаётся текущее значение этой функции.</p>
+<p>Если срабатывание правила не связано непосредственно
+с изменением параметра (например, вызов при инициализации, по таймеру или через <code>runRule()</code>), <code>then</code> вызывается без аргументов, т.е. значением всех трёх аргументов будет <code>undefined</code>.</p>
+<p><code>whenChanged</code> — правила вызываются также и при первом
+просмотре правил, если фигурирующие непосредственно в списке
+или внутри вызываемых функций параметры определены среди retained-значений
+(см. подробности ниже в разделе <em>Просмотр и выполнение правил</em>).</p>
+<p><code>whenChanged</code> также следует использовать для параметров типа <code>pushbutton</code> — правила, в списке <code>whenChanged</code>
+которых фигурируют <code>pushbutton</code>-параметры, срабатывают
+каждый раз при нажатии на кнопку в пользовательском
+интерфейсе. При использовании <code>whenChanged</code> для кнопок не даётся
+никаких гарантий по поводу значения <code>newValue</code>, передаваемого в
+<code>then</code>.</p>
+<p><strong>asSoonAs.</strong> Правила, задаваемые при помощи <code>asSoonAs</code>, называются edge-triggered и срабатывают в случае, если значение функции, заданной в <code>asSoonAs</code> было ложным и стало истинным. Важно понимать, что функция, заданная в <code>asSoonAs</code> будет выполняться при каждом просмотре правил, поэтому перегружать её не надо.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Правило сработает, когда переключатель Devices → Discrete I/O → A1_OUT будет включён и выключит его</span>
+<span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;wb-gpio/A1_OUT&quot;</span><span class="p">];</span><span class="w"> </span><span class="c1">// правило сработает, когда значение параметра изменится на истинное</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Переключатель {} включён! Выключаем…&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;wb-gpio/A1_OUT&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">newValue</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Выключили.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>when.</strong> Правила, задаваемые при помощи <code>when</code>, называются level-triggered,
+и срабатывают при каждом просмотре, при котором функция, заданная в <code>when</code>, возвращает
+истинное значение. При срабатывании правила выполняется функция, заданная
+в свойстве <code>then</code>.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Правило сработает, когда переключатель Devices → Discrete I/O → A1_OUT будет включён</span>
+<span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;wb-gpio/A1_OUT&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;devName:{}, cellName:{}, newValue:{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">,</span><span class="w"> </span><span class="nx">newValue</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>cron-правила</strong> — это отдельный тип правил, которые задаются так:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;crontest_hourly&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="nx">cron</span><span class="p">(</span><span class="s2">&quot;@hourly&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;@hourly rule fired&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+Вместо <code>@hourly</code> здесь можно задать любое выражение, допустимое в
+стандартном crontab, например, <code>00 00 20 * *</code> (секунды минуты часы, выполнять правило каждый
+день в 20:00).</p>
+<h3 id="dev">Объект <code>dev</code><a class="headerlink" href="#dev" title="Permanent link">&para;</a></h3>
+<p>Объект 'dev' определяет MQTT-топик в правилах wb-rules.</p>
+<p>Синтаксис:</p>
+<p><code>dev["device/control"]</code></p>
+<p>где, device — имя устройства в MQTT-топике, control — название контрола.</p>
+<p>Параметры <strong>device</strong> и <strong>control</strong> содерджатся в полном адресе топика, который имеет вид <code>/devices/device/controls/control</code>.</p>
+<p>Альтернативный синтаксис:</p>
+<p><code>dev["device"]["control"]</code> или, что то же самое, <code>dev.device.control</code>.</p>
+<p>Значение параметра зависит от его типа: <code>switch</code>, <code>alarm</code> —
+булевский тип, <code>text</code> — строковый, остальные известные типы параметров,
+кроме уставок диммеров (тип rgb), считаются числовыми, уставки диммеров (тип rgb)
+и неизвестные типы параметров — строковыми.</p>
+<p>Не следует использовать объект <code>dev</code> вне кода правил. Не следует
+присваивать значения параметрам через <code>dev</code> вне <code>then</code>-функций правил
+и функций обработки таймеров (коллбэки <code>setInterval</code> /
+<code>setTimeout</code>). В обоих случаях последствия не определены.</p>
+<p>Операция присваивания <code>dev[...] = ...</code> в <code>then</code> всегда приводит к
+публикации MQTT-сообщения, даже если значение параметра не изменилось.
+В случае виртуальных устройств новое значение публикуется в топике
+<code>/devices/.../controls/...</code>, и соответствующее значение
+<code>dev[...]</code> изменяется сразу:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;virtdev&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;someRule&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;virtdev/someparam&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// публикация 42 -&gt; /devices/virtdev/controls/someparam</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;v={}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;virtdev/someparam&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// всегда выдаёт v=42</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p>В случае внешних устройств новое значение публикуется в топике
+<code>/devices/.../controls/.../on</code>, а соответствующее значение
+<code>dev[...]</code> изменится только после получения ответного значения в
+топике <code>/devices/.../controls/...</code> от драйвера устройства:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;anotherRule&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;extdev/someparam&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// публикация 42 -&gt; /devices/extdev/controls/someparam</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;v={}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;extdev/someparam&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// выдаёт старое значение</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_4">Виртуальные устройства<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>С помощью виртуальных устройств можно создать управляющий элемент
+с внутренним набором функций, например, термостат.</p>
+<p>Виртуальным устройствам и контролам можно присваивать русские имена, задавая <code>title</code> в виде <code>title: { en: ’Title’, ru: ’Заголовок’ }</code>, или через <code>setTitle</code> у контрола: <code>setTitle({ en: ’Title’, ru: ’Заголовок’ })</code>.</p>
+<p>Для значений параметров с типом <code>value</code> и <code>text</code> можно использовать перечисления enum в виде набора именованных констант. Перечисления удобно использовать, когда значение параметра может принимать ограниченное количество значений, например, дни недели.</p>
+<p>Чтобы задать перечисление используйте для нужного контрола параметр <code>enum</code> с набором пар <code>“ключ”: “значение”</code>. Для значений можно использвоать переводы в формате <code>“ключ”: {en: 'Value', ru: 'Значение'}</code>.</p>
+<p>Если параметр имеет тип <code>value</code> каждый ключ должен быть строковым числом в десятичном или шестнадцатеричном формате.</p>
+<p>Виртуальное устройство задаётся так:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s1">&#39;my-virtual-device&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My Virtual Device&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ru</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Мое виртуальное устройство&#39;</span><span class="p">}</span><span class="w"> </span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">ControlName1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Name 1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;switch&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">ControlName2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Name 2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;range&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;State&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ru</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Состояние&#39;</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ru</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;В норме&#39;</span><span class="p">},</span>
+<span class="w">          </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Warning&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ru</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Внимание&#39;</span><span class="p">},</span>
+<span class="w">          </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">en</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Crash&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ru</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Авария&#39;</span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+Описание параметров — ECMAScript-объект, ключами которого являются имена параметров,
+а значениями — описания параметров.</p>
+<p>Поля объекта:
+* <code>title</code> — имя, публикуемое в MQTT-топике <code>/devices/.../controls/.../meta/title</code> для данного параметра.
+* <code>type</code> — тип, публикуемый в MQTT-топике <code>/devices/.../controls/.../meta/type</code> для данного параметра.
+* <code>value</code> — значение параметра по умолчанию (топик <code>/devices/.../controls/...</code>).
+* <code>forceDefault</code> — когда задано истинное значение, при запуске контроллера параметр всегда
+устанавливается в значение по умолчанию. Иначе он будет установлен в последнее сохранённое значение.
+* <code>lazyInit</code> — когда задано истинное значение, при описании контрола в коде фактическое создание его
+в mqtt происходить не будет до тех пор, пока этому контролу не будет присвоено какое-то значение
+(например <code>dev[deviceID][controlID] = "string"</code>)
+* <code>max</code> для параметра типа <code>range</code> может задавать его максимально допустимое значение.
+* <code>min</code> для параметра типа <code>range</code> может задавать его минимально допустимое значение.
+* <code>readonly</code> — когда задано истинное значение, параметр объявляется read-only
+  (публикуется <code>1</code> в <code>/devices/.../controls/.../meta/readonly</code>).</p>
+<p>По умолчанию <code>forceDefault == false</code>, т.е. если флаг не задан явно, при запуске параметр
+примет предыдущее сохранённое значение (если оно существует и <code>lazyInit != true</code>; для новых виртуальных
+устройств будет записано значение по умолчанию при условии <code>lazyInit != true</code>). Для того, чтобы вернуть старое поведение
+wb-rules (не использовать сохранённое значение при запуске), задайте явно forceDefault = true.</p>
+<p>По умолчанию <code>lazyInit == false</code>, т.е. в этом случае при запуске контрол примет предыдущее сохранённое
+значение (при условии, что оно существует и <code>forceDefault != true</code>). Если же задать <code>lazyInit = true</code>,
+то в этом случае хранилище значений не будет использоваться для этого контрола ни для чтения, ни для записи,
+а сам контрол отобразится в mqtt только после присвоения ему значения в первый раз.</p>
+<h2 id="_5">Таймеры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">Однократные<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>setTimeout(callback, milliseconds)</code> запускает однократный таймер,
+вызывающий при срабатывании функцию, переданную в качестве аргумента
+<code>callback</code>. Возвращает положительный целочисленный идентификатор
+таймера, который может быть использован в качестве аргумента функции
+<code>clearTimeout()</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;test_buzzer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Buzzer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pushbutton&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<p><code>startTimer(name, milliseconds)</code>
+запускает однократный таймер с указанным именем.</p>
+<p>Таймер становится доступным как <code>timers.&lt;name&gt;</code>. При срабатывании таймера происходит просмотр правил, при этом <code>timers.&lt;name&gt;.firing</code> для этого таймера становится истинным на время этого просмотра.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;test_buzzer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Buzzer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;switch&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,{</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">startTimer</span><span class="p">(</span><span class="s2">&quot;one_second&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// включаем пищалку</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">timers</span><span class="p">.</span><span class="nx">one_second</span><span class="p">.</span><span class="nx">firing</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// выключаем пищалку</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_7">Периодические<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><code>setInterval(callback, milliseconds)</code> запускает периодический таймер,
+вызывающий при срабатывании функцию, переданную в качестве аргумента
+<code>callback</code>. Возвращает положительный целочисленный идентификатор
+таймера, который может быть использован в качестве аргумента функции
+<code>clearTimeout()</code>.</p>
+<p><code>clearTimeout(id)</code> останавливает таймер с указанным идентификатором.
+Функция <code>clearInterval(id)</code> является alias'ом <code>clearTimeout()</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;test_buzzer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Buzzer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;pushbutton&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">test_interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">test_interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">];</span>
+<span class="w">        </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">){</span>
+<span class="w">          </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">test_interval</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<p><code>startTicker(name, milliseconds)</code>
+запускает периодический таймер с указанным интервалом, который также становится доступным как <code>timers.&lt;name&gt;</code>.</p>
+<p>Метод <code>stop()</code> таймера (обычного или периодического) приводит к его останову.</p>
+<p>Объект <code>timers</code> устроен таким образом, что <code>timers.&lt;name&gt;</code> для любого произвольного
+<code>&lt;name&gt;</code> всегда возвращает "таймероподобный" объект, т.е. объект с методом
+<code>stop()</code> и свойством <code>firing</code>. Для неактивных таймеров <code>firing</code> всегда содержит
+<code>false</code>, а метод <code>stop()</code> ничего не делает.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;test_buzzer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test Buzzer&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;switch&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,{</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">startTicker</span><span class="p">(</span><span class="s2">&quot;one_second&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">timers</span><span class="p">.</span><span class="nx">one_second</span><span class="p">.</span><span class="nx">firing</span><span class="p">;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;test_buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">timers</span><span class="p">.</span><span class="nx">one_second</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+<span class="w">      </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;buzzer/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_8">Просмотр и выполнение правил<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Здесь мы рассмотрим подробно механизм просмотра и выполнения правил. Рекомендуем внимательно прочитать — это поможет в случае возникновения непонятных ситуаций
+с несрабатывающими правилами.</p>
+<p>Правила просматриваются:
+* при инициализации rule engine после получения всех retained-значений из MQTT;
+* при изменении метаданных устройств (добавлении и переименовании устройств);
+* при изменении любого параметра, доступного в MQTT (<code>/devices/+/controls/+</code>).
+  В данном случае в целях оптимизации правила просматриваются избирательно (см. ниже);
+* при срабатывании таймера, запущенного при помощи <code>startTimer()</code> или
+  <code>startTicker()</code>.
+  В данном случае правила также просматриваются избирательно (см. ниже);
+* при явном вызове <code>runRule()</code> из обработчика таймера, заданного по
+  <code>setTimeout()</code> или <code>setInterval()</code>.</p>
+<p>Для просмотра правил важным является понятие <em>полного</em> (complete) параметра.
+Параметр считается полным, когда для него по MQTT получены как значение,
+так и тип (<code>.../meta/type</code>). В отладочном режиме попытки
+обращения к неполным параметрам в функциях, фигурирующих
+в <code>when</code>, <code>asSoonAs</code> и <code>whenChanged</code> приводят к записи
+в лог сообщения <strong>skipping rule due to incomplete cell</strong>.</p>
+<p>Ниже описаны способы просмотра правил различного типа.
+Обратите внимание на оптимизацию просмотра правил
+при получении MQTT-значений и срабатывании таймеров, запущенных
+через <code>startTimer()</code> или <code>startTicker()</code>. Эта оптимизация
+может привести к нежелательным результатам, если в условиях
+правила фигурируют изменяемые пользовательские глобальные переменные,
+т.к. факт доступа к этим переменным не фиксируется
+и их изменение может не повлечь за собой просмотр правила
+при последующих срабатываниях таймера или получении
+MQTT-значений.
+Поэтому вместо изменяемых пользовательских глобальных переменных
+в условиях правил рекомендуем использовать параметры
+виртуальных устройств.</p>
+<p>Срабатывание правила означает вызов <code>then</code>-функции этого правила.</p>
+<p><strong>when (level-triggered).</strong> Просмотр level-triggered правил (when) осуществляется следующим
+образом: вызывается функция, заданная в <code>when</code>. Если функция
+обращается хотя бы к одному неполному параметру, правило не
+выполняется. Если функция не обращалась к неполным параметрам
+и вернула истинное значение, правило выполняется.</p>
+<p>В любом
+случае все параметры, доступные через <code>dev</code>, доступ к которым
+осуществлялся во время выполнения функции, фиксируются, и в
+дальнейшем при получении значений параметров из MQTT правило
+просматривается только тогда, когда topic полученного сообщения
+относится к параметру, хотя бы раз опрашивавшемуся в <code>when</code>-функции
+данного правила.</p>
+<p>Аналогичным образом фиксируется доступ
+к объекту <code>timers</code> - при срабатывании таймеров, запущенных
+через <code>startTimer()</code> или <code>startTicker()</code>, правило просматривается
+только в том случае, если его <code>when</code>-функция хотя бы раз
+обращалась к данному конкретному правилу.</p>
+<p><strong>asSoonAs (edge-triggered).</strong> Просмотр edge-triggered правил (asSoonAs) осуществляется следующим
+образом: вызывается функция, заданная в <code>asSoonAs</code>. Если функция
+обращается хотя бы к одному неполному параметру, правило не
+выполняется. Если функция не обращалась к неполным параметрам
+и вернула истинное значение, и при этом правило просматривается
+первый раз, либо при предыдущем просмотре значение функции
+было ложным, правило выполняется.</p>
+<p>В любом случае все параметры,
+доступные через <code>dev</code>, доступ к которым осуществлялся во время
+выполнения функции, фиксируются, и в дальнейшем при получении
+значений параметров из MQTT правило просматривается только тогда,
+когда topic полученного сообщения относится к параметру, хотя
+бы раз опрашивавшемуся в <code>asSoonAs</code>-функции данного правила.</p>
+<p>Аналогичным образом фиксируется доступ к объекту <code>timers</code> -
+при срабатывании таймеров, запущенных через <code>startTimer()</code>
+или <code>startTicker()</code>, правило просматривается
+только в том случае, если его <code>asSoonAs</code>-функция хотя бы раз
+обращалась к данному конкретному правилу.</p>
+<p><strong>whenChanged.</strong> Просмотр правил, срабатывающих на изменение значения
+(<code>whenChanged</code>) происходит следующим образом. При просмотре
+во время инициализации правило срабатывает, если хотя бы один
+из параметров, непосредственно перечисленных в <code>whenChanged</code>,
+является полным, либо если хотя бы одна из функций, перечисленных
+в <code>whenChanged</code>, при вызове <strong>не</strong> обращается к неполным параметрам.</p>
+<p>При получении MQTT-значений параметров правило срабатывает,
+в случае, если выполнено хотя бы одно из следующих условий:
+* после прихода сообщения соответствующий параметр является
+  полным, изменил своё значение с момента прошлого просмотра
+  и непосредственно упомянут в <code>whenChanged</code>;
+* после прихода сообщения соответствующий параметр является
+  полным, имеет тип <code>pushbutton</code> и непосредственно упомянут
+  в <code>whenChanged</code>;
+* хотя бы одна из функций, фигурирующих в <code>whenChanged</code>,
+  не обращается к неполным параметрам и возвращает
+  значение, отличное от того, которое она вернула
+  при предшествующем просмотре.</p>
+<p>Во время работы функций, фигурирующих в <code>whenChanged</code>,
+доступ к параметрам через <code>dev</code> фиксируется и в дальнейшем
+при получении значений параметров из MQTT правило просматривается
+только тогда, когда topic полученного сообщения относится
+к параметру, хотя бы раз опрашивавшемуся в какой либо
+из функций, фигурирующих в <code>whenChanged</code> правила, либо
+непосредственно упомянутому в <code>whenChanged</code>.</p>
+<p>При срабатывании таймеров, запущенных через <code>startTimer()</code>
+или <code>startTicker()</code>, <code>whenChanged</code>-правила не просматриваются.</p>
+<p>Cron-правила обрабатываются отдельно от остальных правил при
+наступлении времени, удовлетворяющего заданному в определении правила
+cron-выражению.</p>
+<p><strong>Важно!</strong> Чтобы избежать труднопредсказуемое поведение в функциях,
+фигурирующих в <code>when</code>, <code>asSoonAs</code> и <code>whenChanged</code>
+не рекомендуем использовать <em>side effects</em>, т.е.
+менять состояние программы (изменять значение глобальных
+переменных, значений параметров, запускать таймеры и т.д.)
+Важно понимать, что система не даёт никаких
+гарантий по тому, сколько раз будут вызываться эти функции
+при просмотрах правил.</p>
+<h2 id="_9">Управление правилами<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>В wb-rules 2.0 появилась возможность управлять выполнением правил. Теперь функция <code>defineRule()</code> возвращает идентификатор созданного правила (аналогично <code>setTimeout()</code>/<code>setInterval()</code>), который можно использовать позже для выключения/включения отработки правила или принудительного запуска тела правила.</p>
+<p>По умолчанию, все правила включены.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">myRule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mydev/test&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;mydev/test changed&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// ...</span>
+
+<span class="nx">disableRule</span><span class="p">(</span><span class="nx">myRule</span><span class="p">);</span><span class="w"> </span><span class="c1">// отключить проверку и выполнение правила</span>
+<span class="nx">enableRule</span><span class="p">(</span><span class="nx">myRule</span><span class="p">);</span><span class="w"> </span><span class="c1">// разрешить выполнение правила</span>
+
+<span class="nx">runRule</span><span class="p">(</span><span class="nx">myRule</span><span class="p">);</span><span class="w"> </span><span class="c1">// принудительно запустить тело правила (функцию then)</span>
+<span class="c1">// на текущий момент не поддерживается передача аргументов в then</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_10">Пример скрипта<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>Пример файла с правилами (<code>sample1.js</code>):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Определяем виртуальное устройство relayClicker</span>
+<span class="c1">// с параметром enabled типа switch. MQTT-topic параметра —</span>
+<span class="c1">// /devices/relayClicker/controls/enabled</span>
+<span class="nx">defineVirtualDevice</span><span class="p">(</span><span class="s2">&quot;relayClicker&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Relay Clicker&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Название устройства /devices/relayClicker/meta/name</span>
+<span class="w">  </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// параметры</span>
+<span class="w">    </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// /devices/relayClicker/controls/enabled</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="w">  </span><span class="c1">// тип (.../meta/type)</span>
+<span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w">     </span><span class="c1">// значение по умолчанию</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// правило с именем startClicking</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;startClicking&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// edge-triggered-правило - выполняется, только когда значение</span>
+<span class="w">    </span><span class="c1">// данной функции меняется и при этом становится истинным</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;relayClicker/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;uchm121rx/Input 0&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// выполняется при срабатывании правила</span>
+<span class="w">    </span><span class="nx">startTicker</span><span class="p">(</span><span class="s2">&quot;clickTimer&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;stopClicking&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;relayClicker/enabled&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;uchm121rx/Input 0&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">timers</span><span class="p">.</span><span class="nx">clickTimer</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;doClick&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">when</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// level-triggered правило - срабатывает каждый раз при</span>
+<span class="w">    </span><span class="c1">// просмотре данного правила, когда timers.clickTimer.firing</span>
+<span class="w">    </span><span class="c1">// истинно. Такое происходит при просмотре правила</span>
+<span class="w">    </span><span class="c1">// вследствие срабатывании таймера timers.clickTimer.firing</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">timers</span><span class="p">.</span><span class="nx">clickTimer</span><span class="p">.</span><span class="nx">firing</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// отправляем значение в /devices/uchm121rx/controls/Relay 0/on</span>
+<span class="w">    </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;uchm121rx/Relay 0&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;uchm121rx/Relay 0&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Срабатывание при изменения значения параметра.</span>
+<span class="w">  </span><span class="c1">// Вызывается также при первоначальном просмотре</span>
+<span class="w">  </span><span class="c1">// правил, если /devices/wb-w1/controls/00042d40ffff</span>
+<span class="w">  </span><span class="c1">// и /devices/wb-w1/controls/00042d40ffff/meta/type</span>
+<span class="w">  </span><span class="c1">// были среди retained-значений</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;wb-w1/00042d40ffff&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Запуск shell-команды</span>
+<span class="w">    </span><span class="nx">runShellCommand</span><span class="p">(</span><span class="s2">&quot;echo &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">devName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">cellName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">captureOutput</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">exitCallback</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">exitCode</span><span class="p">,</span><span class="w"> </span><span class="nx">capturedOutput</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;cmd output: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">capturedOutput</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// при необходимости можно определять глобальные функции</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">cellSpec</span><span class="p">(</span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// используем форматирование строк</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">devName</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;(no cell)&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{}/{}&quot;</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// пример правила, срабатывающего по изменению значений функции</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;funcValueChange2&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="c1">// Правило срабатывает, когда изменяется значение</span>
+<span class="w">    </span><span class="c1">// /devices/somedev/controls/cellforfunc1 или</span>
+<span class="w">    </span><span class="c1">// меняется значение выражения dev[&quot;somedev/cellforfunc2&quot;] &gt; 3.</span>
+<span class="w">    </span><span class="c1">// Также оно срабатывает при первоначальном просмотре</span>
+<span class="w">    </span><span class="c1">// правил если хотя бы один из используемых в</span>
+<span class="w">    </span><span class="c1">// whenChanged параметров находится среди retained-значений.</span>
+<span class="w">    </span><span class="s2">&quot;somedev/cellforfunc1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;somedev/cellforfunc2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// при использовании whenChanged в then-функцию</span>
+<span class="w">    </span><span class="c1">// передаётся newValue - значение изменившегося</span>
+<span class="w">    </span><span class="c1">// параметра или функции, упомянутой в whenChanged.</span>
+<span class="w">    </span><span class="c1">// В случае, когда правило срабатывает</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;funcValueChange2: {}: {} ({})&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cellSpec</span><span class="p">(</span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="nx">newValue</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="meta">Доступ к топикам meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
+<p>Предусмотрен доступ к топкам <code>/devices/.../controls/.../meta/...</code> как внешних устройств (только чтение), так и локально определённых виртуальных (чтение и запись).</p>
+<p>Получить значение meta-топика: <code>dev["wb-mr3_48/K1#error"]</code> или <code>dev["wb-mr3_48/K1#readonly"]</code></p>
+<p>Установить значение meta-топика виртуального устройства: <code>dev["virDev1/cell1#error"] = "some error"</code> или <code>dev["virDev1/cell2#max"] = 255</code></p>
+<p>Значения meta-топиков можно использовать в правилах как триггеры. Например, можно отслеживать когда теряется связь с устройством и каким-либо образом на это реагировать:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// отправим смс каждый раз, когда первое реле на модуле WB-MR3 станет недоступно</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;onRelayLost&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// также возможно использовать параметр when</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;wb-mr3_48/K1#error&quot;</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;ERROR: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">dev</span><span class="p">[</span><span class="s2">&quot;wb-mr3_48/K1#error&quot;</span><span class="p">]);</span>
+<span class="w">    </span><span class="nx">Notify</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(...);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Для отслеживания изменения значений также доступен триггер <code>whenChanged</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// отправим смс как при потере так и восстановлении связи с реле</span>
+<span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;onChange&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">whenChanged</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;wb-mr3_48/K1#error&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span><span class="w"> </span><span class="nx">devName</span><span class="p">,</span><span class="w"> </span><span class="nx">cellName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="nx">newValue</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Notify</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;relay is broken&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Notify</span><span class="p">.</span><span class="nx">sendSMS</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;relay is OK&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="api">API создания/управления устройств<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>Функция <code>defineVirtualDevice()</code> возвращает объект, представляющей собой виртуальное устройство.
+Также этот объект можно получить с помощью глобальной функции <code>getDevice(&lt;id девайса&gt;)</code>. Аналогично, можно получить объект контрола
+при помощи глобальной функции <code>getControl(&lt;id девайса&gt;/&lt;id контрола&gt;)</code>, т.е. для получения контрола <code>ctrlID</code> на девайсе <code>deviceID</code> нужно вызвать <code>getControl("deviceID/ctrlID")</code>.</p>
+<p>К девайсу можно добавлять котролы динамически при помощи метода <code>addControl(&lt;id контрола&gt;, {описание параметров})</code>, удалять — <code>removeControl(&lt;id контрола&gt;)</code>.</p>
+<p>Для проверки контрола на существование можно воспользоваться функцией <code>isControlExists(&lt;id контрола&gt;)</code>. Так как при попытке установить
+значения контролов не виртуальных (внешних) девайсов возникает исключение — для проверки на принадлежность девайса можно использовать
+метод <code>isVirtual()</code>.</p>
+<p>Для удобства выполнения операция над всеми контролами, присутствующими на девайсе можно использовать
+метод получения массива контролов <code>controlsList()</code> и, например, итерировать его так:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">getDevice</span><span class="p">(</span><span class="s2">&quot;deviceID&quot;</span><span class="p">).</span><span class="nx">controlsList</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ctrl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<p>Полный список методов объекта девайса:
+* <code>getId() =&gt; string</code>
+* <code>getDeviceId() =&gt; string</code> - deprecated, используйте <code>getId()</code>
+* <code>getCellId(string) =&gt; string</code>
+* <code>addControl(string, {описание параметров})</code>
+* <code>removeControl(string)</code>
+* <code>getControl(string) =&gt; __wbVdevCellPrototype</code>
+* <code>isControlExists(string) =&gt; boolean</code>
+* <code>controlsList() =&gt; []__wbVdevCellPrototype</code>
+* <code>isVirtual() =&gt; boolean</code></p>
+<p>Контролам можно устанавливать значения мета-полей при помощи сеттеров.
+Например, установить <code>description</code> можно при помощи метода <code>setDescription(string)</code>, <code>units</code> — <code>setUnits(string)</code> и т.д.
+Аналогично можно и получать значения этих полей геттерами, например, для <code>description</code> — <code>getDescription()</code></p>
+<p>Полный список методов объекта контрола смотрите ниже.</p>
+<p>Setters:
+* <code>setTitle(string)</code> или <code>setTitle({ en: string, ru: string })</code>
+* <code>setEnumTitles(object)</code> (параметр вида <code>{'val1': {'en': 'Title1', 'ru': 'Заголовок1'}, ...}</code>)
+* <code>setDescription(string)</code>
+* <code>setType(string)</code>
+* <code>setUnits(string)</code>
+* <code>setReadonly(string)</code>
+* <code>setMax(string)</code>
+* <code>setMin(string)</code>
+* <code>setError(string)</code>
+* <code>setOrder(string)</code>
+* <code>setValue(any)</code> или <code>setValue({ value: any, notify: bool })</code></p>
+<p>Getters:
+* <code>getId() =&gt; string</code>
+* <code>getTitle(string?) =&gt; string</code> (опциональный параметр - язык заголовка, "en" по умолчанию)
+* <code>getDescription() =&gt; string</code>
+* <code>getType() =&gt; string</code>
+* <code>getUnits() =&gt; string</code>
+* <code>getReadonly() =&gt; boolean</code>
+* <code>getMax() =&gt; number</code>
+* <code>getMin() =&gt; number</code>
+* <code>getError() =&gt; string</code>
+* <code>getOrder() =&gt; number</code>
+* <code>getValue() =&gt; any</code></p>
+<h2 id="_11">Встроенные функции и переменные<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="global"><code>global</code><a class="headerlink" href="#global" title="Permanent link">&para;</a></h3>
+<p><code>global</code> - глобальный объект ECMAScript (в браузерном JavaScript
+глобальный объект доступен, как window)</p>
+<h3 id="readconfig"><code>readConfig()</code><a class="headerlink" href="#readconfig" title="Permanent link">&para;</a></h3>
+<p><code>readConfig(path)</code> считывает конфигурационный файл в формате JSON,
+находящийся по указанному пути. Генерирует исключение, если файл не найден,
+не может быть прочитан или разобран. Ожидается что корневой элемент JSON'а является объектом.
+Поддерживаются однострочные <code>//</code> и многострочные <code>/* ... */</code> комментарии.
+Для чтения массива, вместо:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>rules.js
+var<span class="w"> </span><span class="nv">conf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>readConfig<span class="o">(</span><span class="s2">&quot;test.conf&quot;</span><span class="o">)</span><span class="p">;</span>
+$<span class="w"> </span>cat<span class="w"> </span>test.conf
+<span class="o">[</span>
+<span class="w">  </span>...
+<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+Используйте, например:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>rules.js
+var<span class="w"> </span><span class="nv">conf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>readConfig<span class="o">(</span><span class="s2">&quot;test.conf&quot;</span><span class="o">)</span>.config<span class="p">;</span>
+$<span class="w"> </span>cat<span class="w"> </span>test.conf
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;config&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">    </span>...
+<span class="w">  </span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="definealias">Алиасы <code>defineAlias()</code><a class="headerlink" href="#definealias" title="Permanent link">&para;</a></h3>
+<p><code>defineAlias(name, "device/param")</code> задаёт альтернативное имя для параметра.
+Например, после выполнения <code>defineAlias("heaterRelayOn", "Relays/Relay 1");</code> выражение
+<code>heaterRelayOn = true</code> означает то же самое, что <code>dev["Relays/Relay 1"] = true</code>.</p>
+<h3 id="format">Форматирование строки <code>format()</code><a class="headerlink" href="#format" title="Permanent link">&para;</a></h3>
+<p><code>"...".format(arg1, arg2, ...)</code> осуществляет последовательную замену
+подстрок <code>{}</code> в указанной строке на строковые представления своих
+аргументов и возвращает результирующую строку. Например,
+<code>"a={} b={}".format("q", 42)</code> даёт <code>"a=q b=42"</code>. Для включения символа
+<code>{</code> в строку формата следует использовать <code>{{</code>: <code>"a={} {{}".format("q")</code>
+даёт <code>"a=q {}"</code>. Если в списке аргументов <code>format()</code> присутствуют лишние
+аргументы, они добавляются в конец строки через пробел: <code>"abc {}:".format(1, 42)</code>
+даёт <code>"abc 1: 42"</code>.</p>
+<h3 id="xformat">Форматирование строки <code>xformat()</code><a class="headerlink" href="#xformat" title="Permanent link">&para;</a></h3>
+<p><code>"...".xformat(arg1, arg2, ...)</code> осуществляет последовательную замену
+подстрок <code>{}</code> в указанной строке на строковые представления своих
+аргументов и возвращает результирующую строку. Например,
+<code>"a={} b={}".xformat("q", 42)</code> даёт <code>"a=q b=42"</code>. Для включения символа
+<code>{</code> в строку формата следует использовать <code>\{</code> (<code>\\{</code> внутри
+строковой константы ECMAScript): <code>"a={} \\{}".xformat("q")</code>
+даёт <code>"a=q {}"</code> (важно! в <code>format()</code>, в отличие от <code>xformat()</code>,
+для escape используется две фигурные скобки). Кроме того, <code>xformat()</code>
+позволяет включать в текст результат выполнения произвольных ECMAScript-выражений:
+<code>"Some value: {{dev["abc/def"]}}"</code>. В этой связи <code>xformat()</code>
+следует использовать с осторожностью в тех случаях, когда
+непривелегированный пользователь может влиять на содержимое
+строки формата.</p>
+<h3 id="log">Вывод сообщений в лог <code>log.</code><a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
+<p><code>log.{debug,info,warning,error}(fmt, [arg1 [, ...]])</code> выводит
+сообщение в лог. В зависимости от функции сообщение классифицируется:
+* debug — отладочное, выводится только при включённой отладке;
+* info — информационное;
+* warning — предупреждение;
+* error — ошибка.</p>
+<p>Сообщения можно посмотреть через <code>journalctl</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>wb-rules<span class="w"> </span>-f
+</code></pre></div></td></tr></table></div></p>
+<p>Используется форматированный вывод, как в случае <code>"...".format(...)</code>, при этом аргумент <code>fmt</code> выступает в качестве строки формата, т.е. <code>log.info("a={}", 42)</code> выводит в лог строку <code>a=42</code>.</p>
+<p>Помимо syslog, сообщение дублируется в зависимости от функции в виде MQTT-сообщения в топике <code>/wbrules/log/debug</code>, <code>/wbrules/log/info</code>, <code>/wbrules/log/warning</code>, <code>/wbrules/log/error</code>. debug-сообщения отправляются в MQTT только в том случае, если включён вывод отладочных сообщений установкой в 1 параметра <code>/devices/wbrules/controls/Rule debugging</code>.</p>
+<p>Указанные log-топики используются пользовательским интерфейсом
+для консоли сообщений.</p>
+<p>Для сообщений типа log и debug доступны сокращения:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">log</span><span class="p">(</span><span class="nx">fmt</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">arg1</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="p">...]])</span><span class="w"> </span><span class="c1">// сокращение для log.info(...)</span>
+<span class="nx">debug</span><span class="p">(</span><span class="nx">fmt</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">arg1</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="p">...]])</span><span class="w"> </span><span class="c1">// сокращение для log.debug(...)</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="mqtt-trackmqtt">Подписка на MQTT-топики <code>trackMqtt()</code><a class="headerlink" href="#mqtt-trackmqtt" title="Permanent link">&para;</a></h3>
+<p>Если вам нужно следить за изменением произвольных MQTT-топиков, используйте <code>trackMqtt()</code>;</p>
+<p><code>trackMqtt(topic, callback())</code> подписывается на MQTT с указанным topic'ом, допустимы символы <code>#</code> и <code>+</code> значения передаются в функцию объектом <em>message</em> состоящим из: <em>.topic</em> — путь к топику, значение которого изменилось и <em>.value</em> — новое значение топика:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">trackMqtt</span><span class="p">(</span><span class="s2">&quot;/devices/wb-adc/controls/Vin&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;name: {}, value: {}&quot;</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">topic</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="mqtt-publish">Публикация сообщений в MQTT <code>publish()</code><a class="headerlink" href="#mqtt-publish" title="Permanent link">&para;</a></h3>
+<p><code>publish(topic, payload, [QoS [, retain]])</code> публикует MQTT-сообщение с указанными topic'ом, содержимым, QoS и значением флага <em>retained</em>.</p>
+<p><strong>Важно:</strong> не используйте <code>publish()</code> для изменения значения
+параметров устройств. Для этих целей есть объект <code>dev</code> о котором рассказано выше.</p>
+<p>Пример:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Публикация non-retained сообщения с содержимым &quot;0&quot; (без кавычек)</span>
+<span class="c1">// в топике /abc/def/ghi с QoS = 0</span>
+<span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;/abc/def/ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+<span class="c1">// То же самое с явным заданием QoS</span>
+<span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;/abc/def/ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="c1">// То же самой с QoS=2</span>
+<span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;/abc/def/ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="c1">// То же самое с retained-флагом</span>
+<span class="nx">publish</span><span class="p">(</span><span class="s2">&quot;/abc/def/ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="spawn">Запуск внешних процессов spawn()<a class="headerlink" href="#spawn" title="Permanent link">&para;</a></h3>
+<p><code>spawn(cmd, args, options)</code> запускает внешний процесс, определяемый
+<code>cmd</code>.  Необязательный параметр <code>options</code> - объект, который может
+содержать следующие поля:
+* <code>captureOutput</code> - если <code>true</code>, захватить stdout процесса и передать
+  его в виде строки в <code>exitCallback</code>
+* <code>captureErrorOutput</code> - если <code>true</code>, захватить stderr процесса и
+  передать его в виде строки в <code>exitCallback</code>. Если данный параметр не
+  задан, то stderr дочернего процесса направляется в stderr процесса
+  wb-rules
+* <code>input</code> - строка, которую следует использовать в качестве
+  содержимого stdin процесса
+* <code>exitCallback</code> - функция, вызываемая при завершении
+  процесса. Аргументы функции: <code>exitCode</code> - код возврата процесса,
+  <code>capturedOutput</code> - захваченный stdout процесса в виде строки в
+  случае, когда задана опция <code>captureOutput</code>, <code>capturedErrorOutput</code> -
+  захваченный stderr процсса в виде строки в случае, когда задана
+  опция <code>captureErrorOutput</code></p>
+<p><code>runShellCommand(cmd, options)</code> вызывает <code>/bin/sh</code> с указанной
+командой следующим образом: <code>spawn("/bin/sh", ["-c", cmd], options)</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">asSoonAs</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">runShellCommand</span><span class="p">(</span><span class="s2">&quot;uname -a&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">captureOutput</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">exitCallback</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">exitCode</span><span class="p">,</span><span class="w"> </span><span class="nx">capturedOutput</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">log</span><span class="p">(</span><span class="nx">exitCode</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">exitCode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">log</span><span class="p">(</span><span class="nx">capturedOutput</span><span class="p">);</span>
+<span class="w">          </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_12">Модули<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>Начиная с версии 2.0, в движке правил wb-rules появилась поддержка подключаемых JS-модулей. Поддержка похожа по поведению на аналогичную в Node.js, но с некоторыми особенностями.</p>
+<h3 id="_13">Расположение<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Поиск модулей происходит по следующим путям (в заданном порядке):
+1. <code>/etc/wb-rules-modules</code> — сюда можно складывать пользовательские модули, они сохранятся при обновлении контролера.
+2. <code>/usr/share/wb-rules-modules</code> — папка с системными модулями.</p>
+<p>Таким образом, пользовательские модули удобно складывать в <code>/etc/wb-rules-modules</code>.</p>
+<p>Добавить свои пути можно редактированием <code>/etc/default/wb-rules</code> добавлением путей к переменной WB_RULES_MODULES через разделитель <code>:</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="nx">WB_RULES_MODULES</span><span class="o">=</span><span class="s2">&quot;/etc/wb-rules-modules:/usr/share/wb-rules-modules&quot;</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_14">Создание модуля<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Для создания модуля достаточно создать файл с именем, соответствующим имени модуля (с расширением .js) в директории <code>/etc/wb-rules-modules</code>.</p>
+<p>В этом файле будут доступны все стандартные функции wb-rules, а также набор специальных объектов, с помощью которого можно реализовать необходимый функционал модуля.</p>
+<h4 id="exports">Объект <code>exports</code><a class="headerlink" href="#exports" title="Permanent link">&para;</a></h4>
+<p>С помощью объекта exports можно передавать пользовательскому сценарию параметры и методы.</p>
+<p>Файл модуля:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">exports</span><span class="p">.</span><span class="nx">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from module, {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Файл сценария, в который подключается модуль:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myModule&quot;</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// выведет в лог &quot;Hello from module, world&quot;</span>
+<span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The answer is {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="p">.</span><span class="nx">answer</span><span class="p">);</span><span class="w"> </span><span class="c1">// выведет в лог &quot;The answer is 42&quot;</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>Важно!</strong> Объект exports можно только дополнять значениями, но не переопределять:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from module, {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Ожидание:</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;my-module&quot;</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// не работает</span>
+
+<span class="c1">// На практике m будет пустым объектом.</span>
+<span class="c1">// Та же проблема произойдёт при использовании такой конструкции:</span>
+<span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">hello</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from module, {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">world</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div></p>
+<h4 id="module">Объект <code>module</code><a class="headerlink" href="#module" title="Permanent link">&para;</a></h4>
+<p>Объект module содержит параметры, относящиеся непосредственно к файлу модуля.</p>
+<p><strong>module.filename</strong> содержит полный путь до файла модуля. Например, для модуля, сохранённого в <code>/etc/wb-rules-modules/myModule.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">filename</span><span class="p">);</span><span class="w"> </span><span class="c1">// выведет /etc/wb-rules-modules/myModule.js</span>
+</code></pre></div></td></tr></table></div>
+<strong>module.static</strong> хранит данные, общие для всех экземпляров данного модуля. Его следует использовать для тех данных, которые должны быть доступны сразу во всех сценариях, использующих данный модуль. Смотрите примеры ниже.</p>
+<p>Файл модуля <code>/etc/wb-rules-modules/myModule.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">exports</span><span class="p">.</span><span class="nx">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">module</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Number of calls: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">module</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">module</span><span class="p">.</span><span class="k">static</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+Файл сценария <code>scenario1.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myModule&quot;</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">counter</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+Файл сценария <code>scenario2.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myModule&quot;</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">counter</span><span class="p">();</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">counter</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+В результате работы двух скриптов в логе окажется 5 сообщений:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="nb">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span>
+<span class="nb">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span>
+<span class="nb">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span>
+<span class="nb">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="__filename">__filename<a class="headerlink" href="#__filename" title="Permanent link">&para;</a></h4>
+<p>Переменная <strong>__filename</strong> берётся из глобального объекта сценария, к которому подключается модуль, и содержит имя файла сценария.</p>
+<p>В случае, если модуль подключается в другом модуле, переменная <em>__filename</em>, тем не менее, будет содержать именно имя файла сценария — вершины дерева зависимостей.</p>
+<p>Файл <code>/etc/wb-rules-modules/myModule.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">exports</span><span class="p">.</span><span class="nx">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="nx">__filename</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+Файл сценария <code>/etc/wb-rules/scenario1.js</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myModule&quot;</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">hello</span><span class="p">();</span><span class="w"> </span><span class="c1">// выведет scenario1.js</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="_15">Подключение модуля к сценарию<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Подключение модуля происходит с помощью функции <code>require()</code>. Она возвращает объект, экспортированный модулем (exports).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myModule&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>При этом движок правил будет искать файл <code>myModule.js</code> по очереди в директориях поиска (см. Расположение).</p>
+<p>Также допустим поиск файла модуля по поддиректориям в директориях поиска, тогда вызов будет выглядеть так:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">myModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path/to/myModule&quot;</span><span class="p">);</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+После того, как файл будет найден, его содержимое будет выполнено, и из файла будет передан объект exports.</p>
+<p>Особенности:
+* Если модуль был подключен в одном сценарии несколько раз (несколько вызовов require("myModule")), содержимое файла модуля будет выполнено только в первый раз, а при повторных вызовах будет возвращаться сохранённый объект exports.
+* Если модуль подключается в разных сценариях, для каждого сценария будет создан свой объект модуля и заново выполнен весь код модуля. Если модулю требуется использовать данные, общие для всех файлов сценариев, для хранения данных следует использовать объект <code>module.static</code>.</p>
+<h2 id="_16">Сервис оповещений<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>С помощью сервиса оповещений можно отправлять сообщение на электронную почту или через SMS.</p>
+<p><code>Notify.sendEmail(to, subject, text)</code> отправляет почту указанному
+адресату (<code>to</code>), с указанной темой (<code>subject</code>) и содержимым (<code>text</code>).</p>
+<p><code>Notify.sendSMS(to, text, command)</code> отправляет SMS на указанный номер (<code>to</code>)
+с указанным содержимым (<code>text</code>), используя команду (<code>command</code>) (необязательный аргумент).</p>
+<p>Для отправки SMS используется ModemManager, а если он не установлен, то <code>gammu</code>.</p>
+<h2 id="_17">Сервис алармов<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>Основная функция:</p>
+<p><code>Alarms.load(spec)</code> - загружает блок алармов. <code>spec</code> может задавать
+либо непосредственно блок алармов в виде JavaScript-объекта, либо
+указывать путь к JSON-файлу, содержащему описание алармов.</p>
+<p>Каждому блоку алармов соответсвует виртуальное устройство, содержащее
+по контролу на каждый аларм, отражающему состояние аларма: 0 = не
+активен, 1 = активен.  Также в устройстве присутствует дополнительный
+контрол log, используемый для логирования работы службы алармов.</p>
+<p>Загружаемый по умолчанию блок алармов находится в файле
+<code>/etc/wb-rules/alarms.conf</code>. Этот файл доступен для редактирования
+через веб-редактор конфигов.</p>
+<p>Пример блока алармов с описанием:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Название MQTT-устройства блока алармов</span>
+<span class="w">  </span><span class="s2">&quot;deviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sampleAlarms&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="c1">// Отображаемое название устройства блока алармов</span>
+<span class="w">  </span><span class="s2">&quot;deviceTitle&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sample Alarms&quot;</span><span class="p">,</span>
+
+<span class="w">  </span><span class="c1">// Описание получателей</span>
+<span class="w">  </span><span class="s2">&quot;recipients&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Тип получателя - e-mail</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// E-mail адрес получателя</span>
+<span class="w">      </span><span class="s2">&quot;to&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;someone@example.com&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Тема письма (необязательное поле)</span>
+<span class="w">      </span><span class="s2">&quot;subject&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alarm!&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Ещё один e-mail-получатель</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// E-mail адрес получателя</span>
+<span class="w">      </span><span class="s2">&quot;to&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;anotherone@example.com&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Тема письма. {} заменяется на текст сообщения</span>
+<span class="w">      </span><span class="s2">&quot;subject&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alarm: {}&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Тип получателя - SMS</span>
+<span class="w">      </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sms&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Номер телефона получателя</span>
+<span class="w">      </span><span class="s2">&quot;to&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;+78122128506&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Команда для отправки SMS. Поле можно оставить пустым, чтобы использовать</span>
+<span class="w">      </span><span class="c1">// gammu. В команде нужно указать как минимум один плейсхолдер {} - для номера. Тогда</span>
+<span class="w">      </span><span class="c1">// текст будет отправлен в stdin. Если указать 2 плейсхолдера - то в первый запишется</span>
+<span class="w">      </span><span class="c1">// номер, во второй - текст.</span>
+<span class="w">      </span><span class="c1">// Примеры:</span>
+<span class="w">      </span><span class="c1">// /path/to/sender.py --number {}</span>
+<span class="w">      </span><span class="c1">// /path/to/sender.py --number {} --text &quot;{}&quot;</span>
+<span class="w">      </span><span class="s2">&quot;command&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+
+<span class="w">  </span><span class="c1">// Описание алармов</span>
+<span class="w">  </span><span class="s2">&quot;alarms&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Название аларма</span>
+<span class="w">      </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;importantDeviceIsOff&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Наблюдаемые устройство и контрол</span>
+<span class="w">      </span><span class="s2">&quot;cell&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;somedev/importantDevicePower&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Ожидаемое значение. Аларм срабатывает, если значение контрола становится</span>
+<span class="w">      </span><span class="c1">// отличным от expectedValue. Когда значение снова становится равным</span>
+<span class="w">      </span><span class="c1">// expectedValue, аларм деактивируется.</span>
+<span class="w">      </span><span class="s2">&quot;expectedValue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Сообщение, отправляемое при срабатываении аларма.</span>
+<span class="w">      </span><span class="c1">// Если сообщение не указано, оно генерируется автоматически на основе</span>
+<span class="w">      </span><span class="c1">// текущего значения контрола.</span>
+<span class="w">      </span><span class="s2">&quot;alarmMessage&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Important device is off&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Сообщение, отправляемое при деактивации аларма.</span>
+<span class="w">      </span><span class="c1">// Если сообщение не указано, оно генерируется автоматически на основе</span>
+<span class="w">      </span><span class="c1">// текущего значения контрола.</span>
+<span class="w">      </span><span class="s2">&quot;noAlarmMessage&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Important device is back on&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Интервал (в секундах) отправки сообщений во время активности аларма.</span>
+<span class="w">      </span><span class="c1">// Если это поле не указано, то сообщения отправляются только</span>
+<span class="w">      </span><span class="c1">// при активации и деактивации аларма.</span>
+<span class="w">      </span><span class="s2">&quot;interval&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Задержка срабатывания аларма.</span>
+<span class="w">      </span><span class="c1">// Если поле присутствует, то аларм сработает только когда условие срабатывания</span>
+<span class="w">      </span><span class="c1">// будет непрерывно выполнятся в течение заданного интервала (в миллисекундах).</span>
+<span class="w">      </span><span class="s2">&quot;alarmDelayMs&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">10000</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Задержка сброса аларма.</span>
+<span class="w">      </span><span class="c1">// Если поле присутствует, то аларм сбросится только когда условие срабатывания</span>
+<span class="w">      </span><span class="c1">// не будет непрерывно выполнятся в течение заданного интервала (в миллисекундах).</span>
+<span class="w">      </span><span class="s2">&quot;noAlarmDelayMs&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">3000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Название аларма</span>
+<span class="w">      </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;temperatureOutOfBounds&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Наблюдаемые устройство и контрол</span>
+<span class="w">      </span><span class="s2">&quot;cell&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;somedev/devTemp&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Вместо expectedValue можно указать minValue, maxValue либо и minValue, и maxValue.</span>
+<span class="w">      </span><span class="c1">// Если значение наблюдаемого контрола становится меньше minValue или больше maxValue,</span>
+<span class="w">      </span><span class="c1">// происходит срабатывание аларма. Когда значение возвращается в указанный диапазон,</span>
+<span class="w">      </span><span class="c1">// аларм деактивируется.</span>
+<span class="w">      </span><span class="s2">&quot;minValue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;maxValue&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Сообщение, отправляемое при срабатываении аларма. {} Заменяется</span>
+<span class="w">      </span><span class="c1">// на текущее значение контрола. Возможно использование {{ expr }}</span>
+<span class="w">      </span><span class="c1">// для вычисления произвольного JS-выражения (см. &quot;...&quot;.xformat(...)).</span>
+<span class="w">      </span><span class="s2">&quot;alarmMessage&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Temperature out of bounds, value = {{dev[&#39;somedev&#39;][&#39;devTemp&#39;]}}&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Сообщение, отправляемое при деактивации аларма. {} Заменяется</span>
+<span class="w">      </span><span class="c1">// на текущее значение контрола. Возможно использование {{ expr }}</span>
+<span class="w">      </span><span class="c1">// для вычисления произвольного JS-выражения (см. &quot;...&quot;.xformat(...)).</span>
+<span class="w">      </span><span class="s2">&quot;noAlarmMessage&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Temperature is within bounds again, value = {}&quot;</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Интервал (в секундах) отправки сообщений во время активности аларма.</span>
+<span class="w">      </span><span class="s2">&quot;interval&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+
+<span class="w">      </span><span class="c1">// Максимальное количество отправляемых сообщений.</span>
+<span class="w">      </span><span class="c1">// За каждый период активности аларма отправляется не больше</span>
+<span class="w">      </span><span class="c1">// указанного количества сообщений.</span>
+<span class="w">      </span><span class="s2">&quot;maxCount&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_18">Постоянное хранилище<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>В wb-rules есть возможность использовать постоянное хранилище.
+Переменные в постоянном хранилище сохраняются на flash, таким образом,
+остаются доступными после перезагрузки контроллера.</p>
+<p>Пример использования постоянного хранилища:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">defineRule</span><span class="p">(</span><span class="s2">&quot;myRule&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="nx">then</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// здесь &quot;my-storage&quot; - имя хранилища</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;my-storage&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+
+<span class="w">    </span><span class="c1">// в постоянное хранилище можно записывать значения любого типа</span>
+<span class="w">    </span><span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;var1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;var2&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;var3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Temperature&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">26.3</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// чтение из хранилища</span>
+<span class="w">    </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value of var1: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;var1&quot;</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Можно создавать несколько постоянных хранилищ с разными именами;
+каждое из них будет иметь свой набор значений.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ps1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;storage1&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ps2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;storage2&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+
+<span class="nx">ps1</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+
+<span class="nx">ps2</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">84</span><span class="p">;</span>
+<span class="nx">ps2</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+
+<span class="nx">log</span><span class="p">(</span><span class="nx">ps1</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// выведет 42</span>
+<span class="nx">log</span><span class="p">(</span><span class="nx">ps1</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// undefined</span>
+
+<span class="nx">log</span><span class="p">(</span><span class="nx">ps2</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// выведет 84</span>
+<span class="nx">log</span><span class="p">(</span><span class="nx">ps2</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// выведет bar</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p><em>Примечание:</em> второй аргумент <code>{ global: true }</code> означает, что
+хранилище является глобальным для всех правил. Это значит, что
+если создать хранилища с одинаковыми именами в разных файлах правил,
+они получат доступ к одному и тому же хранилищу. Порядок доступа при
+этом не определён.</p>
+<p>rules1.js:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;global-storage&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+<span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div></p>
+<p>rules2.js:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">...</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;global-storage&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+
+<span class="c1">// выведет bar после того, как это значение будет записано в rules1.js</span>
+<span class="nx">log</span><span class="p">(</span><span class="nx">ps</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]);</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Поддержка локальных хранилищ (для избежания нежелательных конфликтов имён
+хранилищ между файлами) должна появиться в будущих версиях wb-rules.
+Пока что обязательно нужно указывать аргумент <code>{ global: true }</code>.</p>
+<h2 id="_19">Изоляция сценариев<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>Каждый файл сценария запускается в своём отдельном пространстве имён — контексте. Таким образом, каждый сценарий может определять свои функции и глобальные переменные без риска изменить поведение других сценариев.</p>
+<p>В качестве примера приведём два сценария, одновременно запускаемых в движке правил. Каждый сценарий определяет глобальные переменные и функции.</p>
+<p>Поведение wb-rules при обращении к глобальной переменной, изменяемой в нескольких файлах сценариев строго определено и такое же, как будто сценарий единственный в системе.</p>
+<p>Пример правила для вывода сообщения в log.</p>
+<p>Сценарий 1 (rules1.js):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">test1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">myFuncOne</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;myFuncOne called&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;test1: {}, test2: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">test1</span><span class="p">,</span><span class="w"> </span><span class="nx">test2</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">test1</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="p">,</span><span class="w"> </span><span class="nx">test2</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="kc">undefined</span><span class="p">)</span>
+<span class="w">  </span><span class="c1">// (будет выведена ошибка выполнения: ReferenceError: identifier &#39;test2&#39; undefined)</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Сценарий 2 (rules2.js):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">test1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">84</span><span class="p">;</span>
+<span class="nx">test2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">myFuncTwo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;myFuncTwo called&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;test1: {}, test2: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">test1</span><span class="p">,</span><span class="w"> </span><span class="nx">test2</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// раньше: test1: [либо 42, либо 84], test2: Hello</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+В версии 1.7 для изоляции правил рекомендовалось использовать рекомендовалось использовать замыкание, т.е. оборачивание кода сценария в конструкцию:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// код сценария идёт здесь</span>
+<span class="p">})();</span>
+</code></pre></div></td></tr></table></div>
+Начиная с версии 2.0, в подобной конструкции нет необходимости. Тем не менее, старые сценарии, использующие эту конструкцию, продолжат работу без изменений в поведении.</p>
+<h2 id="_20">Обходные пути<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>Если в вашей системе использовалось общее глобальное пространство для хранения общих данных и функций, есть несколько способов реализации такого поведения.</p>
+<p><strong>Использование модулей.</strong> Можно написать модуль для организации взаимодействия. У модулей есть статическое хранилище, общее для всех файлов, импортировавших модуль. (см. module.static)</p>
+<p><strong>Постоянное хранилище.</strong> Для обмена данными также можно использовать глобальные постоянные хранилища (PersistentStorage):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PersistentStorage</span><span class="p">(</span><span class="s2">&quot;my-global-storage&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nb">global</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+
+<span class="c1">/// ...</span>
+
+<span class="nx">ps</span><span class="p">.</span><span class="nx">myvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// это значение доступно для всех пользователей хранилища с именем &quot;my-global-storage&quot;</span>
+</code></pre></div></td></tr></table></div>
+Имейте ввиду, что при использовании глобальных постоянных хранилищ может произойти совпадение имён, в этом случае возможно нарушение поведения, которое трудно обнаружить.</p>
+<p><strong>Прототип глобального объекта.</strong>  Метод считается «грязным», т.к. все переменные и функции, опубликованные таким образом, становятся доступными всем сценариям в системе. Старайтесь избегать этого способа. За неопределённое поведение при использовании этого метода несёт ответственность сам программист.</p>
+<p>Глобальные объекты всех сценариев имеют общий объект — прототип, в котором определены стандартные функции wb-rules (такие, как defineRule, setTimeout и т.д.). Через него можно передавать переменные или функции в общую область видимости.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">global</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// теперь myVar — общая переменная для всех сценариев</span>
+
+<span class="c1">// из других сценариев к переменной можно обращаться так</span>
+<span class="nx">log</span><span class="p">(</span><span class="s2">&quot;shared myVar: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">myVar</span><span class="p">);</span>
+
+<span class="c1">// или вот так, что чуть более аккуратно, т.к. однозначно показывает, где определена переменная</span>
+<span class="nx">log</span><span class="p">(</span><span class="s2">&quot;shared myVar: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">global</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">myVar</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+Правило поиска переменной в первом случае будет выглядеть так:
+1. Проверяем, есть ли <strong>myVar</strong> среди локальных переменных (определённой как var <code>myVar = ...</code>).
+2. Если нет, проверяем, есть ли <strong>myVar</strong> в глобальном объекте (определённой как <code>myVar = ...</code>).
+3. Если нет, проверяем, есть ли <strong>myVar</strong> в прототипе глобального объекта (определённой как <code>global.__proto__.myVar</code>).</p>
+<p>Поиск останавливается, как только переменная найдена.</p>
+<p>Таким образом, первый способ обращения будет работать только в том случае, если <em>myVar</em> не определена в верхних областях видимости.</p>
+<h2 id="_21">Автоматическая перезагрузка сценариев<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>При внесении изменений в файлы с правилами происходит автоматическая
+перезагрузка изменённых файлов. При перезагрузке глобальное состояние
+ECMAScript-движка сохраняется, т.е., например, если глобальная
+переменная определена в файле <code>a.js</code>, то при изменении файла <code>b.js</code> её
+значение не изменится. Глобальные переменные и функции, определения
+которых удалены из правил, также не удаляются до перезагрузки движка
+правил (<code>service wb-rules restart</code>). В то же время удаление
+определений правил и виртуальных устройств отслеживается и
+обрабатываются, т.е. если, например, удалить правило из .js-файла, то
+это правило более срабатывать не будет.</p>
+<h2 id="_22">Управление логированием<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<p>Для включения отладочного режима задать порт и опцию <code>-debug</code>
+в <code>/etc/default/wb-rules</code>:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>WB_RULES_OPTIONS=&quot;-debug&quot;
+</code></pre></div></td></tr></table></div>
+Ещё отладку можно включить в веб-интерфейсе контроллера:
+* переключатель Devices → Rule Engine Settings → Rule debugging;
+* флажок Enable debug в консоли отладки правил.</p>
+<p>Сообщения об ошибках записываются в syslog.</p>
+<h2 id="_23">Установка<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<p>wb-rules уже установлен контроллеры Wiren Board, но если у вас его не оказалось, используйте инструкции ниже.</p>
+<h3 id="apt-get">Через apt-get<a class="headerlink" href="#apt-get" title="Permanent link">&para;</a></h3>
+<p>Пакет wb-rules есть в репозитории, для установки и обновления надо выполнить:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>apt-get update
+apt-get install wb-rules
+</code></pre></div></td></tr></table></div></p>
+<p>Правила находятся в каталоге <code>/etc/wb-rules/</code></p>
+<h3 id="_24">Сборка из исходников<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Сборка из исходников может понадобиться, если вы хотите внести изменения в wb-rules.</p>
+<p>Работу с исходными текстами необходимо производить внутри wbdev workspace
+(создаётся командой <code>wbdev update-workspace</code>).</p>
+<p>Сборка исполняемого файла для arm:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wbdev hmake clean &amp;&amp; wbdev hmake
+</code></pre></div></td></tr></table></div>
+<p>Сборка исполняемого файла для x86_64:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wbdev hmake clean &amp;&amp; wbdev hmake amd64
+</code></pre></div></td></tr></table></div>
+<p>После выполнения этих команд в папке проекта появляется исполняемый
+файл <code>wb-rules</code>.</p>
+<p>Сборка пакета для Wiren Board:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>wbdev gdeb
+</code></pre></div></td></tr></table></div></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../wb-mqtt-serial/" class="btn btn-neutral float-left" title="wb-mqtt-serial"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/aadegtyarev/mkdocs-test" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../wb-mqtt-serial/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

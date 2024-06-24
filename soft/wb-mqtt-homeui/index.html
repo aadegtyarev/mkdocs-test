@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://aadegtytarev.github.io/mkdocs-test/soft/wb-mqtt-homeui/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>wb-mqtt-homeui - Wiren Board Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "wb-mqtt-homeui";
+        var mkdocs_page_input_path = "soft/wb-mqtt-homeui/index.md";
+        var mkdocs_page_url = "/mkdocs-test/soft/wb-mqtt-homeui/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Wiren Board Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Софт</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">ПО Wiren Board</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">wb-mqtt-homeui</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Общие сведения</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-">Доступ к веб-интерфейсу</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Смена прав доступа</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-_1">Смена языка веб-интерфейса</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Настройка контроллера</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Сетевые интерфейсы</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Установка времени</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#a1a4">Настройка аналоговых входов A1…A4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">Настройка модулей расширения и портов</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#knx-">KNX-устройства</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">Создание интерфейса пользователя</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">Текстовая панель</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#svg-">Интерактивная SVG-панель</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">Скрипты автоматизации</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">Просмотр архива данных</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">Отправка данных в ПО верхнего уровня</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#modbus-rtutcp">Шлюз Modbus RTU/TCP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#opc-ua">Шлюз OPC UA</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_12">Шлюз МЭК</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_13">Просмотр системного журнала</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_14">Обновление ПО</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../wb-mqtt-serial/">wb-mqtt-serial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../wb-rules/">wb-rules</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Wiren Board Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Софт</li>
+      <li class="breadcrumb-item active">wb-mqtt-homeui</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/aadegtyarev/mkdocs-test/edit/master/docs/soft/wb-mqtt-homeui/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="wb-mqtt-homeui">wb-mqtt-homeui<a class="headerlink" href="#wb-mqtt-homeui" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Общие сведения<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Программное обеспечение для контроллеров Wiren Board основано на свободной операционной системе Debian Linux и состоит из набора дополнительных пакетов, с помощью которых можно решить большинство задач автоматизации.</p>
+<p>ПО является неотъемлемой частью контроллера Wiren Board, поэтому пользователь не устанавливает его, а взаимодействует с ним через пользовательский интерфейс.</p>
+<p>Для конечного пользователя разработан веб-интерфейс, который позволяет настраивать и эксплуатировать контроллер, а также обновлять программное обеспечение, писать скрипты автоматизации и просматривать архив данных.</p>
+<p>Для продвинутых пользователей доступна текстовая консоль контроллера, доступ к которой можно получить через SSH.</p>
+<p><img alt="" src="images/image11.png" />
+Контроллер Wiren Board</p>
+<h2 id="-">Доступ к веб-интерфейсу<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>Веб-интерфейс предустановлен на все контроллеры Wiren Board с завода и для доступа к нему нужно знать ip-адрес контроллера, который необходимо ввести в адресной строке современного браузера. Рекомендуем использовать браузеры Mozilla FireFox и Яндекс.Браузер.</p>
+<p><img alt="" src="images/image17.png" /></p>
+<p>Веб-интерфейс контроллера в браузере Firefox</p>
+<h2 id="_2">Смена прав доступа<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>В контроллере предусмотрены три роли:</p>
+<ul>
+<li>пользователь — может просматривать панели и историю;</li>
+<li>оператор — может создавать и редактировать панели;</li>
+<li>и администратор — имеет полный доступ к настройкам и правилам.</li>
+</ul>
+<p>Чтобы менять настройки, нужно выставить права доступа «Администратор».</p>
+<p><img alt="" src="images/image21.png" />
+Страница смены прав доступа</p>
+<h2 id="-_1">Смена языка веб-интерфейса<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h2>
+<p>Контроллер поддерживает русский и английский языки веб-интерфейса. Переводятся панели, меню и каналы устройств, если язык был задан разработчиком шаблона.</p>
+<p>По умолчанию выбирается язык, установленный пользователем в браузере, через который открыт веб-интерфейс, но вы можете это изменить. Зайдите в раздел «Настройки» → «Веб-интерфейс» и выберите язык в разделе «Общие параметры».</p>
+<p><img alt="" src="images/image8.png" />
+Настройка языка</p>
+<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<p>SSH — это протокол, при помощи которого можно получить доступ к текстовой консоли Wiren Board через локальную сеть или Интернет.</p>
+<p>Консоль контроллера — это инструмент администратора, который позволяет изменять системные настройки, обновлять программное обеспечение и устанавливать сторонние программы. Также по SSH можно загружать и скачивать файлы.</p>
+<p><img alt="" src="images/image20.png" />
+Контроль контроллера Wiren Board</p>
+<p>Учетная запись по умолчанию: логин root, пароль wirenboard.</p>
+<p>Рекомендуем после первого входа сменить пароль, для этого введите в консоли контроллера команду passwd и дважды введите новый пароль:</p>
+<p><img alt="" src="images/image4.png" /></p>
+<p>Подключиться по SSH можно несколькими способами:</p>
+<ol>
+<li>В Windows с помощью специальных программ, например, Putty.</li>
+<li>В Linux командой вида ssh root@192.168.42.1, где root — логин.</li>
+</ol>
+<h2 id="_3">Настройка контроллера<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Контроллер — сложное устройство и для его настройки есть специальный конфигуратор, который позволяет настраивать:</p>
+<ul>
+<li>сетевые интерфейсы контроллера;</li>
+<li>параметры NTP-клиента;</li>
+<li>подключённые к контроллеру модули расширения и ввода-вывода;</li>
+<li>подключенное по RS-485 оборудование;</li>
+<li>сервис подключения к устройствам KNX;</li>
+<li>аналоговые и цифровые входы-выходы контроллера;</li>
+<li>параметры архива данных;</li>
+<li>шлюз Modbus TCP/RTU протоколов;</li>
+<li>сервис SMS и email-оповещений.</li>
+</ul>
+<p>Инструмент находится на вкладке «Настройки»→«Конфигурационные файлы» и доступен только в режиме администратора.</p>
+<p><img alt="" src="images/image15.png" />
+Перечень настроек</p>
+<h3 id="_4">Сетевые интерфейсы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>В контроллере есть несколько сетевых интерфейсов: два Ethernet, Wi-Fi клиент и точка доступа, опционально 4G модем.</p>
+<p>Все они настраиваются из веб-интерфейса контроллера в разделе «Настройки» →«Конфигурационные файлы» → «Сетевые соединения».</p>
+<p>Так как интерфейсов много, то может понадобится задать приоритет их работы: если на одном интернет пропал, переключаемся автоматически на другой.</p>
+<p>По умолчанию контроллер создаёт открытую Wi-Fi точку доступа, рекомендуем отключить её или включить шифрование и установить пароль.</p>
+<p><img alt="" src="images/image13.png" />
+Пример настройки сетевого интерфейса</p>
+<h3 id="_5">Установка времени<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Контроллер Wiren Board с завода настроен на синхронизацию времени через интернет по протоколу NTP. Если у контроллера есть доступ в интернет и установлен верный часовой пояс, то настраивать ничего не нужно.</p>
+<p>Пользователь может изменить адреса NTP серверов, для этого надо перейти в раздел «Настройки» →«Конфигурационные файлы» → «Синхронизация даты и времени (NTP)».</p>
+<p><img alt="" src="images/image6.png" />
+Пример настроек синхронизации времени</p>
+<p>Если у контроллера нет доступа в интернет, а в вашей локальной сети нет сервера времени, время можно задать вручную:</p>
+<ol>
+<li>подключитесь к контроллеру по SSH;</li>
+<li>отключите автоматическую синхронизацию командой timedatectl set-ntp 0</li>
+<li>установите время командой timedatectl set-time '2020-10-12 01:58:00'</li>
+<li>синхронизируйте аппаратный таймер контроллера с новым временем командой hwclock --systohc --localtime</li>
+</ol>
+<h3 id="a1a4">Настройка аналоговых входов A1…A4<a class="headerlink" href="#a1a4" title="Permanent link">&para;</a></h3>
+<p>Входы A1…A4 универсальны и могут обрабатывать как дискретные сигналы, так и аналоговые. Кроме этого они могут работать в режиме выхода, режим выбирается в интерфейсе пользователя в разделе «Устройства».</p>
+<p>Сами аналоговые входы настраиваются в разделе «Настройки» →«Конфигурационные файлы» → «Аналоговые входы».<img alt="" src="images/image1.png" /></p>
+<h3 id="_6">Настройка модулей расширения и портов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>На борту контроллера есть множество портов ввода-вывода, которые можно настроить в разные режимы.</p>
+<p>Кроме этого в контроллер можно устанавливать модули расширения и подключать боковые модули WBIO.</p>
+<p>Всё это настраивается в веб-интерфейсе контроллера в разделе «Настройки» →«Конфигурационные файлы» → «Модули расширения и порты».</p>
+<p>Аналоговые входы A1…A4 настраиваются отдельно.</p>
+<p><img alt="" src="images/image5.png" />
+Пример настройки модули WBIOModbus и другие устройства, подключенные к последовательному порту</p>
+<p>В контроллере есть два физических последовательных порта RS-485, ещё три можно добавить модулями расширения. Также драйвер контроллера умеет работать с виртуальными сетевыми портами.</p>
+<p>Перед настройкой параметров устройств, их надо добавить. Далее пользователь задаёт мышкой нужные параметры и сохраняет результат.</p>
+<p><img alt="" src="images/image19.png" />
+Пример настройки подключенного устройства</p>
+<h3 id="knx-">KNX-устройства<a class="headerlink" href="#knx-" title="Permanent link">&para;</a></h3>
+<p>К контроллеру можно подключать любые KNX-устройства: панели, реле, датчики, кнопки и т.п.</p>
+<p>Пользователь может настроить групповые адреса вручную или загрузить проект из конфигуратора ETS.</p>
+<p>Загрузка конфигурации ETS делается через консоль, для этого:</p>
+<ol>
+<li>Выгрузите проект из ETS.</li>
+<li>Загрузите его на контроллер.</li>
+<li>Выполните команду wb-knx-ets-tool ETS_CONFIG /etc/wb-mqtt-knx.conf, где ETS_CONFIG — пусть к выгруженному выше конфигу.</li>
+</ol>
+<p><img alt="" src="images/image23.png" />
+Пример настройки групповых адресов</p>
+<h2 id="_7">Создание интерфейса пользователя<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Для управления контроллером Wiren Board и подключенными устройствами есть текстовые и графические панели управления.</p>
+<p>Инструмент находится на вкладке «Панели» и доступен только в режиме администратора.</p>
+<h3 id="_8">Текстовая панель<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Основной элемент текстовой информационной панели — виджет. Виджет позволяет вывести в одном месте информацию из разных источников.</p>
+<p>Кроме показа информации виджет может содержать элементы управления: переключатели, кнопки и ползунки для выбора значения из диапазона. На этапе создания виджета вы задаете ему название, выбираете какие данные он будет отображать и как они будут называться. Количество виджетов на одной панели не ограничено.</p>
+<p><img alt="" src="images/image7.png" /></p>
+<p>Пример текстовой панели</p>
+<h3 id="svg-">Интерактивная SVG-панель<a class="headerlink" href="#svg-" title="Permanent link">&para;</a></h3>
+<p>SVG-панель — это интерактивная графическая панель. С помощью SVG-панелей можно создавать виртуальные пульты управления автоматикой объекта и мнемосхемы технологических установок.</p>
+<p>Чтобы создать SVG-панель, нужно нарисовать в любом векторном графическом редакторе svg-изображение, загрузить его в ПО Wiren Board и привязать графические и текстовые элементы к источникам информации или элементам управления. Источниками информации могут быть любые MQTT-топики.</p>
+<p>В веб-интерфейсе есть визуальный редактор, который упрощает процесс создания панели — выбираете элемент на svg-изображении и указываете какие данные в него выводить, как на них реагировать и что делать, если пользователь воздействовал на элемент.</p>
+<p>Возможности:</p>
+<ul>
+<li>вывод текстовой или логической информации;</li>
+<li>изменение внешнего вида svg-элемента в зависимости от полученной информации: вы можете изменять цвет заливки и обводки, прозрачность элемента, а так же подменить полученное значение своим или скрыть/показать элемент;</li>
+<li>воздействие на исполнительные механизмы: включение и выключение нагрузки, изменение режимов работы устройств.</li>
+</ul>
+<p><img alt="Пример SVG-панели" src="images/image9.png" /></p>
+<p>Пример графической панели</p>
+<h2 id="_9">Скрипты автоматизации<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Штатным инструментом автоматизации является собственный движок wb-rules, который позволяет составлять скрипты автоматизации на JS-подобном языке. Скрипты можно создавать и редактировать прямо в веб-интерфейсе, доступна отладка в консоли.</p>
+<p>Возможности:</p>
+<ul>
+<li>автоматизация любых действий с данными или подключенными устройствами;</li>
+<li>чтение и публикация MQTT-топиков;</li>
+<li>работа с таймерами;</li>
+<li>работа с сервисами оповещений и предупреждений;</li>
+<li>создание виртуальных устройств со своей логикой;</li>
+<li>работа с файловой системой контроллера.</li>
+</ul>
+<p>Инструмент находится на вкладке «Правила» и доступен только в режиме администратора.<img alt="" src="images/image10.png" />
+Пример скрипта автоматизации в редакторе</p>
+<h2 id="_10">Просмотр архива данных<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>Вы можете анализировать изменение полученных контроллером данных во времени с помощью графиков. Источником архивных данных могут служить любые MQTT-топики и виджеты.</p>
+<p>Возможности:</p>
+<ul>
+<li>выбор временного периода;</li>
+<li>одновременное отображение данных с нескольких источников;</li>
+<li>автоматическая расцветка графиков разными цветами;</li>
+<li>курсорные измерения на одном или нескольких графиках;</li>
+<li>масштабирование графика и перемещение по нему;</li>
+<li>просмотр дельты изменения значения;</li>
+<li>снятие скриншотов.</li>
+</ul>
+<p>Параметры архива настраиваются в разделе «Настройки» →«Конфигурационные файлы» → «История данных MQTT».</p>
+<p><img alt="" src="images/image12.png" />
+Пример просмотра архива значений</p>
+<h2 id="_11">Отправка данных в ПО верхнего уровня<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>Контроллер Wiren Board может выступать в роли шлюза и обмениваться данными с программным обеспечением верхнего уровня: ПО других устройств, SCADA-системы, облачные MQTT-брокеры.</p>
+<h3 id="modbus-rtutcp">Шлюз Modbus RTU/TCP<a class="headerlink" href="#modbus-rtutcp" title="Permanent link">&para;</a></h3>
+<p>Из веб-интерфейса можно настроить обмен данными с внешними устройствами и ПО по протоколам Modbus TCP и Modbus RTU. В этом случае контроллер будет выступать в роли Modbus Slave-устройства, а вы сможете не только считывать данные с контроллера, но и передавать команды подключенным к нему устройствам.</p>
+<p>Настраивается шлюз в разделе «Настройки» →«Конфигурационные файлы» → «Шлюз MQTT - Modbus RTU/TCP slave».</p>
+<p><img alt="" src="images/image14.png" />
+Пример настройки шлюза в Modbus TCP</p>
+<h3 id="opc-ua">Шлюз OPC UA<a class="headerlink" href="#opc-ua" title="Permanent link">&para;</a></h3>
+<p>Контроллер может выступать в роли шлюза и отдавать данные в систему верхнего уровня по протоколу OPC UA.</p>
+<p>Настраивается шлюз в разделе «Настройки» →«Конфигурационные файлы» → «Шлюз MQTT - OPC UA». Пользователю надо выбрать, какие каналы надо транслировать по этому протоколу, а также указать адрес и порт. Остальное происходит автоматически.</p>
+<p><img alt="" src="images/image22.png" />
+Пример настройки шлюза OPC UA</p>
+<h3 id="_12">Шлюз МЭК<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Контроллер может выступать в роли шлюза и отдавать данные в систему верхнего уровня по протоколу МЭК 60870-5-104. Протокол популярен в энергетике.</p>
+<p>Настраивается шлюз в разделе «Настройки» →«Конфигурационные файлы» → « Шлюз MQTT - МЭК 60870-5-104». Пользователю надо выбрать, какие каналы надо транслировать по этому протоколу, а также указать адрес и порт.</p>
+<p><img alt="" src="images/image16.png" />
+Пример настройки шлюза МЭК</p>
+<h2 id="_13">Просмотр системного журнала<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>В контроллерах Wiren Board используется системный сервис журналов journald, который обрабатывает события на запись в лог и сохраняет их в бинарные файлы. Если в процессе эксплуатации контроллера или подключённых устройств возникли ошибки — в первую очередь нужно посмотреть сообщения системного журнала.</p>
+<p>В веб-интерфейсе сообщения системного журнала доступны с помощью инструмента «Системный журнал», который находится на вкладке «Настройки».</p>
+<p>Возможности:</p>
+<ul>
+<li>просмотр сообщений системного журнала;</li>
+<li>фильтрация сообщений по сервисам;</li>
+<li>экспорт загруженных сообщений в текстовый файл.</li>
+</ul>
+<p><img alt="" src="images/image2.png" /></p>
+<p>Просмотр системного журнала</p>
+<h2 id="_14">Обновление ПО<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>Так как программное обеспечение постоянно совершенствуется, есть встроенный инструмент для загрузки образов ПО в контроллер.</p>
+<p>Инструмент обновления ПО находится в разделе «Настройки» →«Система».</p>
+<p>Тут же можно настроить подключение к облаку, собрать данные для диагностики и сбросить контроллер к заводским настройкам.</p>
+<p><img alt="" src="images/image18.png" />
+Возможности раздела «Система»</p>
+<p><img alt="" src="images/image3.png" /></p>
+<p>Процесс обновления программного обеспечения через веб-интерфейс</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="ПО Wiren Board"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../wb-mqtt-serial/" class="btn btn-neutral float-right" title="wb-mqtt-serial">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/aadegtyarev/mkdocs-test" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../wb-mqtt-serial/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
