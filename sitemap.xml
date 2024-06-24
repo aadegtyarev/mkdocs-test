@@ -6,22 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/wb-mqtt-homeui/</loc>
          <lastmod>2024-06-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mqtt-homeui/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/wb-mqtt-serial/</loc>
          <lastmod>2024-06-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-mqtt-serial/</loc>
-         <lastmod>2024-06-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://aadegtytarev.github.io/mkdocs-test/soft/wb-rules/</loc>
+         <loc>https://aadegtytarev.github.io/mkdocs-test/wb-rules/</loc>
          <lastmod>2024-06-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
