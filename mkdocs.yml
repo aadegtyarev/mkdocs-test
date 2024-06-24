@@ -3,7 +3,7 @@ site_url: https://aadegtytarev.github.io/mkdocs-test
 nav:
     - Home: index.md
         - wb-mqtt-homeui: wb-mqtt-homeui/index.md
-        - wb-mqtt-serial: soft/wb-mqtt-serial/index.md
+        - wb-mqtt-serial: wb-mqtt-serial/index.md
         - wb-rules: wb-rules/index.md
 theme: 
   name: mkdocs
@@ -30,5 +30,3 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-
-repo_url: https://github.com/aadegtyarev/mkdocs-test
