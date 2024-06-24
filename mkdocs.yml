@@ -8,7 +8,7 @@ nav:
         - wb-mqtt-serial: soft/wb-mqtt-serial/index.md
         - wb-rules: soft/wb-rules/index.md
 theme: 
-  name: readthedocs
+  name: mkdocs
   language: ru
   primary: green
 
