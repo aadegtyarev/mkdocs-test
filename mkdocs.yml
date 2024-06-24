@@ -2,42 +2,18 @@ site_name: Wiren Board Docs
 site_url: https://aadegtytarev.github.io/mkdocs-test
 nav:
     - Home: index.md
-    - Контроллеры:
-        - plc/index.md
-        - Wiren Board 7: plc/wb7/index.md
-        - Wiren Board 6: plc/wb6/index.md
-    - Реле:
-        - relay/index.md
-        - WB-MR6C v.2: relay/wb-mr6c-v2/index.md
     - Софт:
         - soft/index.md
+        - wb-mqtt-homeui: soft/wb-mqtt-homeui/index.md
         - wb-mqtt-serial: soft/wb-mqtt-serial/index.md
-        - wb-mcu-fw-updater: soft/wb-mcu-fw-updater/index.md
-        - wb-mcu-fw-flasher: soft/wb-mcu-fw-flasher/index.md
-
+        - wb-rules: soft/wb-rules/index.md
 theme: 
-  name: material
-  features:
-    - content.tabs.link
-    - content.action.edit
-    - search.suggest
-    - search.highlight
-    - navigation.indexes
-    - navigation.top
-    - navigation.path
-#    - toc.integrate
+  name: readthedocs
   language: ru
   primary: green
 
 plugins:
-  - include-markdown
-  - glightbox
   - search
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - mkdocs-video
-  - table-reader
-  - external-markdown
 
 markdown_extensions:
   - pymdownx.details
@@ -58,4 +34,3 @@ markdown_extensions:
       custom_checkbox: true
 
 repo_url: https://github.com/aadegtyarev/mkdocs-test
-edit_uri: edit/main/docs/
